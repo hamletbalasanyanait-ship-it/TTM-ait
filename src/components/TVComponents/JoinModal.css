@@ -1,0 +1,7 @@
+.join-modal__overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: grid; place-items: center; z-index: 100; }
+.join-modal { position: relative; background: #fff; border-radius: 16px; padding: 32px; width: min(440px, 92vw); }
+.join-modal__close { position: absolute; top: 12px; right: 16px; background: none; border: 0; font-size: 28px; cursor: pointer; }
+.join-form { display: grid; gap: 16px; }
+.join-form label { display: grid; gap: 6px; font-size: 14px; }
+.join-form input { padding: 12px; border: 1px solid #c9d6e0; border-radius: 8px; font-size: 16px; }
+.join-form__error { color: #e8453c; font-size: 13px; }
