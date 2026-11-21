@@ -10,13 +10,78 @@ const tabs = [
 ];
 
 const navLinks = [
-  { label: "Սակագներ", to: "/tariffs" },
-  { label: "Ինտերնետ", to: "/internet" },
-  { label: "Ծառայություններ", to: "/services" },
-  { label: "Ռոումինգ", to: "/roaming" },
-  { label: "Ցանց խանութ", to: "/eshop" },
-  { label: "Առաջարկներ", to: "/offers" },
-  { label: "Օգնություն", to: "/help" },
+  {
+    label: "Սակագներ",
+    to: "/tariffs",
+    children: [
+      { label: "Բջջային կապ", to: "/tariffs/mobile" },
+      { label: "Ինտերնետ և TV - ԿՈՍՄՈ", to: "/tariffs/kosmo" },
+      { label: "Ինտերնետ և TV - ԿՈՄԲՈ", to: "/tariffs/combo" },
+      { label: "Ֆիքսված հեռախոսակապ", to: "/tariffs/fixed" },
+    ],
+  },
+  {
+    label: "Ինտերնետ",
+    to: "/internet",
+    children: [
+      { label: "Սմարթֆոնի համար", to: "/internet/smartphone" },
+      { label: "Տան համար - ԿՈՍՄՈ", to: "/internet/home-kosmo" },
+      { label: "Տան համար - ԿՈՄԲՈ", to: "/internet/home-combo" },
+      { label: "Համակարգիչ/պլանշետի համար", to: "/internet/computer" },
+      { label: "Team 5G", to: "/internet/5g" },
+    ],
+  },
+  {
+    label: "Ծառայություններ",
+    to: "/services",
+    children: [
+      { label: "TeamTV", to: "/services/teamtv" },
+      { label: "Վճարում և համալրում", to: "/services/payment" },
+      { label: "Զվարճանք", to: "/services/entertainment" },
+      { label: "Զանգեր և անվտանգություն", to: "/services/calls-security" },
+      { label: "Ֆիքսված հեռախոսակապ", to: "/services/fixed" },
+    ],
+  },
+  {
+    label: "Ռոումինգ",
+    to: "/roaming",
+    children: [
+      { label: "Ռոումինգ", to: "/roaming/roaming" },
+      { label: "Միջազգային կապ", to: "/roaming/international" },
+      { label: "Օգտակար տեղեկատվություն", to: "/roaming/info" },
+      { label: "Ծառայություններ", to: "/roaming/services" },
+    ],
+  },
+  {
+    label: "Առցանց խանութ",
+    to: "/eshop",
+    children: [
+      { label: "E-shop", to: "/eshop" },
+      { label: "Առցանց ապառիկ", to: "/eshop/installment" },
+    ],
+  },
+  {
+    label: "Առաջարկներ",
+    to: "/offers",
+    children: [
+      { label: "Շեյքի՛ր և Շահի՛ր", to: "/offers/shake" },
+      { label: "Team Բոնուս", to: "/offers/bonus" },
+      { label: "Ակցիաներ", to: "/offers/promotions" },
+      { label: "MobiBattle", to: "/offers/mobibattle" },
+      { label: "GeForce Games", to: "/offers/geforce" },
+      { label: "Koreez", to: "/offers/koreez" },
+    ],
+  },
+  {
+    label: "Օգնություն",
+    to: "/help",
+    children: [
+      { label: "Հաճախ տրվող հարցեր", to: "/help/faq" },
+      { label: "Սարքերի կարգավորումներ", to: "/help/devices" },
+      { label: "Բաժանորդային սպասարկում", to: "/help/support" },
+      { label: "USSD հրահանգներ և օգտակար համարներ", to: "/help/ussd" },
+    ],
+  },
 ];
 
 const languages = [
@@ -123,6 +188,15 @@ export default function Header() {
                   >
                     {link.label}
                   </NavLink>
+                  {link.children && (
+                    <ul className="ait-header__dropdown">
+                      {link.children.map((child) => (
+                        <li key={child.to}>
+                          <Link to={child.to}>{child.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>
