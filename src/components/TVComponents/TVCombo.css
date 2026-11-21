@@ -1,0 +1,20 @@
+.tv-combo { max-width: 1200px; margin: 0 auto; padding: 24px; color: #12324a; }
+.tv-combo__layout { display: grid; grid-template-columns: 280px 1fr; gap: 32px; }
+.tv-combo__breadcrumbs { font-size: 14px; margin-bottom: 24px; }
+.tv-combo__title { font-size: 40px; margin: 0 0 12px; }
+.tv-combo__price { margin: 0 0 32px; color: #4a6478; }
+.tv-combo__sidebar { background: #f3f7fa; border-radius: 12px; padding: 16px; }
+.tv-combo__sidebar ul { list-style: none; margin: 0 0 16px; padding: 0; }
+.tv-combo__sidebar button { width: 100%; text-align: left; padding: 10px 12px; border: 0; background: transparent; cursor: pointer; border-radius: 8px; }
+.tv-combo__sidebar button.is-active { background: #7fd6e0; font-weight: 600; }
+.tv-combo__group { border-bottom: 1px solid #dbe5ec; }
+.tv-combo__group-title { display: flex; justify-content: space-between; font-weight: 600; }
+.tv-combo__group ul { margin: 0 0 8px; }
+.tv-combo__list { list-style: none; padding: 0; margin: 0 0 32px; }
+.tv-combo__list li { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #e3eaf0; }
+.tv-combo__join { background: #e8453c; color: #fff; border: 0; border-radius: 999px; padding: 14px 48px; font-size: 16px; cursor: pointer; }
+.tv-combo__tabs { display: flex; gap: 24px; margin-top: 32px; border-bottom: 1px solid #e3eaf0; }
+.tv-combo__tabs button { background: none; border: 0; padding: 12px 0; cursor: pointer; }
+.tv-combo__tabs button.is-active { border-bottom: 3px solid #7fd6e0; font-weight: 600; }
+.tv-combo__tab-body { background: #f8f9fa; padding: 24px; }
+@media (max-width: 800px) { .tv-combo__layout { grid-template-columns: 1fr; } }
