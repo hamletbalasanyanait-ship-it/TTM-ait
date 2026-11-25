@@ -32,3 +32,13 @@
   font-size: 15px;
   font-weight: 700;
 }
+
+/* hover rotate */
+.biz-pbx__circle {
+  transition: transform 0.4s, background 0.3s;
+}
+
+.biz-pbx__item:hover .biz-pbx__circle {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(360deg) scale(1.08);
+}
