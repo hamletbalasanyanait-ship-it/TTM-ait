@@ -1,0 +1,11 @@
+.biz-pbx {
+  padding: 60px 20px 80px;
+  text-align: center;
+  color: #fff;
+  background: var(--biz-navy-dark);
+}
+
+.biz-pbx h2 {
+  margin-bottom: 50px;
+  font-size: 44px;
+}
