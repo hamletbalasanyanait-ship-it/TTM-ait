@@ -24,3 +24,27 @@
   flex: 0 0 min(340px, 80%);
   scroll-snap-align: start;
 }
+
+/* carousel dots */
+.biz-dots {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin: 14px 0 26px;
+}
+
+.biz-dots button {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #c7cfd8;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.biz-dots button.on {
+  background: var(--biz-navy);
+  transform: scale(1.25);
+}
