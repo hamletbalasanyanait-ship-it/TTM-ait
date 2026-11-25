@@ -6,7 +6,7 @@ export default function Services() {
   return (
     <section className="biz-section biz-services">
       {services.map(({ id, title, text, Icon }, i) => (
-        <Reveal key={id} delay={i * 100}>
+        <Reveal key={id} delay={i * 100} from={i % 2 ? "right" : "left"}>
           <article className="biz-service">
             <h3>{title}</h3>
             <p>{text}</p>
