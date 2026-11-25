@@ -14,13 +14,22 @@ export default function Tariffs() {
     track.current.scrollTo({ left: card.offsetLeft - 20, behavior: "smooth" });
   };
 
+  // keep the active dot in sync while the user swipes
+  const onScroll = () => {
+    const el = track.current;
+    const card = el.children[0];
+    const step = card.offsetWidth + 16;
+    const i = Math.min(tariffs.length - 1, Math.max(0, Math.round(el.scrollLeft / step)));
+    if (i !== active) setActive(i);
+  };
+
   return (
     <section className="biz-section biz-tariffs">
       <Reveal>
         <h2>Բջջային կապի սակագներ</h2>
       </Reveal>
 
-      <div className="biz-tariffs__track" ref={track}>
+      <div className="biz-tariffs__track" ref={track} onScroll={onScroll}>
         {tariffs.map((t) => (
           <TariffCard key={t.id} t={t} />
         ))}
