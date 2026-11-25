@@ -96,8 +96,10 @@
   color: #fff;
   border: 2px solid var(--biz-cyan);
   border-radius: 50%;
-  background: rgba(8, 70, 110, 0.6);
-  box-shadow: 0 0 24px rgba(63, 208, 216, 0.4);
+  background: radial-gradient(circle at 30% 25%, rgba(63, 208, 216, 0.35), rgba(8, 70, 110, 0.75) 70%);
+  box-shadow: 0 0 24px rgba(63, 208, 216, 0.4), inset 0 0 18px rgba(63, 208, 216, 0.25);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   animation: biz-float 4s ease-in-out infinite;
 }
 
