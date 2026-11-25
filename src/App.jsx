@@ -27,6 +27,8 @@ export default function App() {
           <Route path="/tariffs/combo" element={<TVCombo />} />
           <Route path="/tariffs/mobile" element={<Mobile />} />
           <Route path="*" element={<Home />} />
+          
+<Route path="/internet/smartphone" element={<ForPhone />} />
         </Routes>
       </main>
 
