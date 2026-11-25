@@ -1,0 +1,29 @@
+.tvc__hero{height:340px;background:linear-gradient(#e8a27a,#6b5a7a 60%,#2f4a3a)}
+.tvc__container{max-width:1080px;margin:0 auto;padding:0 16px}
+.tvc__cats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:-48px;background:#fff;box-shadow:0 2px 10px #0002}
+.tvc__cats a{padding:36px 8px 16px;text-align:center;font-weight:600;font-size:13px;color:#003a5c;border-bottom:4px solid transparent}
+.tvc__cats a.active{border-color:#7fd0dc;background:#f4f4f4}
+.tvc__crumbs{margin:20px 0;font-size:12px;color:#777}
+.tvc__crumbs a{color:#7a8aa0;text-decoration:underline}
+.tvc__layout{display:grid;grid-template-columns:250px 1fr;gap:30px}
+.tvc__side{background:#f4f5f7;align-self:start;font-size:13px}
+.tvc__side h4{margin:0;padding:16px;color:#003a5c}
+.tvc__side button{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;width:100%;padding:12px 16px;cursor:pointer;font-weight:600;border-top:1px solid #e3e3e3}
+.tvc__side button.on{background:#e3e3e3}
+.tvc__side a{display:block;padding:12px 32px;color:#003a5c}
+.tvc__side a.sel{background:#7fd0dc}
+.tvc__main h1{font-size:32px;color:#003a5c;margin:0 0 12px}
+.tvc__note{color:#777;font-size:13px;line-height:1.6}
+.tvc__main h2{font-size:22px;color:#003a5c;margin:40px 0 16px}
+.tvc__row{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:12px 0;color:#555}
+.tvc__row b{font-size:24px;color:#003a5c;white-space:nowrap}
+.tvc__row small{font-size:12px}
+.tvc__main hr{border:0;border-top:1px solid #e5e5e5;margin:24px 0}
+.tvc__btn{margin:24px 0 40px;padding:16px 60px;border:0;border-radius:30px;background:#f04d4d;color:#fff;font-weight:700;cursor:pointer}
+.tvc__tabs{display:flex;gap:28px;border-bottom:1px solid #e5e5e5}
+.tvc__tabs button{all:unset;cursor:pointer;padding:12px 16px;font-weight:600;color:#003a5c;border-bottom:3px solid transparent}
+.tvc__tabs button.on{border-color:#7fd0dc}
+.tvc__included{list-style:none;margin:0;padding:20px;background:#f4f5f7;display:grid;gap:28px;color:#555}
+.tvc__foot{margin:30px 0 80px;color:#777;font-size:14px}
+.tvc__foot a{color:#003a5c;font-weight:700}
+@media(max-width:800px){.tvc__layout{grid-template-columns:1fr}.tvc__cats{grid-template-columns:1fr 1fr}.tvc__tabs{overflow-x:auto}}
