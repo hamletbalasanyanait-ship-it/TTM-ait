@@ -48,3 +48,26 @@
   font-size: 14px;
   color: var(--biz-muted);
 }
+
+/* messenger app badges */
+.biz-tariff__apps {
+  display: flex;
+  gap: 10px;
+}
+
+.biz-tariff__apps i {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #fff;
+  font: 700 14px sans-serif;
+  font-style: normal;
+}
+
+.biz-tariff__apps .more {
+  background: #e3e8ee;
+  color: #777;
+  font-size: 11px;
+}
