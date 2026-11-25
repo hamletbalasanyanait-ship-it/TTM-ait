@@ -7,9 +7,21 @@ const apps = [
   { label: "v", bg: "#7360f2" },
 ];
 
+function Gear({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" strokeDasharray="9.4 9.4" />
+      <circle cx="50" cy="50" r="33" stroke="currentColor" strokeWidth="8" />
+      <circle cx="50" cy="50" r="12" stroke="currentColor" strokeWidth="6" />
+    </svg>
+  );
+}
+
 function CustomCard({ t }) {
   return (
     <article className="biz-tariff biz-tariff--custom">
+      <Gear className="biz-gear biz-gear--big" />
+      <Gear className="biz-gear biz-gear--small" />
       <h3>{t.title}</h3>
       <h4>{t.sub}</h4>
       <p>{t.text}</p>
