@@ -2,12 +2,15 @@
   padding: 60px 20px;
   text-align: center;
   color: #fff;
-  background: var(--biz-navy);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(63, 208, 216, 0.18), transparent 40%),
+    radial-gradient(circle at 90% 95%, rgba(240, 71, 62, 0.16), transparent 40%),
+    var(--biz-navy);
 }
 
 .biz-join h2 {
   margin-bottom: 20px;
-  font-size: 44px;
+  font-size: clamp(30px, 7vw, 46px);
   line-height: 1.15;
 }
 
