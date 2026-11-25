@@ -1,0 +1,14 @@
+// NOTE: values copied from the screenshot of telecomarmenia.am/hy/b2b.
+// The 2nd and 3rd cards were cut off in the screenshot, so check them on the site.
+export const tariffs = [
+  {
+    id: 1,
+    type: "plan",
+    name: "PRO",
+    price: "3700",
+    gb: "40",
+    min: "1,500",
+    ch: "60",
+    sms: "1,500",
+  },
+];
