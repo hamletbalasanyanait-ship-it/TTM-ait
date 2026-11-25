@@ -7,7 +7,8 @@
   text-align: center;
   background: #fff;
   border-top: 8px solid var(--biz-navy);
-  border-radius: 6px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(11, 59, 102, 0.08);
 }
 
 .biz-tariff__name {
@@ -28,16 +29,33 @@
   text-align: left;
 }
 
+.biz-tariff__list {
+  width: 100%;
+  max-width: 230px;
+}
+
 .biz-tariff__list li {
   display: flex;
   align-items: center;
   gap: 12px;
+  padding-bottom: 12px;
   font-size: 24px;
+  border-bottom: 1px solid #e8edf2;
+}
+
+.biz-tariff__list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
 }
 
 .biz-tariff__list svg {
   flex: none;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
   color: var(--biz-navy);
+  background: #eaf1f7;
+  border-radius: 50%;
 }
 
 .biz-tariff__list b {
