@@ -112,3 +112,24 @@
     transform: translateX(-40px);
   }
 }
+
+/* pagination dots */
+.biz-hero__dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  display: flex;
+  gap: 14px;
+  transform: translateX(-50%);
+}
+
+.biz-hero__dots i {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.biz-hero__dots i.on {
+  background: var(--biz-red);
+}
