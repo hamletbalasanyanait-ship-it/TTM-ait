@@ -42,3 +42,11 @@
   background: rgba(255, 255, 255, 0.1);
   transform: rotate(360deg) scale(1.08);
 }
+
+@media (min-width: 768px) {
+  .biz-pbx__grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
