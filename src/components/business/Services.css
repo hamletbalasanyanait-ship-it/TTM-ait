@@ -63,3 +63,12 @@
 .biz-service__art {
   animation: biz-float 4s ease-in-out infinite;
 }
+
+@media (min-width: 768px) {
+  .biz-services {
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 40px;
+  }
+}

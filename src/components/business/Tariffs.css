@@ -70,3 +70,15 @@
 .biz-more a:hover {
   color: var(--biz-red);
 }
+
+@media (min-width: 768px) {
+  .biz-tariffs {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 40px;
+  }
+
+  .biz-tariffs__track .biz-tariff {
+    flex-basis: 300px;
+  }
+}
