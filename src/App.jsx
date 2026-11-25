@@ -7,13 +7,14 @@ import Conect from "./pages/Conect";
 import EShop from "./pages/E-shop";
 import ForHome from "./pages/Forhome";
 import ForPhone from "./pages/Forphone";
+import TVCombo from "./pages/TVCombo";
 import "./App.css";
 
 export default function App() {
   return (
     <div className="app">
       <Header />
-    
+
       <main className="app__main">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/eshop" element={<EShop />} />
           <Route path="/for-home" element={<ForHome />} />
           <Route path="/for-phone" element={<ForPhone />} />
+          <Route path="/tariffs/combo" element={<TVCombo />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
