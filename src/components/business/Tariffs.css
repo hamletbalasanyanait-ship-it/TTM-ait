@@ -92,3 +92,16 @@
     flex-basis: 300px;
   }
 }
+
+/* on desktop all four cards fit, so show a grid instead of a carousel */
+@media (min-width: 1100px) {
+  .biz-tariffs__track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: visible;
+  }
+
+  .biz-dots {
+    display: none;
+  }
+}
