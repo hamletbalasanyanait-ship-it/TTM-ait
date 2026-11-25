@@ -95,3 +95,20 @@
     transform: translateY(-14px);
   }
 }
+
+/* text slide-in on load */
+.biz-hero__text h1 {
+  animation: biz-slide-in 0.9s both;
+}
+
+.biz-hero__text li,
+.biz-hero__text .biz-btn {
+  animation: biz-slide-in 0.9s 0.3s both;
+}
+
+@keyframes biz-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+}
