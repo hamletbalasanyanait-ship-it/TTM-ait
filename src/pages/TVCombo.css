@@ -1,29 +1,92 @@
-.tvc__hero{height:340px;background:linear-gradient(#e8a27a,#6b5a7a 60%,#2f4a3a)}
+.tvc{background:#fff;color:#555;font-size:15px}
+
+.tvc__hero{
+  height:360px;
+  background:url("https://www.telecomarmenia.am/img/menu_default.jpg") center/cover no-repeat;
+}
+
 .tvc__container{max-width:1080px;margin:0 auto;padding:0 16px}
-.tvc__cats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:-48px;background:#fff;box-shadow:0 2px 10px #0002}
-.tvc__cats a{padding:36px 8px 16px;text-align:center;font-weight:600;font-size:13px;color:#003a5c;border-bottom:4px solid transparent}
-.tvc__cats a.active{border-color:#7fd0dc;background:#f4f4f4}
-.tvc__crumbs{margin:20px 0;font-size:12px;color:#777}
+
+.tvc__cats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  margin-top:-56px;background:#fff;border-radius:6px;
+  box-shadow:0 6px 24px rgba(0,40,70,.15);overflow:hidden;position:relative;
+}
+.tvc__cats a{
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  padding:26px 8px 18px;text-align:center;font-weight:600;font-size:13px;
+  color:#003a5c;text-decoration:none;border-bottom:4px solid transparent;
+  transition:background .2s;
+}
+.tvc__cats a::before{font-size:30px;line-height:1}
+.tvc__cats a:nth-child(1)::before{content:"📱"}
+.tvc__cats a:nth-child(2)::before,
+.tvc__cats a:nth-child(3)::before{content:"📺"}
+.tvc__cats a:nth-child(4)::before{content:"☎️"}
+.tvc__cats a:hover{background:#f6f8fa}
+.tvc__cats a.active{border-color:#7fd0dc;background:#f2f4f6}
+
+.tvc__crumbs{margin:22px 0 30px;font-size:12px;color:#8a94a0}
 .tvc__crumbs a{color:#7a8aa0;text-decoration:underline}
-.tvc__layout{display:grid;grid-template-columns:250px 1fr;gap:30px}
-.tvc__side{background:#f4f5f7;align-self:start;font-size:13px}
-.tvc__side h4{margin:0;padding:16px;color:#003a5c}
-.tvc__side button{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;width:100%;padding:12px 16px;cursor:pointer;font-weight:600;border-top:1px solid #e3e3e3}
-.tvc__side button.on{background:#e3e3e3}
-.tvc__side a{display:block;padding:12px 32px;color:#003a5c}
-.tvc__side a.sel{background:#7fd0dc}
-.tvc__main h1{font-size:32px;color:#003a5c;margin:0 0 12px}
-.tvc__note{color:#777;font-size:13px;line-height:1.6}
-.tvc__main h2{font-size:22px;color:#003a5c;margin:40px 0 16px}
-.tvc__row{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:12px 0;color:#555}
-.tvc__row b{font-size:24px;color:#003a5c;white-space:nowrap}
-.tvc__row small{font-size:12px}
-.tvc__main hr{border:0;border-top:1px solid #e5e5e5;margin:24px 0}
-.tvc__btn{margin:24px 0 40px;padding:16px 60px;border:0;border-radius:30px;background:#f04d4d;color:#fff;font-weight:700;cursor:pointer}
-.tvc__tabs{display:flex;gap:28px;border-bottom:1px solid #e5e5e5}
-.tvc__tabs button{all:unset;cursor:pointer;padding:12px 16px;font-weight:600;color:#003a5c;border-bottom:3px solid transparent}
+.tvc__crumbs a:hover{color:#003a5c}
+
+.tvc__layout{display:grid;grid-template-columns:250px 1fr;gap:40px;align-items:start}
+
+.tvc__side{background:#f4f5f7;border-radius:6px;overflow:hidden;font-size:13px}
+.tvc__side h4{margin:0;padding:18px 16px 12px;color:#003a5c;font-size:14px}
+.tvc__side button{
+  all:unset;box-sizing:border-box;display:flex;justify-content:space-between;gap:8px;
+  width:100%;padding:14px 16px;cursor:pointer;font-weight:600;color:#333;
+  border-top:1px solid #e6e8eb;transition:background .2s;
+}
+.tvc__side button:hover{background:#eceef1}
+.tvc__side button.on{background:#e3e5e8}
+.tvc__side a{display:block;padding:13px 32px;color:#003a5c;text-decoration:none}
+.tvc__side a:hover{background:#eaf6f8}
+.tvc__side a.sel{background:#7fd0dc;font-weight:600}
+
+.tvc__main h1{font-size:36px;color:#003a5c;margin:0 0 14px;letter-spacing:.5px}
+.tvc__note{color:#7b8591;font-size:13px;line-height:1.7;margin:0}
+.tvc__main h2{font-size:24px;color:#003a5c;margin:44px 0 12px}
+
+.tvc__row{
+  display:flex;justify-content:space-between;align-items:center;gap:24px;
+  padding:14px 0;color:#555;border-bottom:1px solid #f0f1f3;
+}
+.tvc__row:last-of-type{border-bottom:0}
+.tvc__row b{font-size:26px;font-weight:700;color:#003a5c;white-space:nowrap}
+.tvc__row small{font-size:12px;font-weight:600;margin-left:2px}
+.tvc__main hr{border:0;border-top:1px solid #e5e5e5;margin:28px 0 0}
+
+.tvc__btn{
+  margin:28px 0 48px;padding:16px 64px;border:0;border-radius:32px;
+  background:#f04d4d;color:#fff;font-weight:700;font-size:15px;cursor:pointer;
+  box-shadow:0 4px 14px rgba(240,77,77,.35);transition:transform .15s,background .2s;
+}
+.tvc__btn:hover{background:#e03c3c;transform:translateY(-1px)}
+
+.tvc__tabs{display:flex;gap:8px;border-bottom:1px solid #e5e5e5;overflow-x:auto}
+.tvc__tabs button{
+  all:unset;cursor:pointer;white-space:nowrap;padding:12px 18px;
+  font-weight:600;color:#003a5c;border-bottom:3px solid transparent;
+}
+.tvc__tabs button:hover{background:#f6f8fa}
 .tvc__tabs button.on{border-color:#7fd0dc}
-.tvc__included{list-style:none;margin:0;padding:20px;background:#f4f5f7;display:grid;gap:28px;color:#555}
-.tvc__foot{margin:30px 0 80px;color:#777;font-size:14px}
+
+.tvc__included{list-style:none;margin:0;padding:24px;background:#f4f5f7;display:grid;gap:24px;color:#555}
+.tvc__included li{display:flex;align-items:center;gap:14px}
+.tvc__included li::before{font-size:24px}
+.tvc__included li:nth-child(1)::before{content:"📶"}
+.tvc__included li:nth-child(2)::before{content:"📦"}
+.tvc__included li:nth-child(3)::before{content:"💳"}
+
+.tvc__foot{margin:32px 0 90px;color:#7b8591;font-size:14px;border-top:1px solid #eee;padding-top:20px}
 .tvc__foot a{color:#003a5c;font-weight:700}
-@media(max-width:800px){.tvc__layout{grid-template-columns:1fr}.tvc__cats{grid-template-columns:1fr 1fr}.tvc__tabs{overflow-x:auto}}
+
+@media(max-width:800px){
+  .tvc__hero{height:240px}
+  .tvc__layout{grid-template-columns:1fr;gap:24px}
+  .tvc__cats{grid-template-columns:1fr 1fr}
+  .tvc__main h1{font-size:28px}
+  .tvc__row b{font-size:20px}
+}
