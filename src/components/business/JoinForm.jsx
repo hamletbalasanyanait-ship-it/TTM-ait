@@ -17,6 +17,7 @@ function validate(f) {
 export default function JoinForm() {
   const [form, setForm] = useState(empty);
   const [errors, setErrors] = useState({});
+  const [sent, setSent] = useState(false);
 
   const set = (key) => (e) => {
     setForm({ ...form, [key]: e.target.value });
@@ -25,7 +26,14 @@ export default function JoinForm() {
 
   const submit = (e) => {
     e.preventDefault();
-    setErrors(validate(form));
+    const found = validate(form);
+    setErrors(found);
+    if (Object.keys(found).length) return;
+
+    // TODO: send `form` to the backend when the API is ready
+    console.log("business join request", form);
+    setSent(true);
+    setForm(empty);
   };
 
   const field = (key, label, placeholder) => (
@@ -58,6 +66,11 @@ export default function JoinForm() {
         <button type="submit" className="biz-btn biz-btn--red biz-btn--center">
           Միանալ
         </button>
+        {sent && (
+          <p className="biz-join__ok" role="status">
+            Շնորհակալություն, ձեր հայտը ընդունված է:
+          </p>
+        )}
       </form>
     </section>
   );
