@@ -1,0 +1,194 @@
+.login {
+  --l-navy: #01415f;
+  --l-red: #f04f4d;
+  --l-teal: #8dd0d9;
+  --l-bg: #f4f5f7;
+  --l-line: #dcdfe3;
+  --l-text: #2c3843;
+  --l-muted: #b9bdc2;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--l-bg);
+  color: var(--l-text);
+  font-size: 15px;
+  line-height: 1.4;
+}
+.login *,
+.login *::before,
+.login *::after { box-sizing: border-box; }
+
+.login__container {
+  flex: 1;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 44px 45px 70px;
+}
+
+.login__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 52px;
+}
+.login__logo { display: block; height: 76px; width: auto; }
+.login__flag {
+  width: 40px; height: 40px;
+  border: 0; border-radius: 50%; cursor: pointer;
+  background: linear-gradient(#d90012 0 33%, #0033a0 33% 66%, #f2a800 66%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .25);
+}
+
+/* tabs */
+.login__tabs {
+  display: flex;
+  list-style: none;
+  margin: 0; padding: 0;
+  border-bottom: 2px solid #e8eaed;
+}
+.login__tab-item { flex: 1; }
+.login__tab {
+  width: 100%;
+  padding: 24px 0 22px;
+  margin-bottom: -2px;
+  background: none;
+  border: 0;
+  border-bottom: 5px solid transparent;
+  border-radius: 3px;
+  font: inherit;
+  font-size: 19px;
+  letter-spacing: .5px;
+  color: var(--l-text);
+  cursor: pointer;
+}
+.login__tab.is-active {
+  font-weight: 700;
+  border-bottom-color: var(--l-teal);
+}
+
+/* card */
+.login__card {
+  margin-top: 45px;
+  padding: 45px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .12);
+}
+.login__tabs--inner { margin-bottom: 38px; }
+.login__tabs--inner .login__tab { font-size: 18px; padding: 20px 0; }
+
+.login__label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  letter-spacing: .4px;
+}
+
+.login__input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 16px;
+  color: var(--l-text);
+}
+.login__input::placeholder { color: var(--l-muted); }
+
+.login__line-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 52px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid var(--l-line);
+}
+.login__line-field:focus-within { border-bottom-color: var(--l-navy); }
+.login__prefix { font-size: 16px; }
+.login__divider { width: 1px; height: 38px; background: var(--l-line); }
+
+.login__pill-field {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  margin-bottom: 30px;
+  padding: 0 14px;
+  border: 1px solid #eceef0;
+  border-radius: 30px;
+  background: #fff;
+}
+.login__pill-field:focus-within { border-color: var(--l-navy); }
+.login__eye {
+  display: flex;
+  padding: 4px;
+  background: none;
+  border: 0;
+  color: var(--l-navy);
+  cursor: pointer;
+}
+
+/* buttons */
+.login__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+  border-radius: 32px;
+  font: inherit;
+  font-size: 19px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.login__btn--primary {
+  background: var(--l-red);
+  border: 2px solid var(--l-red);
+  color: #fff;
+}
+.login__btn--primary:hover { background: #d93e3c; border-color: #d93e3c; }
+.login__btn--outline {
+  background: #fff;
+  border: 2px solid var(--l-red);
+  color: var(--l-red);
+  height: 68px;
+}
+.login__btn--outline:hover { background: var(--l-red); color: #fff; }
+
+.login__forgot {
+  display: block;
+  margin: 34px 0 40px;
+  text-align: center;
+  color: var(--l-navy);
+  text-decoration: underline;
+}
+
+/* footer */
+.login__footer {
+  padding: 28px 16px 24px;
+  background: #58636c;
+  color: #fff;
+  text-align: center;
+}
+.login__footer p { margin: 10px 0 0; }
+.login__social {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0; padding: 0;
+  list-style: none;
+}
+.login__social a { color: rgba(255, 255, 255, .25); }
+.login__social a:hover { color: #fff; }
+
+@media (max-width: 480px) {
+  .login__container { padding: 32px 16px 48px; }
+  .login__logo { height: 56px; }
+  .login__card { padding: 28px 16px; }
+  .login__tab { font-size: 16px; }
+  .login__tabs--inner .login__tab { font-size: 15px; }
+}
