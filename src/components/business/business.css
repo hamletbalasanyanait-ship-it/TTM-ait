@@ -129,3 +129,11 @@
     transform: none;
   }
 }
+
+/* keyboard focus */
+.biz-btn:focus-visible,
+.biz-dots button:focus-visible,
+.biz a:focus-visible {
+  outline: 3px solid var(--biz-cyan);
+  outline-offset: 3px;
+}
