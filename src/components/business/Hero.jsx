@@ -10,6 +10,12 @@ const bubbles = [
 export default function Hero() {
   return (
     <section className="biz-hero" id="top">
+      <div className="biz-hero__rings" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
+
       {bubbles.map((b) => (
         <div key={b.cls} className={`biz-bubble ${b.cls}`}>
           {b.label}
@@ -26,6 +32,12 @@ export default function Hero() {
         <button type="button" className="biz-btn biz-btn--white">
           Մանրամասն
         </button>
+      </div>
+
+      <div className="biz-hero__dots" aria-hidden="true">
+        <i />
+        <i />
+        <i className="on" />
       </div>
     </section>
   );
