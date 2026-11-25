@@ -5,3 +5,29 @@
   color: #fff;
   background: radial-gradient(circle at 70% 80%, #0d5a8a, #052a47 70%);
 }
+
+.biz-hero__text {
+  position: relative;
+  z-index: 2;
+  padding: 90px 40px 70px;
+}
+
+.biz-hero__text h1 {
+  font-size: 44px;
+  margin-bottom: 24px;
+}
+
+.biz-hero__text li {
+  font-size: 15px;
+  margin: 6px 0;
+}
+
+.biz-hero__text li::before {
+  content: "• ";
+}
+
+.biz-hero__text .biz-btn {
+  margin-top: 28px;
+  width: 100%;
+  max-width: 360px;
+}
