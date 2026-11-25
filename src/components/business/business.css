@@ -114,3 +114,18 @@
     left: 130%;
   }
 }
+
+/* respect users who turn animations off */
+@media (prefers-reduced-motion: reduce) {
+  .biz *,
+  .biz *::before,
+  .biz *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .biz-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
