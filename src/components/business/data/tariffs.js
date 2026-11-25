@@ -2,6 +2,14 @@
 // The 2nd and 3rd cards were cut off in the screenshot, so check them on the site.
 export const tariffs = [
   {
+    id: 0,
+    type: "custom",
+    title: "SMART",
+    sub: "BUSINESS",
+    text: "Կարգավորեք ձեր փաթեթը",
+    btn: "Միանալ",
+  },
+  {
     id: 1,
     type: "plan",
     name: "PRO",
