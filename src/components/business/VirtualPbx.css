@@ -9,3 +9,26 @@
   margin-bottom: 50px;
   font-size: 44px;
 }
+
+.biz-pbx__grid {
+  display: grid;
+  gap: 40px;
+}
+
+.biz-pbx__circle {
+  display: grid;
+  place-items: center;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 20px;
+  color: var(--biz-cyan);
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.biz-pbx__item p {
+  max-width: 220px;
+  margin: 0 auto;
+  font-size: 15px;
+  font-weight: 700;
+}
