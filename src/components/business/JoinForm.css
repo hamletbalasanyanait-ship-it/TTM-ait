@@ -34,3 +34,39 @@
 .biz-join__form .biz-btn {
   grid-column: 1 / -1;
 }
+
+.biz-join__form input {
+  height: 56px;
+  padding: 0 22px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--biz-text);
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 28px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.biz-join__form input:focus {
+  outline: 0;
+  border-color: var(--biz-red);
+  box-shadow: 0 0 0 4px rgba(240, 71, 62, 0.25);
+}
+
+.biz-join__form .has-error input {
+  border-color: var(--biz-red);
+}
+
+.biz-join__form em {
+  font-size: 12px;
+  font-style: normal;
+  color: #ff9a94;
+}
+
+.biz-join__ok {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--biz-cyan);
+}
