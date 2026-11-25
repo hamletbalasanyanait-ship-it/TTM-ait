@@ -46,6 +46,13 @@ export default function Tariffs() {
           />
         ))}
       </div>
+
+      <div className="biz-more">
+        <span />
+        <a href="https://www.telecomarmenia.am/hy/b2b/" target="_blank" rel="noreferrer">
+          Տեսնել ավելին
+        </a>
+      </div>
     </section>
   );
 }
