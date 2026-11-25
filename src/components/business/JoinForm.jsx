@@ -1,7 +1,14 @@
+import { useState } from "react";
 import Reveal from "./Reveal";
 import "./JoinForm.css";
 
+const empty = { number: "", name: "", org: "", phone: "" };
+
 export default function JoinForm() {
+  const [form, setForm] = useState(empty);
+
+  const set = (key) => (e) => setForm({ ...form, [key]: e.target.value });
+
   return (
     <section className="biz-join">
       <Reveal>
@@ -14,19 +21,19 @@ export default function JoinForm() {
       <form className="biz-join__form">
         <label>
           Տեղափոխվող համար (0XXYYYYYY ֆորմատով)*
-          <input placeholder="0" />
+          <input placeholder="0" value={form.number} onChange={set("number")} />
         </label>
         <label>
           Անուն Ազգանուն*
-          <input />
+          <input value={form.name} onChange={set("name")} />
         </label>
         <label>
           Կազմակերպություն*
-          <input />
+          <input value={form.org} onChange={set("org")} />
         </label>
         <label>
           Կոնտակտային համար*
-          <input placeholder="0" />
+          <input placeholder="0" value={form.phone} onChange={set("phone")} />
         </label>
         <button type="submit" className="biz-btn biz-btn--red biz-btn--center">
           Միանալ
