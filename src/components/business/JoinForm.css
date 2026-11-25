@@ -1,0 +1,17 @@
+.biz-join {
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+  background: var(--biz-navy);
+}
+
+.biz-join h2 {
+  margin-bottom: 20px;
+  font-size: 44px;
+  line-height: 1.15;
+}
+
+.biz-join__sub {
+  margin-bottom: 40px;
+  font-size: 18px;
+}
