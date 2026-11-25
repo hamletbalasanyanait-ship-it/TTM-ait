@@ -70,3 +70,24 @@
 .biz-btn:active {
   transform: translateY(0);
 }
+
+.biz-btn--red {
+  background: var(--biz-red);
+  color: #fff;
+}
+
+.biz-btn--white {
+  background: #fff;
+  color: var(--biz-red);
+}
+
+.biz-btn--outline {
+  background: transparent;
+  border: 2px solid var(--biz-red);
+  color: var(--biz-red);
+}
+
+.biz-btn--center {
+  display: block;
+  margin: 40px auto 0;
+}
