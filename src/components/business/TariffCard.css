@@ -71,3 +71,34 @@
   color: #777;
   font-size: 11px;
 }
+
+/* Smart Business (custom package) card */
+.biz-tariff--custom {
+  justify-content: center;
+  min-height: 400px;
+  color: #fff;
+  border: 0;
+  background:
+    radial-gradient(circle at 80% 110%, rgba(255, 255, 255, 0.12) 0 22%, transparent 23%),
+    radial-gradient(circle at 10% -5%, rgba(255, 255, 255, 0.1) 0 18%, transparent 19%),
+    linear-gradient(160deg, #35506b, #1d3550);
+}
+
+.biz-tariff--custom h3 {
+  font-size: 36px;
+}
+
+.biz-tariff--custom h4 {
+  margin-top: -12px;
+  font-size: 22px;
+  letter-spacing: 6px;
+}
+
+.biz-tariff--custom p {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.biz-tariff--custom .biz-btn {
+  padding-inline: 56px;
+}
