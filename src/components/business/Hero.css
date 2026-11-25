@@ -89,3 +89,9 @@
 .biz-bubble--2 { top: 100px; right: 10px; animation-delay: 0.6s; }
 .biz-bubble--3 { top: 220px; right: 210px; animation-delay: 1.2s; }
 .biz-bubble--4 { top: 220px; right: 90px; animation-delay: 1.8s; }
+
+@keyframes biz-float {
+  50% {
+    transform: translateY(-14px);
+  }
+}
