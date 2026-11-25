@@ -186,3 +186,23 @@
   .biz-bubble--3 { top: 260px; right: 22%; }
   .biz-bubble--4 { top: 260px; right: 11%; }
 }
+
+/* soft pulse ring around every bubble */
+.biz-bubble::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 2px solid var(--biz-cyan);
+  border-radius: 50%;
+  opacity: 0;
+  animation: biz-pulse 3.2s ease-out infinite;
+}
+
+.biz-bubble--2::after { animation-delay: 0.8s; }
+.biz-bubble--3::after { animation-delay: 1.6s; }
+.biz-bubble--4::after { animation-delay: 2.4s; }
+
+@keyframes biz-pulse {
+  0% { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.45); }
+}
