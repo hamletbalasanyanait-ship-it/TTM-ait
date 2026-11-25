@@ -50,8 +50,15 @@
 .biz-service__art {
   position: absolute;
   right: 24px;
-  bottom: 16px;
+  bottom: 20px;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
   color: var(--biz-cyan);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(63, 208, 216, 0.4);
+  border-radius: 50%;
 }
 
 /* hover */
