@@ -7,7 +7,22 @@ const apps = [
   { label: "v", bg: "#7360f2" },
 ];
 
+function CustomCard({ t }) {
+  return (
+    <article className="biz-tariff biz-tariff--custom">
+      <h3>{t.title}</h3>
+      <h4>{t.sub}</h4>
+      <p>{t.text}</p>
+      <button type="button" className="biz-btn biz-btn--red">
+        {t.btn}
+      </button>
+    </article>
+  );
+}
+
 export default function TariffCard({ t }) {
+  if (t.type === "custom") return <CustomCard t={t} />;
+
   return (
     <article className="biz-tariff">
       <h3 className="biz-tariff__name">{t.name}</h3>
