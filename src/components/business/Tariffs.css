@@ -48,3 +48,25 @@
   background: var(--biz-navy);
   transform: scale(1.25);
 }
+
+/* "see more" line */
+.biz-more {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.biz-more span {
+  flex: 1;
+  height: 1px;
+  background: #cfd6dd;
+}
+
+.biz-more a {
+  color: var(--biz-muted);
+  text-decoration: underline;
+}
+
+.biz-more a:hover {
+  color: var(--biz-red);
+}
