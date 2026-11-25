@@ -41,3 +41,25 @@
   bottom: 16px;
   color: var(--biz-cyan);
 }
+
+/* hover */
+.biz-service {
+  transition: transform 0.3s;
+}
+
+.biz-service:hover {
+  transform: scale(1.02);
+}
+
+.biz-service__link span {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.biz-service:hover .biz-service__link span {
+  transform: translateX(8px);
+}
+
+.biz-service__art {
+  animation: biz-float 4s ease-in-out infinite;
+}
