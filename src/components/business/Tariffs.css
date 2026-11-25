@@ -4,7 +4,17 @@
 
 .biz-section h2 {
   margin-bottom: 36px;
-  font-size: 34px;
+  font-size: clamp(28px, 6vw, 38px);
+}
+
+.biz-section h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 12px;
+  background: var(--biz-red);
+  border-radius: 2px;
 }
 
 .biz-tariffs__track {
