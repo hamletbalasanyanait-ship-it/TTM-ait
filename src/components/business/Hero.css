@@ -133,3 +133,38 @@
 .biz-hero__dots i.on {
   background: var(--biz-red);
 }
+
+@media (min-width: 768px) {
+  .biz-hero {
+    min-height: 520px;
+  }
+
+  .biz-hero__text {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 80px 80px;
+  }
+
+  .biz-hero__text h1 {
+    font-size: 64px;
+  }
+
+  .biz-hero__text li {
+    font-size: 20px;
+  }
+
+  .biz-hero__text .biz-btn {
+    width: auto;
+  }
+
+  .biz-hero__rings {
+    right: 5%;
+    width: 560px;
+    height: 560px;
+  }
+
+  .biz-bubble--1 { top: 60px; right: 26%; }
+  .biz-bubble--2 { top: 120px; right: 8%; }
+  .biz-bubble--3 { top: 260px; right: 22%; }
+  .biz-bubble--4 { top: 260px; right: 11%; }
+}
