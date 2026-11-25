@@ -102,3 +102,13 @@
 .biz-tariff--custom .biz-btn {
   padding-inline: 56px;
 }
+
+/* hover lift */
+.biz-tariff {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.biz-tariff:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 30px rgba(11, 59, 102, 0.18);
+}
