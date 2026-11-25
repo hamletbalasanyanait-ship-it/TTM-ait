@@ -1,0 +1,26 @@
+.biz-section {
+  padding: 50px 20px;
+}
+
+.biz-section h2 {
+  margin-bottom: 36px;
+  font-size: 34px;
+}
+
+.biz-tariffs__track {
+  display: flex;
+  gap: 16px;
+  padding: 10px 0 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.biz-tariffs__track::-webkit-scrollbar {
+  display: none;
+}
+
+.biz-tariffs__track .biz-tariff {
+  flex: 0 0 min(340px, 80%);
+  scroll-snap-align: start;
+}
