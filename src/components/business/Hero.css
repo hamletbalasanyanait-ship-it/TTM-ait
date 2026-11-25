@@ -29,8 +29,20 @@
 }
 
 .biz-hero__text h1 {
-  font-size: 44px;
-  margin-bottom: 24px;
+  position: relative;
+  margin-bottom: 30px;
+  font-size: clamp(44px, 9vw, 64px);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.biz-hero__text h1::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin-top: 14px;
+  background: var(--biz-red);
+  border-radius: 3px;
 }
 
 .biz-hero__text li {
