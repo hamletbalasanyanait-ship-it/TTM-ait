@@ -1,12 +1,13 @@
 import useReveal from "./hooks/useReveal";
 import "./Reveal.css";
 
-export default function Reveal({ children, delay = 0, className = "" }) {
+// from: "up" (default) | "left" | "right"
+export default function Reveal({ children, delay = 0, from = "up", className = "" }) {
   const [ref, visible] = useReveal();
   return (
     <div
       ref={ref}
-      className={`biz-reveal ${visible ? "biz-reveal--in" : ""} ${className}`}
+      className={`biz-reveal biz-reveal--${from} ${visible ? "biz-reveal--in" : ""} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
