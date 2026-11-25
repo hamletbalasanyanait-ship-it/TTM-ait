@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;500;700;800&display=swap");
+
+/* Every business style is scoped under .biz / .biz-* so it
+   never collides with the other pages' CSS. */
+.biz {
+  --biz-navy: #0b3b66;
+  --biz-navy-dark: #06304f;
+  --biz-card: #064a73;
+  --biz-red: #f0473e;
+  --biz-bg: #f3f5f7;
+  --biz-text: #0b2a45;
+  --biz-muted: #6a7f92;
+  --biz-cyan: #3fd0d8;
+}
