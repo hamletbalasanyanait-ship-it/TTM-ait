@@ -12,3 +12,38 @@
   --biz-muted: #6a7f92;
   --biz-cyan: #3fd0d8;
 }
+
+.biz {
+  font-family: "Noto Sans Armenian", "Sylfaen", system-ui, sans-serif;
+  background: var(--biz-bg);
+  color: var(--biz-text);
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.biz *,
+.biz *::before,
+.biz *::after {
+  box-sizing: border-box;
+}
+
+.biz h1,
+.biz h2,
+.biz h3,
+.biz h4 {
+  margin: 0;
+  font-weight: 800;
+  color: inherit;
+}
+
+.biz ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.biz a {
+  color: inherit;
+  text-decoration: none;
+}
