@@ -1,0 +1,43 @@
+.biz-services {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.biz-service {
+  position: relative;
+  min-height: 220px;
+  padding: 34px 30px;
+  overflow: hidden;
+  color: #fff;
+  background: var(--biz-card);
+  border-radius: 6px;
+}
+
+.biz-service h3 {
+  max-width: 220px;
+  margin-bottom: 14px;
+  font-size: 22px;
+}
+
+.biz-service p {
+  max-width: 260px;
+  font-size: 14px;
+}
+
+.biz-service__link {
+  display: inline-block;
+  margin-top: 32px;
+  font-size: 18px;
+}
+
+.biz-service__link span {
+  color: var(--biz-red);
+}
+
+.biz-service__art {
+  position: absolute;
+  right: 24px;
+  bottom: 16px;
+  color: var(--biz-cyan);
+}
