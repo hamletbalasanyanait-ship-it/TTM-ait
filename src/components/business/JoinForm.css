@@ -15,3 +15,22 @@
   margin-bottom: 40px;
   font-size: 18px;
 }
+
+.biz-join__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 13px;
+  text-align: left;
+}
+
+.biz-join__form label {
+  display: grid;
+  gap: 10px;
+}
+
+.biz-join__form .biz-btn {
+  grid-column: 1 / -1;
+}
