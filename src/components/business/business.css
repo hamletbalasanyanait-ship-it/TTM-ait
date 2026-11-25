@@ -91,3 +91,26 @@
   display: block;
   margin: 40px auto 0;
 }
+
+/* shine sweep on hover */
+.biz-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.biz-btn:hover::after {
+  animation: biz-shine 0.7s;
+}
+
+@keyframes biz-shine {
+  to {
+    left: 130%;
+  }
+}
