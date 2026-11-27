@@ -1,0 +1,116 @@
+.kc{--navy:#003a5c;--red:#f0504d;--teal:#8ad3dc;font-family:inherit;color:var(--navy);letter-spacing:0}
+.kc h2,.kc h3,.kc h4,.kc p,.kc ul{margin:0;padding:0}
+.kc ul{list-style:none}
+.kc-wrap{max-width:1050px;margin:0 auto;padding:0 16px}
+
+/* Hero */
+.kc-hero{position:relative;background:#00263a;padding:150px 0 100px;overflow:hidden}
+.kc-hero__inner{max-width:1050px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.kc-hero__card{background:#003a5c;padding:56px 34px;width:430px;max-width:100%;color:#fff;border-radius:4px}
+.kc-hero__card h2{font-size:32px;margin-bottom:34px}
+.kc-hero__card p{font-size:18px;line-height:1.35;margin-bottom:22px}
+.kc-hero__btn{display:inline-block;background:#fff;color:var(--red);font-weight:700;padding:11px 24px;border-radius:30px;text-decoration:none;font-size:14px}
+.kc-hero__art{text-align:center;color:#cbbfa8;font-weight:800;line-height:.9}
+.kc-hero__art span{display:block;font-size:90px}
+.kc-hero__art b{display:block;font-size:170px}
+.kc-hero__arrow{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:#ffffff55;font-size:60px;cursor:pointer;padding:0 14px}
+.kc-hero__arrow--l{left:0}.kc-hero__arrow--r{right:0}
+.kc-dots{position:absolute;bottom:30px;left:0;right:0;display:flex;justify-content:center;gap:16px}
+.kc-dots button{width:12px;height:12px;border-radius:50%;border:0;background:#fff;padding:0;cursor:pointer}
+.kc-dots button.on{background:var(--red)}
+
+/* Tariffs */
+.kc-tariffs{background:#003a5c;padding-bottom:60px;margin-top:-1px}
+.kc-ttabs{display:grid;grid-template-columns:1fr 1fr;margin-top:-22px;background:#fff}
+.kc-ttabs button{background:#f6f8f8;border:0;border-bottom:5px solid #ddd;padding:18px;font:inherit;font-weight:700;color:var(--navy);cursor:pointer}
+.kc-ttabs button.on{background:#fff;border-bottom-color:var(--red)}
+.kc-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;align-items:start;margin-top:26px}
+.kc-card{position:relative;background:#fff;border-top:8px solid var(--red);border-radius:3px;padding:0 0 22px;text-align:center}
+.kc-card header{padding:22px 10px 10px;border-bottom:1px solid #eee}
+.kc-card h3{font-size:24px;color:#22313f}
+.kc-card header s{display:block;font-size:30px;font-weight:700;color:#22313f;text-decoration-color:var(--red)}
+.kc-card header strong{display:block;font-size:34px;color:#22313f}
+.kc-card header strong.new{color:var(--red)}
+.kc-card__badge{position:absolute;top:-24px;right:-14px;color:#ff6a6a;font-weight:900;font-size:30px;transform:rotate(8deg)}
+.kc-card ul{padding:8px 24px}
+.kc-card li{border-bottom:1px solid #eee;padding:10px 0}
+.kc-card__row{display:flex;align-items:center;gap:16px;color:#22313f}
+.kc-card__row svg{color:#1d4f73;flex:none}
+.kc-card__big{font-size:20px}
+.kc-card__big small{font-size:12px}
+.kc-card li p{font-size:9.5px;line-height:1.3;color:#444;text-align:left;margin-top:4px}
+.kc-card__apps{display:flex;justify-content:center;gap:10px;margin:20px 0 10px}
+.kc-card__apps i{width:24px;height:24px;border-radius:50%;background:#cfd8e0}
+.kc-card__apps em{width:24px;height:24px;border-radius:50%;background:#eee;font-size:9px;line-height:24px;font-style:normal}
+.kc-card__btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:13px 34px;border-radius:30px;text-decoration:none;margin-top:16px;font-size:14px}
+.kc-empty{color:#fff;text-align:center;padding:50px 0}
+
+/* Terms */
+.kc-terms{max-width:620px;margin:0 auto;padding:22px 16px;text-align:center;font-size:14px;line-height:1.5;color:#1d4f73}
+
+/* Be Free */
+.kc-befree{background:#003a5c;padding:200px 16px 150px;text-align:center}
+.kc-befree h2{color:#e3dccf;font-size:clamp(32px,5vw,52px);max-width:1000px;margin:0 auto 120px;line-height:1.3}
+.kc-bf{display:flex;justify-content:center;gap:30px;flex-wrap:wrap}
+.kc-bf__card{position:relative;width:240px;background:#05507a;color:#fff;overflow:hidden;padding-top:18px}
+.kc-bf__name{color:#cfd8e0;font-size:17px}
+.kc-bf__name b{color:#fff}
+.kc-bf__price{color:var(--red);font-size:30px;font-weight:700;padding:6px 0 18px;margin:0 20px;border-bottom:1px dashed #ffffff66}
+.kc-bf__price small{font-size:12px;display:inline-block;vertical-align:middle}
+.kc-bf__price s{font-size:14px;color:#fff;margin-left:6px}
+.kc-bf ul{padding:18px 40px 26px;display:grid;gap:12px;text-align:left}
+.kc-bf li{display:flex;align-items:center;gap:12px}
+.kc-bf li b{font-size:20px}
+.kc-bf li small{font-size:13px}
+.kc-bf__foot{background:var(--teal);color:var(--navy);font-size:11px;font-weight:700;padding:3px}
+.kc-bf__foot.red{background:var(--red);color:#fff}
+.kc-bf__badge{position:absolute;top:0;right:0;width:100px;height:100px;background:var(--red);clip-path:polygon(30% 0,100% 0,100% 70%);font-size:12px;font-weight:700;text-align:right;padding:18px 14px 0 0;box-sizing:border-box}
+
+/* TeamTV */
+.kc-tv{background:#003a5c;padding:40px 16px 90px}
+.kc-tv h2{text-align:center;font-size:clamp(80px,15vw,190px);line-height:1;font-weight:800;margin-bottom:60px}
+.kc-tv h2 span:first-child{color:var(--red)}
+.kc-tv h2 span:last-child{color:var(--teal)}
+.kc-tv__body{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;color:#fff}
+.kc-tv li{display:flex;gap:30px;align-items:center;margin-bottom:34px}
+.kc-tv h4{font-size:21px;font-weight:400;margin-bottom:6px}
+.kc-tv p{font-size:14px;line-height:1.3}
+.kc-tv__img{aspect-ratio:16/9;border:1px dashed #ffffff44}
+
+/* TV packages */
+.kc-beige{height:240px;background:#e3dcd0}
+.kc-pk{text-align:center;padding:60px 16px 50px;background:#fff}
+.kc-pk h2{font-size:34px;margin-bottom:30px}
+.kc-pk ul{max-width:700px;margin:0 auto}
+.kc-pk li{padding:10px;border-top:1px solid #e3e3e3;font-size:14px;color:#1d4f73}
+.kc-pk li:last-child{border-bottom:1px solid #e3e3e3}
+
+/* Nokia */
+.kc-band{height:200px}
+.kc-band--blue{background:#003a5c}.kc-band--light{background:#f4f6f9;height:230px}.kc-band--gray{background:#eaecee;height:230px}
+.kc-nokia-link{text-align:center;font-weight:700;font-size:12px;padding:12px;color:var(--navy)}
+.kc-nokia{text-align:center;padding:70px 16px 0;background:linear-gradient(#fff,#f5f6f8)}
+.kc-nokia h2{font-weight:400;font-size:26px;margin-bottom:6px}
+.kc-nokia p{font-size:14px}
+.kc-nokia__empty{height:260px}
+
+/* Conditions */
+.kc-cond{padding:50px 16px 80px;background:linear-gradient(#f5f6f8,#fff)}
+.kc-cond h2{text-align:center;font-weight:400;font-size:26px;margin-bottom:24px}
+.kc-acc{max-width:1050px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.kc-acc ul{background:#fff;box-shadow:0 2px 10px #0001}
+.kc-acc button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;padding:13px 14px;font-size:12px;font-weight:700;cursor:pointer;border-bottom:1px solid #eee}
+.kc-acc i{border:5px solid transparent;border-top-color:var(--red);margin-top:5px}
+.kc-acc i.up{transform:rotate(180deg);margin-top:-5px}
+.kc-acc__body{min-height:40px;padding:12px 14px}
+
+@media(max-width:1000px){.kc-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){
+  .kc-hero{padding:60px 0 80px}
+  .kc-hero__inner{flex-direction:column}
+  .kc-hero__art{display:none}
+  .kc-cards{grid-template-columns:1fr}
+  .kc-tv__body,.kc-acc{grid-template-columns:1fr}
+  .kc-befree{padding:80px 16px}
+  .kc-befree h2{margin-bottom:50px}
+}
