@@ -1,6 +1,10 @@
+ HEAD
 
 import { Routes, Route, useLocation } from "react-router-dom";
-import Header from "./components/header/Header";
+
+import { Routes, Route, useLocation, Form } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Header from "./components/header/Header";  
 import Footer from "./components/footer/Footer";
 
 import Home from "./pages/Home";
