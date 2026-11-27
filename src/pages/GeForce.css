@@ -16,9 +16,7 @@
 .gf-hero__card { width: 400px; padding: 32px 24px; background: rgba(60, 60, 60, .8); color: #fff; border-radius: 4px; z-index: 1; }
 .gf-hero__card h1 { margin: 0 0 24px; font-size: 24px; font-weight: 800; }
 .gf-hero__card p { margin: 0 0 16px; font-size: 14px; }
-/* TODO: background-image: url(./assets/hero.png); */
-.gf-hero__img { flex: 1; height: 100%; background: center / contain no-repeat; }
-
+.gf-hero__img { flex: 1; height: 100%; background: url(./assets/geforce-hero.jpg) center / contain no-repeat; }
 /* SECTIONS */
 .gf-sec { padding: 40px 0; }
 .gf-sec--dark { background: #033f63; color: #fff; }
@@ -35,9 +33,12 @@
 .gf-sec--light .gf-img { flex-basis: 50%; max-width: 50%; }
 /* TODO: add the images, e.g.
 .gf-img--servers { background-image: url(./assets/servers.png); } */
-.gf-img--servers {} .gf-img--internet {} .gf-img--cosmobox {}
-.gf-img--devices {} .gf-img--apex {} .gf-img--auth {}
-
+.gf-img--servers  { background-image: url(./assets/geforce-servers.jpg); }
+.gf-img--internet { background-image: url(./assets/geforce-internet.jpg); }
+.gf-img--cosmobox { background-image: url(./assets/geforce-cosmobox.jpg); }
+.gf-img--devices  { background-image: url(./assets/geforce-devices.jpg); }
+.gf-img--apex     { background-image: url(./assets/geforce-apex.jpg); }
+.gf-img--auth     { background-image: url(./assets/geforce-auth.jpg); }
 /* FAQ */
 .gf-faq { padding: 48px 0 64px; background: #fff; }
 .gf-faq h2 { margin: 0 0 24px; text-align: center; font-size: 20px; font-weight: 400; }

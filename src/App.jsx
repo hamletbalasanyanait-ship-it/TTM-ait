@@ -9,6 +9,7 @@ import ForHome from "./pages/Forhome";
 import ForPhone from "./pages/Forphone";
 import Login from "./pages/Login";
 import "./App.css";
+import GeForce from "./pages/GeForce";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -30,7 +31,7 @@ export default function App() {
           <Route path="/account" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<Home />} />
-          
+          <Route path="/offers/geforce" element={<GeForce />} />
 <Route path="/internet/smartphone" element={<ForPhone />} />
         </Routes>
       </main>
