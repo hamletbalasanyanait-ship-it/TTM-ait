@@ -1,6 +1,13 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./TVCombo.css";
 
+const cats = [
+  { label: "Բջջային կապ", to: "/tariffs/mobile" },
+  { label: "Ինտերնետ և TV - ԿՈՍՄՈ", to: "/tariffs/kosmo" },
+  { label: "Ինտերնետ և TV - ԿՈՄԲՈ", to: "/tariffs/combo" },
+  { label: "Ֆիքսված հեռախոսակապ", to: "/tariffs/fixed" },
+];
 const plans = [
   { name: "ԿՈՄԲՈ 2: Երկուսը մեկում փաթեթ", items: [] },
   { name: "ԿՈՄԲՈ 3: Երեքը մեկում փաթեթ", items: [] },
@@ -39,13 +46,13 @@ export default function TVCombo() {
 
       <div className="tvc__container">
         <div className="tvc__cats">
-          {["Բջջային կապ", "Ինտերնետ և TV - ԿՈՍՄՈ", "Ինտերնետ և TV - ԿՈՄԲՈ", "Ֆիքսված հեռախոսակապ"].map((c, i) => (
-            <a key={c} href="#" className={i === 2 ? "active" : ""}>{c}</a>
+          {cats.map((c, i) => (
+            <Link key={c.to} to={c.to} className={i === 2 ? "active" : ""}>{c.label}</Link>
           ))}
         </div>
 
         <nav className="tvc__crumbs">
-          <a href="/">Գլխավոր</a> › <a href="#">Անհատներին</a> › <a href="#">Սակագներ</a> › <a href="#">Ինտերնետ և TV - ԿՈՄԲՈ</a>
+          <Link to="/">Գլխավոր</Link> › <Link to="/">Անհատներին</Link> › <Link to="/tariffs">Սակագներ</Link> › <Link to="/tariffs/combo">Ինտերնետ և TV - ԿՈՄԲՈ</Link>
         </nav>
 
         <div className="tvc__layout">

@@ -1,0 +1,854 @@
+﻿===== Header.jsx =====
+import { Link, NavLink } from "react-router-dom";
+import "./Header.css";
+import logo from "./assets/logo.png";
+import eshop from "./assets/eshop.png";
+import cartBtn from "./assets/cart-btn.png";
+
+const tabs = [
+  { label: "Անհատներին", to: "/" },
+  { label: "Բիզնես", to: "/business" },
+];
+
+const navLinks = [
+  {
+    label: "Սակագներ",
+    to: "/tariffs",
+    children: [
+      { label: "Բջջային կապ", to: "/tariffs/mobile" },
+      { label: "Ինտերնետ և TV - ԿՈՍՄՈ", to: "/tariffs/kosmo" },
+      { label: "Ինտերնետ և TV - ԿՈՄԲՈ", to: "/tariffs/combo" },
+      { label: "Ֆիքսված հեռախոսակապ", to: "/tariffs/fixed" },
+    ],
+  },
+  {
+    label: "Ինտերնետ",
+    to: "/internet",
+    children: [
+      { label: "Սմարթֆոնի համար", to: "/internet/smartphone" },
+      { label: "Տան համար - ԿՈՍՄՈ", to: "/internet/home-kosmo" },
+      { label: "Տան համար - ԿՈՄԲՈ", to: "/internet/home-combo" },
+      { label: "Համակարգիչ/պլանշետի համար", to: "/internet/computer" },
+      { label: "Team 5G", to: "/internet/5g" },
+    ],
+  },
+  {
+    label: "Ծառայություններ",
+    to: "/services",
+    children: [
+      { label: "TeamTV", to: "/services/teamtv" },
+      { label: "Վճարում և համալրում", to: "/services/payment" },
+      { label: "Զվարճանք", to: "/services/entertainment" },
+      { label: "Զանգեր և անվտանգություն", to: "/services/calls-security" },
+      { label: "Ֆիքսված հեռախոսակապ", to: "/services/fixed" },
+    ],
+  },
+  {
+    label: "Ռոումինգ",
+    to: "/roaming",
+    children: [
+      { label: "Ռոումինգ", to: "/roaming/roaming" },
+      { label: "Միջազգային կապ", to: "/roaming/international" },
+      { label: "Օգտակար տեղեկատվություն", to: "/roaming/info" },
+      { label: "Ծառայություններ", to: "/roaming/services" },
+    ],
+  },
+  {
+    label: "Առցանց խանութ",
+    to: "/eshop",
+    children: [
+      { label: "E-shop", to: "/eshop" },
+      { label: "Առցանց ապառիկ", to: "/eshop/installment" },
+    ],
+  },
+  {
+    label: "Առաջարկներ",
+    to: "/offers",
+    children: [
+      { label: "Շեյքի՛ր և Շահի՛ր", to: "/offers/shake" },
+      { label: "Team Բոնուս", to: "/offers/bonus" },
+      { label: "Ակցիաներ", to: "/offers/promotions" },
+      { label: "MobiBattle", to: "/offers/mobibattle" },
+      { label: "GeForce Games", to: "/offers/geforce" },
+      { label: "Koreez", to: "/offers/koreez" },
+    ],
+  },
+  {
+    label: "Օգնություն",
+    to: "/help",
+    children: [
+      { label: "Հաճախ տրվող հարցեր", to: "/help/faq" },
+      { label: "Սարքերի կարգավորումներ", to: "/help/devices" },
+      { label: "Բաժանորդային սպասարկում", to: "/help/support" },
+      { label: "USSD հրահանգներ և օգտակար համարներ", to: "/help/ussd" },
+    ],
+  },
+];
+
+const languages = [
+  { label: "Հայ", to: "/hy" },
+  { label: "Рус", to: "/ru" },
+  { label: "Eng", to: "/en" },
+];
+
+export default function Header() {
+  return (
+    <header className="ait-header">
+      <div className="ait-header__top">
+        <div className="ait-container ait-header__top-inner">
+          <ul className="ait-header__tabs">
+            {tabs.map((tab) => (
+              <li key={tab.to}>
+                <NavLink
+                  to={tab.to}
+                  end={tab.to === "/"}
+                  className={({ isActive }) => (isActive ? "is-active" : "")}
+                >
+                  {tab.label}
+                </NavLink>
+              </li>
+            ))}
+            <li>
+              <Link to="/eshop" className="ait-header__eshop">
+                <img src={eshop} alt="" />
+                E-shop
+              </Link>
+            </li>
+          </ul>
+
+          <ul className="ait-header__tools">
+            <li>
+              <button
+                type="button"
+                aria-label="Search"
+                className="ait-header__icon-btn"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="13"
+                  height="13"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                >
+                  <circle cx="10.5" cy="10.5" r="6.5" />
+                  <path d="m16 16 5 5" />
+                </svg>
+              </button>
+            </li>
+            {languages.map((lang) => (
+              <li key={lang.to}>
+                <NavLink
+                  to={lang.to}
+                  className={({ isActive }) =>
+                    `ait-header__lang ${isActive ? "is-current" : ""}`
+                  }
+                >
+                  {lang.label}
+                </NavLink>
+              </li>
+            ))}
+            <li>
+              <Link to="/account" className="ait-header__account">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                >
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" />
+                </svg>
+                Անձնական գրասենյակ
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="ait-header__nav">
+        <div className="ait-container ait-header__nav-inner">
+          <Link
+            to="/"
+            className="ait-header__logo"
+            aria-label="Team Telecom Armenia"
+          >
+            <img src={logo} alt="Team Telecom Armenia" />
+          </Link>
+          <nav aria-label="Main">
+            <ul className="ait-header__links">
+              {navLinks.map((link) => (
+                <li key={link.to}>
+                  <NavLink
+                    to={link.to}
+                    className={({ isActive }) => (isActive ? "is-active" : "")}
+                  >
+                    {link.label}
+                  </NavLink>
+                  {link.children && (
+                    <ul className="ait-header__dropdown">
+                      {link.children.map((child) => (
+                        <li key={child.to}>
+                          <Link to={child.to}>{child.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <Link
+            to="/payments"
+            className="ait-header__cart"
+            aria-label="Payments"
+          >
+            <img src={cartBtn} alt="" />
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+===== Business.jsx =====
+import Hero from "../components/business/Hero";
+import Tariffs from "../components/business/Tariffs";
+import Services from "../components/business/Services";
+import JoinForm from "../components/business/JoinForm";
+import VirtualPbx from "../components/business/VirtualPbx";
+import "../components/business/business.css";
+
+// Header and Footer are rendered globally in App.jsx, so they are not repeated here.
+export default function Business() {
+  return (
+    <div className="biz">
+      <Hero />
+      <Tariffs />
+      <Services />
+      <JoinForm />
+      <VirtualPbx />
+    </div>
+  );
+}
+
+===== Conect.jsx =====
+import React from 'react'
+
+export default function Conect() {
+  return (
+    <div>Conect</div>
+  )
+}
+
+===== E-shop.jsx =====
+import React from 'react'
+
+export default function Eshop() {
+  return (
+    <div>E-shop</div>
+  )
+}
+
+===== Forhome.jsx =====
+import React from 'react'
+
+export default function forhome() {
+  return (
+    <div></div>
+  )
+}
+
+===== Forphone.jsx =====
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import heroImg from './heroImage.js'
+import './Forphone.css'
+
+const TABS = [
+  { label: 'Սմարթֆոնի համար', to: '/for-phone', icon: 'phone' },
+  { label: 'Տան համար - ԿՈՍՄՈ', to: '/for-home', icon: 'tv' },
+  { label: 'Տան համար - ԿՈՄԲՈ', to: '/tvcombo', icon: 'tv' },
+  { label: 'Համակարգչի/պլանշետի համար', to: '/conect', icon: 'pc' },
+  { label: 'Team 5G', to: '/5g', icon: '5g' },
+]
+
+const CRUMBS = [
+  { label: 'Գլխավոր', to: '/' },
+  { label: 'Անհատներին', to: '/' },
+  { label: 'Ինտերնետ', to: '/internet' },
+  { label: 'Սմարթֆոնի համար' },
+]
+
+const SUBTABS = ['Կանխավճարային', 'Հետվճարային']
+
+const GIGA_DESC = 'Գերարագ ինտերնետ փաթեթ սմարթֆոնի համար'
+const MEGA_DESC = 'Օրական Ինտերնետ սմարթֆոնի համար․ մնացորդն այլևս չի զրոյանում'
+
+const SECTIONS = [
+  {
+    id: 'unlimit',
+    title: 'Անսահմանափակ հավելվածներ',
+    cards: [
+      { title: 'Video Unlimit', text: 'Միացրու և վայելիր անսահմանափակ տեսանյութերը' },
+      { title: 'Music Unlimit', text: 'Միացրու և վայելիր անսահմանափակ երաժշտությունը' },
+      { title: 'Social Unlimit', text: 'Միացրու և վայելիր անսահմանափակ սոցիալական ցանցերը' },
+      { title: 'Messenger Unlimit', text: 'Միացրու և վայելիր անսահմանափակ մեսենջերներ' },
+    ],
+  },
+  {
+    id: 'giga',
+    title: 'Giga',
+    cards: [
+      { title: 'Giga 1+1ԳԲ', text: GIGA_DESC },
+      { title: 'Giga 2+1ԳԲ', text: GIGA_DESC },
+      { title: 'Giga 5+1ԳԲ', text: GIGA_DESC },
+      { title: 'Giga 10 ԳԲ', text: GIGA_DESC },
+      { title: 'Giga 15 ԳԲ', text: GIGA_DESC },
+    ],
+  },
+  {
+    id: 'mega',
+    title: 'Mega',
+    cards: [
+      { title: 'Mega 300+', text: MEGA_DESC },
+      { title: 'Mega 500+', text: MEGA_DESC },
+      { title: 'Mega 300', text: 'Օրական Ինտերնետ սմարթֆոնի համար։' },
+      { title: 'Mega 500', text: 'Օրական Ինտերնետ սմարթֆոնի համար' },
+    ],
+  },
+  {
+    id: '3gb',
+    title: 'Փաթեթ «3ԳԲ» = 500֏',
+    cards: [
+      {
+        title: '«3ԳԲ»',
+        text: 'Ինտերնետ փաթեթ «ՍՄԱՐԹ» և «Be Free» կանխավճարային սակագնային փաթեթների…',
+      },
+    ],
+  },
+]
+
+const S = {
+  viewBox: '0 0 48 48',
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 2,
+  strokeLinecap: 'round',
+  strokeLinejoin: 'round',
+  'aria-hidden': true,
+}
+
+function TabIcon({ name }) {
+  switch (name) {
+    case 'phone':
+      return (
+        <svg {...S}>
+          <rect x="14" y="3" width="20" height="42" rx="4" />
+          <circle cx="24" cy="38" r="1.3" fill="currentColor" />
+        </svg>
+      )
+    case 'tv':
+      return (
+        <svg {...S}>
+          <rect x="4" y="14" width="30" height="22" rx="3" />
+          <path d="m13 14-5-8M22 14l5-8" />
+          <rect x="26" y="26" width="18" height="13" rx="2" fill="#fff" />
+        </svg>
+      )
+    case 'pc':
+      return (
+        <svg {...S}>
+          <rect x="4" y="5" width="30" height="24" rx="3" />
+          <path d="M19 29v8M12 38h14" />
+          <rect x="30" y="16" width="13" height="24" rx="3" fill="#fff" />
+        </svg>
+      )
+    default:
+      return (
+        <svg {...S}>
+          <rect x="12" y="3" width="24" height="42" rx="4" />
+          <text x="24" y="31" textAnchor="middle" fontSize="15" fontWeight="700" fill="currentColor" stroke="none">5G</text>
+        </svg>
+      )
+  }
+}
+
+export default function ForPhone() {
+  const [closed, setClosed] = useState({})
+  const toggle = (id) => setClosed((c) => ({ ...c, [id]: !c[id] }))
+
+  return (
+    <div className="fp">
+      {/* HERO */}
+      <section className="fp-hero">
+        <img className="fp-hero__img" src={heroImg} alt="Social, Video, Messenger, Music Unlimit" />
+      </section>
+
+      <div className="fp-container">
+        {/* TABS */}
+        <nav className="fp-tabs" aria-label="Ինտերնետ">
+          {TABS.map((t, i) => (
+            <Link key={t.label} to={t.to} className={`fp-tabs__item ${i === 0 ? 'is-active' : ''}`}>
+              <TabIcon name={t.icon} />
+              <span>{t.label}</span>
+            </Link>
+          ))}
+        </nav>
+
+        {/* CRUMBS */}
+        <ul className="fp-crumbs">
+          {CRUMBS.map((c, i) => (
+            <li key={c.label}>
+              {c.to ? <Link to={c.to}>{c.label}</Link> : <span>{c.label}</span>}
+              {i < CRUMBS.length - 1 && <i aria-hidden="true">›</i>}
+            </li>
+          ))}
+        </ul>
+
+        {/* SUBTABS */}
+        <div className="fp-subtabs">
+          {SUBTABS.map((s, i) => (
+            <button key={s} type="button" className={i === 0 ? 'is-active' : ''}>
+              {s}
+            </button>
+          ))}
+        </div>
+
+        {/* HEAD */}
+        <h1 className="fp-title">Սմարթֆոնի համար</h1>
+
+        {/* SECTIONS */}
+        {SECTIONS.map((sec) => {
+          const isClosed = !!closed[sec.id]
+          return (
+            <section key={sec.id} className="fp-section">
+              <button
+                type="button"
+                className="fp-section__head"
+                aria-expanded={!isClosed}
+                onClick={() => toggle(sec.id)}
+              >
+                <h2>{sec.title}</h2>
+                <span className={`fp-section__arrow ${isClosed ? 'is-closed' : ''}`} />
+              </button>
+
+              {!isClosed && (
+                <div className="fp-grid">
+                  {sec.cards.map((card) => (
+                    <article key={card.title} className="fp-card">
+                      <h3>{card.title}</h3>
+                      <p>{card.text}</p>
+                      <a href="#" className="fp-card__btn">Մանրամասն</a>
+                    </article>
+                  ))}
+                </div>
+              )}
+            </section>
+          )
+        })}
+
+        {/* NOTE */}
+        <p className="fp-note">
+          Արխիվային սակագնային և ինտերնետ <a href="#">փաթեթներ</a>
+        </p>
+      </div>
+    </div>
+  )
+}
+===== Home.jsx =====
+import "../../public/components/anhatner/anhatner-himnakan/AnhatnerHimnakan.css";
+import Hero from "../../public/components/anhatner/anhatner-himnakan/hero/Hero.jsx";
+import Categories from "../../public/components/anhatner/anhatner-himnakan/categories/Categories.jsx";
+import JoinBanner from "../../public/components/anhatner/anhatner-himnakan/join-banner/JoinBanner.jsx";
+import News from "../../public/components/anhatner/anhatner-himnakan/news/News.jsx";
+import MyTeamApp from "../../public/components/anhatner/anhatner-himnakan/my-team-app/MyTeamApp.jsx";
+
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      <Categories />
+      <JoinBanner />
+      <News />
+      <MyTeamApp />
+    </>
+  );
+}
+===== Internet.jsx =====
+import React from 'react'
+
+export default function Internet() {
+  return (
+    <div>Internet</div>
+  )
+}
+
+===== Login.jsx =====
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Login.css";
+import logo from "../components/header/assets/logo.png";
+
+const topTabs = ["Անհատներին", "Բիզնես"];
+const methods = [
+  { id: "phone", label: "Հեռախոսահամար" },
+  { id: "email", label: "Էլ. հասցե" },
+];
+
+const Eye = ({ off }) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+    <path
+      d="M1.5 12S5.5 4.5 12 4.5 22.5 12 22.5 12 18.5 19.5 12 19.5 1.5 12 1.5 12Z"
+      fill="currentColor"
+    />
+    <circle cx="12" cy="12" r="3.6" fill="#fff" />
+    <circle cx="12" cy="12" r="1.8" fill="currentColor" />
+    {off && (
+      <path d="M3 3l18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    )}
+  </svg>
+);
+
+const social = [
+  {
+    label: "Facebook",
+    d: "M14 8V6.2c0-.8.2-1.2 1.4-1.2H17V2h-2.6C11.3 2 10 3.7 10 6v2H7.5v3H10v11h4V11h2.7l.4-3H14Z",
+  },
+  {
+    label: "Instagram",
+    d: "M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Z",
+  },
+  {
+    label: "YouTube",
+    d: "M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2C1.5 10 1.5 12 1.5 12s0 2 .5 3.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1c.5-1.8.5-3.8.5-3.8s0-2-.5-3.8ZM10 15V9l5.2 3L10 15Z",
+  },
+];
+
+export default function Login() {
+  const [segment, setSegment] = useState(0); // 0 = Անհատներին, 1 = Բիզնես
+  const [method, setMethod] = useState("phone");
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // TODO: connect to your auth API
+    console.log({ segment, method, login, password });
+  };
+
+  return (
+    <div className="login">
+      <div className="login__container">
+        <header className="login__header">
+          <Link to="/" aria-label="Team Telecom Armenia">
+            <img className="login__logo" src={logo} alt="Team Telecom Armenia" />
+          </Link>
+          <button type="button" className="login__flag" aria-label="Language" />
+        </header>
+
+        <ul className="login__tabs" role="tablist">
+          {topTabs.map((label, i) => (
+            <li key={label} className="login__tab-item">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={segment === i}
+                className={`login__tab ${segment === i ? "is-active" : ""}`}
+                onClick={() => setSegment(i)}
+              >
+                {label}
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        <form className="login__card" onSubmit={handleSubmit}>
+          <ul className="login__tabs login__tabs--inner" role="tablist">
+            {methods.map((m) => (
+              <li key={m.id} className="login__tab-item">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={method === m.id}
+                  className={`login__tab ${method === m.id ? "is-active" : ""}`}
+                  onClick={() => {
+                    setMethod(m.id);
+                    setLogin("");
+                  }}
+                >
+                  {m.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          <label className="login__label" htmlFor="login-user">
+            Օգտանուն
+          </label>
+          <div className="login__line-field">
+            {method === "phone" && (
+              <>
+                <span className="login__prefix">+374</span>
+                <span className="login__divider" />
+              </>
+            )}
+            <input
+              id="login-user"
+              className="login__input"
+              type={method === "phone" ? "tel" : "email"}
+              inputMode={method === "phone" ? "numeric" : "email"}
+              autoComplete="username"
+              placeholder="Մուտքագրեք ձեր օգտանունը"
+              value={login}
+              onChange={(e) => setLogin(e.target.value)}
+            />
+          </div>
+
+          <label className="login__label" htmlFor="login-pass">
+            Գաղտնաբառ
+          </label>
+          <div className="login__pill-field">
+            <input
+              id="login-pass"
+              className="login__input"
+              type={showPassword ? "text" : "password"}
+              autoComplete="current-password"
+              placeholder="Մուտքագրեք գաղտնաբառը"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button
+              type="button"
+              className="login__eye"
+              aria-label={showPassword ? "Hide password" : "Show password"}
+              onClick={() => setShowPassword((v) => !v)}
+            >
+              <Eye off={showPassword} />
+            </button>
+          </div>
+
+          <button type="submit" className="login__btn login__btn--primary">
+            Մուտք
+          </button>
+
+          <Link to="/forgot-password" className="login__forgot">
+            Մոռացե՞լ եք գաղտնաբառը
+          </Link>
+
+          <Link to="/register" className="login__btn login__btn--outline">
+            Գրանցում
+          </Link>
+        </form>
+      </div>
+
+      <footer className="login__footer">
+        <ul className="login__social">
+          {social.map((s) => (
+            <li key={s.label}>
+              <a href="#" aria-label={s.label}>
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+                  <path d={s.d} />
+                </svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p>Team © 2026.</p>
+      </footer>
+    </div>
+  );
+}
+===== Mobile.jsx =====
+import React from 'react'
+import Mob from '../components/anhatner/TeamTelecom/TeamTelecom'
+
+export default function Mobile() {
+  return (
+    <div>
+        <Mob/>
+    </div>
+  )
+}
+
+===== TVCombo.jsx =====
+import { useState } from "react";
+import "./TVCombo.css";
+
+const plans = [
+  { name: "ԿՈՄԲՈ 2: Երկուսը մեկում փաթեթ", items: [] },
+  { name: "ԿՈՄԲՈ 3: Երեքը մեկում փաթեթ", items: [] },
+  { name: "ԿՈՄԲՈ 4: Չորսը մեկում փաթեթ", items: ["ԿՈՄԲՈ 4 9900", "ԿՈՄԲՈ 4 Մարզային 7990"] },
+];
+const mobile = [
+  ["Be Free 5000", "5,000", ""],
+  ["Րոպեներ դեպի ՀՀ բոլոր ցանցեր, ԱՄՆ, Կանադա, ՌԴ Beeline և t2*", "3,000", "րոպե"],
+  ["SMS դեպի ՀՀ բոլոր ցանցեր", "500", "SMS"],
+  ["Բջջային ինտերնետ", "Անսահմ.", ""],
+  ["Ինտերնետ ռոումինգում", "200", "ՄԲ"],
+  ["3 Be Free հատուկ պայմաններով", "", ""],
+];
+const fixed = [
+  ["Ֆիքսված ինտերնետ (մինչև)", "100", "Մբիթ/վրկ"],
+  ["TeamTV (+1 TeamTV համալրված)", "150", "ալիք"],
+  ["Րոպեներ", "180", "րոպե"],
+];
+const tabs = ["Փաթեթում ներառված է", "TeamTV", "Սակագներ", "Պայմաններ", "Team Բոնուս"];
+const included = ["Wi-Fi սարք", "TV Box", "3 Be Free հատուկ պայմաններով"];
+
+const Row = ({ r: [label, val, unit] }) => (
+  <div className="tvc__row">
+    <span>{label}</span>
+    {val && <b>{val} <small>{unit}</small></b>}
+  </div>
+);
+
+export default function TVCombo() {
+  const [open, setOpen] = useState(2);
+  const [tab, setTab] = useState(0);
+
+  return (
+    <div className="tvc">
+      <div className="tvc__hero" />
+
+      <div className="tvc__container">
+        <div className="tvc__cats">
+          {["Բջջային կապ", "Ինտերնետ և TV - ԿՈՍՄՈ", "Ինտերնետ և TV - ԿՈՄԲՈ", "Ֆիքսված հեռախոսակապ"].map((c, i) => (
+            <a key={c} href="#" className={i === 2 ? "active" : ""}>{c}</a>
+          ))}
+        </div>
+
+        <nav className="tvc__crumbs">
+          <a href="/">Գլխավոր</a> › <a href="#">Անհատներին</a> › <a href="#">Սակագներ</a> › <a href="#">Ինտերնետ և TV - ԿՈՄԲՈ</a>
+        </nav>
+
+        <div className="tvc__layout">
+          <aside className="tvc__side">
+            <h4>Ընտրիր քո փաթեթը</h4>
+            {plans.map((p, i) => (
+              <div key={p.name}>
+                <button className={open === i ? "on" : ""} onClick={() => setOpen(open === i ? -1 : i)}>
+                  {p.name} <span>{open === i ? "▴" : "▾"}</span>
+                </button>
+                {open === i && p.items.map((it, j) => (
+                  <a key={it} href="#" className={j === 0 ? "sel" : ""}>{it}</a>
+                ))}
+              </div>
+            ))}
+          </aside>
+
+          <section className="tvc__main">
+            <h1>ԿՈՄԲՈ 4 9900</h1>
+            <p className="tvc__note">
+              Ամսական վճարը 9900 դրամ է:<br />
+              Զեղչված արժեք՝ 7425 դրամ: Զեղչը գործում է 17.11.2026-17.02.2027թ. բժանորդագրությամբ միանալու դեպքում:
+            </p>
+
+            <h2>Բջջային ներառումներ</h2>
+            {mobile.map((r) => <Row key={r[0]} r={r} />)}
+            <hr />
+            <h2>Ֆիքսված ներառումներ</h2>
+            {fixed.map((r) => <Row key={r[0]} r={r} />)}
+
+            <button className="tvc__btn">Միանալ</button>
+
+            <div className="tvc__tabs">
+              {tabs.map((t, i) => (
+                <button key={t} className={tab === i ? "on" : ""} onClick={() => setTab(i)}>{t}</button>
+              ))}
+            </div>
+            {tab === 0 && (
+              <ul className="tvc__included">
+                {included.map((i) => <li key={i}>{i}</li>)}
+              </ul>
+            )}
+
+            <p className="tvc__foot">Արխիվային սակագնային և ինտերնետ <a href="#">փաթեթներ</a></p>
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+}
+===== Tariffs.jsx =====
+import { useRef, useState } from "react";
+import TariffCard from "./TariffCard";
+import Reveal from "./Reveal";
+import { tariffs } from "./data/tariffs";
+import "./Tariffs.css";
+
+export default function Tariffs() {
+  const track = useRef(null);
+  const [active, setActive] = useState(0);
+
+  const goTo = (i) => {
+    setActive(i);
+    const card = track.current.children[i];
+    track.current.scrollTo({ left: card.offsetLeft - 20, behavior: "smooth" });
+  };
+
+  // keep the active dot in sync while the user swipes
+  const onScroll = () => {
+    const el = track.current;
+    const card = el.children[0];
+    const step = card.offsetWidth + 16;
+    const i = Math.min(tariffs.length - 1, Math.max(0, Math.round(el.scrollLeft / step)));
+    if (i !== active) setActive(i);
+  };
+
+  return (
+    <section className="biz-section biz-tariffs">
+      <Reveal>
+        <h2>Բջջային կապի սակագներ</h2>
+      </Reveal>
+
+      <div className="biz-tariffs__track" ref={track} onScroll={onScroll}>
+        {tariffs.map((t) => (
+          <TariffCard key={t.id} t={t} />
+        ))}
+      </div>
+
+      <div className="biz-dots">
+        {tariffs.map((t, i) => (
+          <button
+            key={t.id}
+            type="button"
+            className={i === active ? "on" : ""}
+            onClick={() => goTo(i)}
+            aria-label={`Սլայդ ${i + 1}`}
+          />
+        ))}
+      </div>
+
+      <div className="biz-more">
+        <span />
+        <a href="https://www.telecomarmenia.am/hy/b2b/" target="_blank" rel="noreferrer">
+          Տեսնել ավելին
+        </a>
+      </div>
+    </section>
+  );
+}
+
+===== tariffs.js =====
+// NOTE: values copied from the screenshot of telecomarmenia.am/hy/b2b.
+// The 2nd and 3rd cards were cut off in the screenshot, so check them on the site.
+export const tariffs = [
+  {
+    id: 0,
+    type: "custom",
+    title: "SMART",
+    sub: "BUSINESS",
+    text: "Կարգավորեք ձեր փաթեթը",
+    btn: "Միանալ",
+  },
+  { id: 1, type: "plan", name: "PRO", price: "3700", gb: "40", min: "1,500", ch: "60", sms: "1,500" },
+  { id: 2, type: "plan", name: "PRO", price: "5200", gb: "ԱՆՍԱՀՄԱՆ", min: "3,500", ch: "110", sms: "3,500" },
+  { id: 3, type: "plan", name: "PRO", price: "7500", gb: "ԱՆՍԱՀՄԱՆ", min: "5,000", ch: "150", sms: "5,000" },
+];
+
