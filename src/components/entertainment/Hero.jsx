@@ -4,7 +4,7 @@ import { media } from "./data/media";
 // Top block of the page: breadcrumbs + title (+ lead for service pages).
 export default function Hero({ title, lead, leadList, current, showIcon = false }) {
   return (
-    <header className="ent-hero">
+    <header className="ent-hero" aria-labelledby="ent-hero-title">
       <div className="ent-wrap">
         <Breadcrumbs current={current} />
         <div className="ent-hero__row">
@@ -20,7 +20,7 @@ export default function Hero({ title, lead, leadList, current, showIcon = false 
               }}
             />
           )}
-          <h1 className="ent-hero__title">{title}</h1>
+          <h1 id="ent-hero-title" className="ent-hero__title">{title}</h1>
         </div>
         {lead && <p className="ent-hero__lead">{lead}</p>}
         {leadList && (
