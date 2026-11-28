@@ -3,7 +3,6 @@
   --navy: #003e59;
   --red: #ed3548;
   --cyan: #7fd0dc;
-  width: 100%;
   background: #fff;
   color: #4d5961;
   font-family: Arial, sans-serif;
@@ -11,17 +10,30 @@
   overflow: hidden;
 }
 
-.tvc * {
-  box-sizing: border-box;
-}
+.tvc * { box-sizing: border-box; }
 
 .tvc__hero {
   min-height: 390px;
   display: flex;
   align-items: center;
   background:
-    linear-gradient(90deg, rgba(0, 38, 58, .94), rgba(0, 62, 89, .55)),
+    linear-gradient(90deg, rgba(0,38,58,.94), rgba(0,62,89,.48)),
     url("https://www.telecomarmenia.am/img/menu_default.jpg") center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.tvc__hero::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  right: 8%;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px rgba(255,255,255,.04),
+              0 0 0 75px rgba(255,255,255,.03);
+  animation: tvcOrbit 12s linear infinite;
 }
 
 .tvc__hero-content {
@@ -30,7 +42,9 @@
   padding: 55px 20px;
   margin: 0 auto;
   color: white;
-  animation: tvcAppear .7s ease both;
+  position: relative;
+  z-index: 1;
+  animation: tvcSlide .9s ease both;
 }
 
 .tvc__hero-label,
@@ -46,6 +60,7 @@
   font-size: clamp(45px, 7vw, 76px);
   color: white;
   letter-spacing: 2px;
+  animation: tvcTitle 1s ease both;
 }
 
 .tvc__hero-content p {
@@ -66,12 +81,14 @@
   color: white;
   text-decoration: none;
   font-weight: 700;
-  transition: .25s;
+  transition: .3s;
+  box-shadow: 0 8px 25px rgba(237,53,72,.25);
 }
 
 .tvc__hero-btn:hover {
   background: #d8243a;
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+  box-shadow: 0 13px 30px rgba(237,53,72,.4);
 }
 
 .tvc__container {
@@ -83,14 +100,15 @@
 
 .tvc__cats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4,1fr);
   position: relative;
   margin-top: -35px;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 8px 30px rgba(0, 40, 70, .12);
+  border-radius: 12px;
+  box-shadow: 0 10px 35px rgba(0,40,70,.12);
   overflow: hidden;
   z-index: 2;
+  animation: tvcSlide .7s .15s both;
 }
 
 .tvc__cats a {
@@ -105,7 +123,7 @@
   font-weight: 700;
   text-decoration: none;
   border-bottom: 4px solid transparent;
-  transition: .25s;
+  transition: .3s;
 }
 
 .tvc__cats a:hover,
@@ -131,17 +149,12 @@
   transition: .2s;
 }
 
-.tvc__crumbs a:hover {
-  color: var(--red);
-}
-
-.tvc__crumb-current {
-  color: var(--navy);
-}
+.tvc__crumbs a:hover { color: var(--red); }
+.tvc__crumb-current { color: var(--navy); }
 
 .tvc__layout {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
+  grid-template-columns: 260px minmax(0,1fr);
   gap: 38px;
   align-items: start;
   scroll-margin-top: 30px;
@@ -154,6 +167,7 @@
   border: 1px solid #e9eef0;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,40,70,.05);
 }
 
 .tvc__side h3 {
@@ -163,9 +177,7 @@
   font-size: 17px;
 }
 
-.tvc__plan-group {
-  border-top: 1px solid #e3e9ec;
-}
+.tvc__plan-group { border-top: 1px solid #e3e9ec; }
 
 .tvc__plan-group > button {
   display: flex;
@@ -178,12 +190,13 @@
   background: transparent;
   text-align: left;
   cursor: pointer;
-  transition: .2s;
+  transition: .25s;
 }
 
 .tvc__plan-group > button:hover,
 .tvc__plan-group > button.on {
   background: #eaf5f7;
+  padding-left: 23px;
 }
 
 .tvc__plan-group > button b {
@@ -209,11 +222,18 @@
   background: white;
   color: var(--navy);
   font-size: 20px;
+  transition: .3s;
+}
+
+.tvc__plan-group > button.on .tvc__arrow {
+  transform: rotate(180deg);
+  background: var(--navy);
+  color: white;
 }
 
 .tvc__plan-options {
   padding: 5px 12px 14px;
-  animation: tvcAppear .25s ease;
+  animation: tvcDrop .3s ease;
 }
 
 .tvc__plan-options button {
@@ -229,7 +249,7 @@
   text-align: left;
   font-size: 12px;
   cursor: pointer;
-  transition: .2s;
+  transition: .25s;
 }
 
 .tvc__plan-options button:hover,
@@ -237,6 +257,7 @@
   background: var(--cyan);
   color: var(--navy);
   font-weight: 700;
+  transform: translateX(4px);
 }
 
 .tvc__empty {
@@ -248,17 +269,15 @@
 
 .tvc__main {
   min-width: 0;
-  animation: tvcAppear .5s ease;
+  animation: tvcSlide .7s ease both;
 }
 
-.tvc__heading {
-  margin-bottom: 25px;
-}
+.tvc__heading { margin-bottom: 25px; }
 
 .tvc__heading h2 {
   margin: 10px 0 5px;
   color: var(--navy);
-  font-size: clamp(28px, 4vw, 38px);
+  font-size: clamp(28px,4vw,38px);
 }
 
 .tvc__heading p {
@@ -275,13 +294,17 @@
   margin-bottom: 35px;
   border: 1px solid #e5eff1;
   border-radius: 12px;
-  background: linear-gradient(120deg, #f1fafb, #fff);
+  background: linear-gradient(120deg,#f1fafb,#fff);
+  transition: .3s;
+  animation: tvcFloat 4s ease-in-out infinite;
 }
 
-.tvc__price-label {
-  color: #77868e;
-  font-size: 13px;
+.tvc__price-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(0,62,89,.1);
 }
+
+.tvc__price-label { color: #77868e; font-size: 13px; }
 
 .tvc__price {
   margin-top: 8px;
@@ -290,10 +313,7 @@
   font-weight: 800;
 }
 
-.tvc__price small {
-  font-size: 15px;
-  font-weight: 500;
-}
+.tvc__price small { font-size: 15px; font-weight: 500; }
 
 .tvc__discount {
   display: inline-block;
@@ -313,11 +333,10 @@
   color: white;
   font-size: 27px;
   font-weight: 700;
+  animation: tvcPulse 2.5s infinite;
 }
 
-.tvc__section {
-  margin-bottom: 30px;
-}
+.tvc__section { margin-bottom: 30px; }
 
 .tvc__section h3,
 .tvc__tab-content h3 {
@@ -334,18 +353,17 @@
   padding: 16px 0;
   border-bottom: 1px solid #edf0f1;
   line-height: 1.6;
-  transition: padding .2s;
+  transition: .25s;
 }
 
 .tvc__row:hover {
-  padding-left: 8px;
-  padding-right: 8px;
-  background: #fbfdfd;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #f5fbfc;
+  border-radius: 7px;
 }
 
-.tvc__row span {
-  font-size: 14px;
-}
+.tvc__row span { font-size: 14px; }
 
 .tvc__row strong {
   flex-shrink: 0;
@@ -354,10 +372,7 @@
   white-space: nowrap;
 }
 
-.tvc__row small {
-  font-size: 11px;
-  font-weight: 500;
-}
+.tvc__row small { font-size: 11px; font-weight: 500; }
 
 .tvc__btn {
   display: flex;
@@ -374,24 +389,24 @@
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 7px 18px rgba(237, 53, 72, .2);
-  transition: .25s;
+  box-shadow: 0 7px 18px rgba(237,53,72,.2);
+  transition: .3s;
 }
 
 .tvc__btn:hover {
   background: #d8253c;
-  box-shadow: 0 10px 25px rgba(237, 53, 72, .3);
-  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(237,53,72,.3);
+  transform: translateY(-4px);
 }
 
-.tvc__btn span {
-  font-size: 20px;
-}
+.tvc__btn span { font-size: 20px; transition: .3s; }
+.tvc__btn:hover span { transform: translateX(7px); }
 
 .tvc__details {
   border: 1px solid #e8edef;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,40,70,.04);
 }
 
 .tvc__tabs {
@@ -412,7 +427,7 @@
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
-  transition: .2s;
+  transition: .25s;
 }
 
 .tvc__tabs button:hover {
@@ -429,7 +444,7 @@
 .tvc__tab-content {
   min-height: 210px;
   padding: 25px;
-  animation: tvcAppear .3s ease;
+  animation: tvcAppear .35s ease;
 }
 
 .tvc__tab-content p {
@@ -478,9 +493,7 @@
   text-decoration: none;
 }
 
-.tvc__foot a:hover {
-  color: var(--red);
-}
+.tvc__foot a:hover { color: var(--red); }
 
 /* Modal */
 
@@ -491,7 +504,7 @@
   display: grid;
   place-items: center;
   padding: 20px;
-  background: rgba(0, 30, 45, .65);
+  background: rgba(0,30,45,.65);
   backdrop-filter: blur(5px);
   animation: tvcFade .2s ease;
 }
@@ -504,7 +517,7 @@
   border-radius: 16px;
   background: white;
   text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, .2);
+  box-shadow: 0 20px 60px rgba(0,0,0,.2);
   animation: tvcModal .3s ease;
 }
 
@@ -520,7 +533,10 @@
   color: #52616a;
   font-size: 25px;
   cursor: pointer;
+  transition: .2s;
 }
+
+.tvc__modal-close:hover { transform: rotate(90deg); background: #e5eef0; }
 
 .tvc__modal-icon {
   display: grid;
@@ -532,12 +548,10 @@
   background: #e4f7f1;
   color: #15916e;
   font-size: 27px;
+  animation: tvcPulse 2s infinite;
 }
 
-.tvc__modal h3 {
-  color: var(--navy);
-  font-size: 21px;
-}
+.tvc__modal h3 { color: var(--navy); font-size: 21px; }
 
 .tvc__modal p {
   color: #7b878e;
@@ -554,12 +568,10 @@
   color: white;
   font-weight: 700;
   text-decoration: none;
-  transition: .2s;
+  transition: .25s;
 }
 
-.tvc__modal-link:hover {
-  background: #d8253c;
-}
+.tvc__modal-link:hover { background: #d8253c; transform: translateY(-3px); }
 
 .tvc__modal-back {
   margin-top: 15px;
@@ -570,15 +582,38 @@
   cursor: pointer;
 }
 
+@keyframes tvcSlide {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tvcTitle {
+  from { opacity: 0; letter-spacing: 12px; }
+  to { opacity: 1; letter-spacing: 2px; }
+}
+
+@keyframes tvcOrbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes tvcFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes tvcPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(127,208,220,.3); }
+  50% { box-shadow: 0 0 0 10px rgba(127,208,220,0); }
+}
+
+@keyframes tvcDrop {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes tvcAppear {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes tvcFade {
@@ -587,89 +622,37 @@
 }
 
 @keyframes tvcModal {
-  from {
-    opacity: 0;
-    transform: scale(.94) translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+  from { opacity: 0; transform: scale(.94) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-@media (max-width: 850px) {
-  .tvc__layout {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .tvc__side {
-    position: static;
-  }
-
-  .tvc__hero {
-    min-height: 300px;
-  }
+@media (max-width:850px) {
+  .tvc__layout { grid-template-columns: 1fr; gap: 25px; }
+  .tvc__side { position: static; }
+  .tvc__hero { min-height: 300px; }
 }
 
-@media (max-width: 600px) {
-  .tvc__hero {
-    min-height: 260px;
-  }
+@media (max-width:600px) {
+  .tvc__hero { min-height: 260px; }
+  .tvc__hero-content { padding: 40px 20px 55px; }
+  .tvc__hero-content p { font-size: 14px; }
+  .tvc__cats { grid-template-columns: repeat(2,1fr); }
+  .tvc__cats a { min-height: 65px; font-size: 11px; }
+  .tvc__crumbs { margin: 22px 0; gap: 6px; }
+  .tvc__price-card { padding: 20px; }
+  .tvc__price { font-size: 31px; }
+  .tvc__price-icon { width: 50px; height: 50px; }
+  .tvc__row { align-items: flex-start; gap: 12px; }
+  .tvc__row span { font-size: 12px; }
+  .tvc__row strong { font-size: 16px; }
+  .tvc__tabs button { padding: 14px 12px; }
+  .tvc__tab-content { padding: 20px 15px; }
+}
 
-  .tvc__hero-content {
-    padding: 40px 20px 55px;
-  }
-
-  .tvc__hero-content p {
-    font-size: 14px;
-  }
-
-  .tvc__cats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .tvc__cats a {
-    min-height: 65px;
-    font-size: 11px;
-  }
-
-  .tvc__crumbs {
-    margin: 22px 0;
-    gap: 6px;
-  }
-
-  .tvc__price-card {
-    padding: 20px;
-  }
-
-  .tvc__price {
-    font-size: 31px;
-  }
-
-  .tvc__price-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .tvc__row {
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .tvc__row span {
-    font-size: 12px;
-  }
-
-  .tvc__row strong {
-    font-size: 16px;
-  }
-
-  .tvc__tabs button {
-    padding: 14px 12px;
-  }
-
-  .tvc__tab-content {
-    padding: 20px 15px;
+@media (prefers-reduced-motion: reduce) {
+  .tvc *, .tvc *::before, .tvc *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
