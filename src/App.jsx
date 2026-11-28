@@ -16,6 +16,7 @@ import ForPhone from "./pages/Forphone";
 import ForHome from "./pages/Forhome";
 import TVCombo from "./pages/TVCombo";
 import TVCosmo from "./pages/TVCosmo";
+import TeamTV from "./pages/TeamTV";
 
 const Soon = ({ title }) => (
   <h1 style={{ textAlign: "center" }}>{title}</h1>
@@ -35,6 +36,10 @@ export default function App() {
           <Route path="/business" element={<Soon title="Business" />} />
           <Route path="/eshop" element={<Soon title="E-Shop" />} />
 
+          {/* TeamTV */}
+          <Route path="/teamtv" element={<TeamTV />} />
+          <Route path="/services/teamtv" element={<TeamTV />} />
+
           {/* Tariffs */}
           <Route path="/tariffs" element={<Mobile />} />
           <Route path="/tariffs/mobile" element={<Mobile />} />
@@ -49,6 +54,13 @@ export default function App() {
           <Route path="/internet/home-combo" element={<TVCombo />} />
           <Route path="/internet/computer" element={<Soon title="Internet for computer" />} />
           <Route path="/internet/5g" element={<Soon title="Team 5G" />} />
+
+          {/* Services (placeholders until pages exist) */}
+          <Route path="/services" element={<Soon title="Services" />} />
+          <Route path="/services/payment" element={<Soon title="Վճարում և համալրում" />} />
+          <Route path="/services/entertainment" element={<Soon title="Զվարճանք" />} />
+          <Route path="/services/security" element={<Soon title="Զանգեր և անվտանգություն" />} />
+          <Route path="/services/fixed" element={<Soon title="Ֆիքսված հեռախոսակապ" />} />
 
           {/* Other pages */}
           <Route path="/for-phone" element={<ForPhone />} />
