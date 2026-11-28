@@ -16,3 +16,27 @@
   font-size: 20px;
   color: var(--sms-navy);
 }
+
+.sms-terms__bullets {
+  display: grid;
+  gap: 12px;
+}
+
+.sms-terms__bullets li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--sms-text);
+}
+
+.sms-terms__bullets li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.72em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sms-red);
+}
