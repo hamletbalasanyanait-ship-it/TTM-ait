@@ -134,3 +134,16 @@
     width: 260px;
   }
 }
+
+/* ---------- decorative rings ---------- */
+.sms-hero__rings {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sms-hero__rings span {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
