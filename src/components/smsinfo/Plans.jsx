@@ -1,5 +1,6 @@
 import Reveal from "../business/Reveal";
 import { plan } from "./data/plan";
+import { IconCheck } from "./Icons";
 import "./Plans.css";
 
 export default function Plans() {
@@ -21,10 +22,15 @@ export default function Plans() {
               <ul className="sms-plan__features">
                 {plan.features.map((f) => (
                   <li key={f.label}>
-                    <span className="sms-plan__value">
-                      <strong>{f.value}</strong> {f.unit}
+                    <span className="sms-plan__check">
+                      <IconCheck />
                     </span>
-                    <span className="sms-plan__label">{f.label}</span>
+                    <span className="sms-plan__text">
+                      <span className="sms-plan__value">
+                        <strong>{f.value}</strong> {f.unit}
+                      </span>
+                      <span className="sms-plan__label">{f.label}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
