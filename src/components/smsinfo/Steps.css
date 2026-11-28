@@ -3,3 +3,23 @@
   grid-template-columns: 1fr;
   gap: 20px;
 }
+
+.sms-steps__grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sms-steps__reveal,
+.sms-step {
+  height: 100%;
+}
+
+.sms-step {
+  position: relative;
+  padding: 34px 26px 28px;
+  border-radius: var(--sms-radius);
+  background: #fff;
+  border: 1px solid var(--sms-line);
+  box-shadow: 0 8px 24px rgba(11, 59, 102, 0.07);
+}
