@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;500;700;800&display=swap");
+
+/* Every Entertainment style is scoped under .ent / .ent-* so it never
+   collides with the CSS of the other pages. */
+.ent {
+  --ent-navy: #0b3b66;
+  --ent-navy-dark: #06304f;
+  --ent-red: #f0473e;
+  --ent-cyan: #3fd0d8;
+  --ent-bg: #f3f5f7;
+  --ent-text: #0b2a45;
+  --ent-muted: #6a7f92;
+  --ent-line: #dbe3ea;
+  --ent-radius: 18px;
+  --ent-max: 1140px;
+
+  font-family: "Noto Sans Armenian", "Sylfaen", system-ui, sans-serif;
+  background: #fff;
+  color: var(--ent-text);
+  line-height: 1.55;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.ent *,
+.ent *::before,
+.ent *::after {
+  box-sizing: border-box;
+}
+
+.ent h1,
+.ent h2,
+.ent h3,
+.ent h4 {
+  margin: 0;
+  font-weight: 800;
+  color: inherit;
+}
+
+.ent p {
+  margin: 0;
+}
+
+.ent ul,
+.ent ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ent a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ent img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ent-wrap {
+  width: 100%;
+  max-width: var(--ent-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ent-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
