@@ -112,3 +112,22 @@
 .sms-terms__item.is-open .sms-terms__head svg {
   transform: rotate(180deg);
 }
+
+.sms-terms__body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.sms-terms__item.is-open .sms-terms__body {
+  grid-template-rows: 1fr;
+}
+
+.sms-terms__inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sms-terms__item.is-open .sms-terms__inner {
+  padding-top: 16px;
+}
