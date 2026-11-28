@@ -1,5 +1,24 @@
+import { useState } from "react";
 import { limitations, unsubscribe, generalTerms } from "./data/terms";
+import { IconChevron } from "./Icons";
 import "./Terms.css";
+
+// One collapsible block of the «Պայմաններ» section.
+function Panel({ title, open, onToggle, children }) {
+  return (
+    <div className={`sms-terms__item ${open ? "is-open" : ""}`}>
+      <h3>
+        <button type="button" className="sms-terms__head" onClick={onToggle}>
+          <span>{title}</span>
+          <IconChevron />
+        </button>
+      </h3>
+      <div className="sms-terms__body">
+        <div className="sms-terms__inner">{children}</div>
+      </div>
+    </div>
+  );
+}
 
 export default function Terms() {
   return (
