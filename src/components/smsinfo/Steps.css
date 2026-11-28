@@ -59,17 +59,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
   }
-
-  /* dashed connector between the number badges */
-  .sms-steps__grid > li:not(:last-child) .sms-step::after {
-    content: "";
-    position: absolute;
-    top: 61px;
-    left: calc(26px + 54px + 12px);
-    width: calc(100% - 54px - 24px + 28px);
-    border-top: 2px dashed rgba(11, 59, 102, 0.25);
-    pointer-events: none;
-  }
 }
 
 .sms-step__media {
