@@ -30,8 +30,11 @@ export default function Terms() {
         <h2 className="sms-title">Պայմաններ</h2>
 
         <div className="sms-terms__list">
-          <div className="sms-terms__item">
-            <h3>Ծառայության սահմանափակումներ</h3>
+          <Panel
+            title="Ծառայության սահմանափակումներ"
+            open={open.limits}
+            onToggle={() => toggle("limits")}
+          >
             <ul className="sms-terms__bullets">
               {limitations.map((text) => (
                 <li key={text.slice(0, 24)}>{text}</li>
@@ -46,7 +49,7 @@ export default function Terms() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Panel>
 
           <div className="sms-terms__item">
             <h3>Ընդհանուր պայմաններ</h3>
