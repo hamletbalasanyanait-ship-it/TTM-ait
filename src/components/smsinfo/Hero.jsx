@@ -2,7 +2,7 @@ import "./Hero.css";
 
 export default function Hero() {
   return (
-    <section className="sms-hero" id="top">
+    <section className="sms-hero" id="top" aria-labelledby="sms-hero-title">
       <div className="sms-hero__rings" aria-hidden="true">
         <span />
         <span />
@@ -11,7 +11,7 @@ export default function Hero() {
 
       <div className="sms-wrap sms-hero__inner">
         <div className="sms-hero__text">
-          <h1>SMS-ինֆո</h1>
+          <h1 id="sms-hero-title">SMS-ինֆո</h1>
           <p>
             Պահպանեք մշտական կապ առկա հաճախորդների հետ, ինչպես նաև՝ ներգրավեք
             նորերին։ Ստացեք արդյունավետ և ճկուն հաղորդակցման միջոց: Այս ամենը
