@@ -2,3 +2,17 @@
   display: grid;
   gap: 16px;
 }
+
+.sms-terms__item {
+  padding: 26px 26px 22px;
+  border-radius: var(--sms-radius);
+  background: #fff;
+  border: 1px solid var(--sms-line);
+  box-shadow: 0 8px 24px rgba(11, 59, 102, 0.06);
+}
+
+.sms-terms__item h3 {
+  margin-bottom: 14px;
+  font-size: 20px;
+  color: var(--sms-navy);
+}
