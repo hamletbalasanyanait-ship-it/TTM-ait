@@ -83,3 +83,25 @@
   border-radius: 4px;
   background: var(--sms-red);
 }
+
+/* ---------- button ---------- */
+.sms-btn {
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  padding: 15px 44px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  background: var(--sms-red);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.sms-btn:hover {
+  background: #e23a31;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(240, 71, 62, 0.35);
+}
