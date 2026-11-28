@@ -162,3 +162,11 @@
   0%, 100% { transform: scale(1); opacity: 0.6; }
   50% { transform: scale(1.06); opacity: 1; }
 }
+
+@media (max-width: 767px) {
+  .sms-hero__inner {
+    min-height: 260px;
+    padding-top: 36px;
+    padding-bottom: 40px;
+  }
+}
