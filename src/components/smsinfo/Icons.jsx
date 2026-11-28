@@ -84,3 +84,13 @@ export function IconMail() {
     </svg>
   );
 }
+
+export function IconGift() {
+  return (
+    <svg {...base}>
+      <rect x="7" y="19" width="34" height="21" rx="2" />
+      <path d="M5 13h38v6H5zM24 13v27" />
+      <path d="M24 13c-3-7-11-7-10-2.5C14.6 13 24 13 24 13Zm0 0c3-7 11-7 10-2.5C33.4 13 24 13 24 13Z" />
+    </svg>
+  );
+}
