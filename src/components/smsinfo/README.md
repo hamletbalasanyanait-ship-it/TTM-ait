@@ -18,3 +18,10 @@ the CSS of the other pages. Header and Footer are rendered globally in
 | `Steps.jsx` | «Ակտիվացման քայլեր» (3 steps) |
 | `JoinCta.jsx` | «Թողնել միացման հայտ» (mailto + phone) |
 | `data/*.js` | all texts and prices, edit them here |
+
+## Routes
+
+- `/sms-info`
+- `/business/sms-info`
+
+Scroll-reveal animation is reused from `../business/Reveal`.
