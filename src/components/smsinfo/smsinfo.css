@@ -53,3 +53,14 @@
   color: inherit;
   text-decoration: none;
 }
+
+.sms-wrap {
+  width: 100%;
+  max-width: var(--sms-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sms-section {
+  padding: 56px 0;
+}
