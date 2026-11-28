@@ -4,3 +4,10 @@ export const limitations = [
   "SMS հաղորդագրությունները չպետք է պարունակեն այնպիսի տեղեկատվություն, որի տարածումն արգելված է Հայաստանի Հանրապետության գործող օրենսդրությամբ:",
   "Բաժանորդները հնարավորություն ունեն արգելափակել SMS-ների ստացումը նշված տարբերակների միջոցով.",
 ];
+
+// How a subscriber can block the SMS (shown under the limitations list)
+export const unsubscribe = [
+  { id: "call", before: "զանգահարել ", label: "0674454 համարին", href: "tel:0674454", after: "" },
+  { id: "sms", before: "ուղարկել ", label: "454 թիվը 0674 համարին", href: "sms:0674?&body=454", after: "" },
+  { id: "ussd", before: "USSD ", label: "*454#", href: "tel:*454%23", after: " հրահանգով:" },
+];
