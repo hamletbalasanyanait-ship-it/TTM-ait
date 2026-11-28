@@ -19,7 +19,7 @@
 
 .sms {
   font-family: "Noto Sans Armenian", "Sylfaen", system-ui, sans-serif;
-  background: var(--sms-bg);
+  background: #fff;
   color: var(--sms-text);
   line-height: 1.5;
   letter-spacing: 0;
