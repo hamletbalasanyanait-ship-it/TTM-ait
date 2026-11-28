@@ -4,7 +4,7 @@ import "./Steps.css";
 
 export default function Steps() {
   return (
-    <section className="sms-section sms-steps" id="steps">
+    <section className="sms-section sms-section--soft sms-steps" id="steps">
       <div className="sms-wrap">
         <h2 className="sms-title">Ակտիվացման քայլեր</h2>
 
