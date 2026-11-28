@@ -25,3 +25,9 @@ the CSS of the other pages. Header and Footer are rendered globally in
 - `/business/sms-info`
 
 Scroll-reveal animation is reused from `../business/Reveal`.
+
+## Design notes
+
+- Sections alternate white / soft grey bands (`sms-section--soft`).
+- «Պայմաններ» is an accessible accordion (`aria-expanded`, both blocks open by default).
+- Hero image of the original is replaced by a CSS phone, because assets cannot be copied offline.
