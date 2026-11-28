@@ -5,9 +5,9 @@ import "./Advantages.css";
 
 export default function Advantages() {
   return (
-    <section className="sms-section sms-adv" id="advantages">
+    <section className="sms-section sms-adv" id="advantages" aria-labelledby="sms-adv-title">
       <div className="sms-wrap">
-        <h2 className="sms-title">Ծառայության առավելությունները</h2>
+        <h2 className="sms-title" id="sms-adv-title">Ծառայության առավելությունները</h2>
 
         <ul className="sms-adv__grid">
           {advantages.map((item, i) => {
