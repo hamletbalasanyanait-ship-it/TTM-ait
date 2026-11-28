@@ -44,8 +44,8 @@
 .sms-terms__ways {
   display: grid;
   gap: 8px;
-  margin: 14px 0 4px 22px;
-  padding-top: 14px;
+  margin: 16px 0 4px 22px;
+  padding-top: 16px;
   border-top: 1px dashed var(--sms-line);
 }
 
