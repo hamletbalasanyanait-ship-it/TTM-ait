@@ -102,3 +102,13 @@
   color: inherit;
   cursor: pointer;
 }
+
+.sms-terms__head svg {
+  flex: none;
+  color: var(--sms-red);
+  transition: transform 0.3s ease;
+}
+
+.sms-terms__item.is-open .sms-terms__head svg {
+  transform: rotate(180deg);
+}
