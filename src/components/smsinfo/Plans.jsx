@@ -13,9 +13,9 @@ function goToJoin(e) {
 
 export default function Plans() {
   return (
-    <section className="sms-section sms-plans" id="packages">
+    <section className="sms-section sms-plans" id="packages" aria-labelledby="sms-plans-title">
       <div className="sms-wrap">
-        <h2 className="sms-title">SMS-ինֆո փաթեթներ</h2>
+        <h2 className="sms-title" id="sms-plans-title">SMS-ինֆո փաթեթներ</h2>
 
         <div className="sms-plans__wrap">
           <Reveal>
