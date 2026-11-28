@@ -701,3 +701,47 @@
 .ent-related__list a:hover {
   color: var(--ent-red);
 }
+
+/* ---------- responsive ---------- */
+@media (max-width: 960px) {
+  .ent-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ent-related__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ent-hero__title {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ent-section {
+    padding: 32px 0;
+  }
+  .ent-grid,
+  .ent-related__list {
+    grid-template-columns: 1fr;
+  }
+  .ent-hero {
+    padding: 24px 0 28px;
+  }
+  .ent-hero__title {
+    font-size: 28px;
+  }
+  .ent-hero__lead {
+    font-size: 16px;
+  }
+  .ent-section__title {
+    font-size: 24px;
+  }
+  .ent-tabs__panel {
+    padding: 20px 16px;
+  }
+  .ent-code {
+    font-size: 18px;
+  }
+  .ent-detail__cover {
+    display: block;
+  }
+}
