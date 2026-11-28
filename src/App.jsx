@@ -35,6 +35,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/business" element={<Business />} />
+          <Route path="/business/sms-info" element={<SmsInfo />} />
           <Route path="/eshop" element={<EShop />} />
 
           {/* Tariffs */}
