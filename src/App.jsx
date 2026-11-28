@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import "./App.css";
@@ -24,6 +25,10 @@ const Soon = ({ title }) => (
 );
 =======
 import { Routes, Route, useLocation, Form } from "react-router-dom";
+=======
+import { Routes, Route } from "react-router-dom";
+import Bonus from "./pages/bonus";
+>>>>>>> 095ec43 (Add /bonus route)
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/Home";
@@ -102,9 +107,13 @@ export default function App() {
           <Route path="/tvcosmo" element={<TVCosmo />} />
           <Route path="/roming" element={<Roming />} />
           <Route path="*" element={<Home />} />
+<<<<<<< HEAD
           
 
 <Route path="/internet/smartphone" element={<ForPhone />} />
+=======
+          <Route path="/offers/bonus" element={<Bonus />} />
+>>>>>>> 095ec43 (Add /bonus route)
         </Routes>
       </main>
 
