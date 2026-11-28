@@ -170,3 +170,9 @@
     padding-bottom: 40px;
   }
 }
+
+@media (min-width: 768px) {
+  .sms-hero__text p {
+    font-size: 18px;
+  }
+}
