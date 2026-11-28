@@ -43,3 +43,16 @@
   background: var(--sms-navy);
   transform: rotate(-8deg) scale(1.06);
 }
+
+.sms-adv__card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--sms-navy);
+}
+
+.sms-adv__card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--sms-muted);
+}
