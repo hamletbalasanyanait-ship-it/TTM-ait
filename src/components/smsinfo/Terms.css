@@ -131,3 +131,15 @@
 .sms-terms__item.is-open .sms-terms__inner {
   padding-top: 16px;
 }
+
+.sms-terms__head:hover {
+  color: var(--sms-red);
+}
+
+.sms-terms__item {
+  transition: box-shadow 0.25s ease;
+}
+
+.sms-terms__item.is-open {
+  box-shadow: 0 14px 32px rgba(11, 59, 102, 0.1);
+}
