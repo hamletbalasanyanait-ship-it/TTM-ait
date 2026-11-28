@@ -40,3 +40,10 @@
     padding: 56px 48px;
   }
 }
+
+.sms-join__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
