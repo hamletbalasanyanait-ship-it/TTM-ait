@@ -64,3 +64,22 @@
 .sms-section {
   padding: 56px 0;
 }
+
+/* ---------- section heading ---------- */
+.sms-title {
+  position: relative;
+  margin-bottom: 36px;
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.2;
+  color: var(--sms-navy);
+}
+
+.sms-title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 12px;
+  border-radius: 4px;
+  background: var(--sms-red);
+}
