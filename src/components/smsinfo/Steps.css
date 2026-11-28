@@ -26,17 +26,19 @@
 }
 
 .sms-step__num {
+  position: absolute;
+  top: 14px;
+  left: 14px;
   display: grid;
   place-items: center;
-  width: 54px;
-  height: 54px;
-  margin-bottom: 18px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 800;
   color: #fff;
   background: linear-gradient(135deg, var(--sms-red), #ff7a52);
-  box-shadow: 0 8px 18px rgba(240, 71, 62, 0.35);
+  box-shadow: 0 8px 18px rgba(240, 71, 62, 0.4);
 }
 
 .sms-step h3 {
