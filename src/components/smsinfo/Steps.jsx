@@ -1,5 +1,6 @@
 import Reveal from "../business/Reveal";
 import { steps } from "./data/steps";
+import { stepIcons } from "./Icons";
 import "./Steps.css";
 
 export default function Steps() {
@@ -13,6 +14,7 @@ export default function Steps() {
             <li key={step.id}>
               <Reveal delay={i * 110} from={i % 2 ? "right" : "left"} className="sms-steps__reveal">
                 <article className="sms-step">
+                  <div className="sms-step__media">{stepIcons[step.id]}</div>
                   <span className="sms-step__num">{step.id}</span>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
