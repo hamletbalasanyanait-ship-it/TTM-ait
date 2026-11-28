@@ -94,3 +94,20 @@ export function IconGift() {
     </svg>
   );
 }
+
+export function IconRocket() {
+  return (
+    <svg {...base}>
+      <path d="M24 5c7 4 10 12 9 21l-5 5h-8l-5-5c-1-9 2-17 9-21Z" />
+      <circle cx="24" cy="18" r="3" />
+      <path d="M15 28 9 34l1 5 6-3M33 28l6 6-1 5-6-3M21 36l3 7 3-7" />
+    </svg>
+  );
+}
+
+// step id -> icon element
+export const stepIcons = {
+  1: <IconMail />,
+  2: <IconGift />,
+  3: <IconRocket />,
+};
