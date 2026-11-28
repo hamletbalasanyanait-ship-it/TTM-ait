@@ -543,3 +543,43 @@
 .ent-copy:hover {
   border-color: var(--ent-navy);
 }
+
+/* ---------- price badge ---------- */
+.ent-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+}
+
+.ent-price__badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 12px 22px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--ent-navy), #0f5a96);
+  color: #fff;
+}
+
+.ent-price__badge strong {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.ent-price__badge span {
+  font-size: 15px;
+}
+
+.ent-price__badge em {
+  margin-left: 6px;
+  padding-left: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  font-style: normal;
+  opacity: 0.85;
+}
+
+.ent-price__text {
+  flex: 1 1 260px;
+}
