@@ -113,3 +113,13 @@
   outline-offset: 3px;
   border-radius: 6px;
 }
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .sms *,
+  .sms *::before,
+  .sms *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
