@@ -88,3 +88,8 @@
   width: 64px;
   height: 64px;
 }
+
+.sms-step h3,
+.sms-step p {
+  padding: 0 24px;
+}
