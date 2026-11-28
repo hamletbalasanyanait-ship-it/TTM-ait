@@ -17,7 +17,8 @@
 
 .sms-step {
   position: relative;
-  padding: 34px 26px 28px;
+  overflow: hidden;
+  padding: 0 0 28px;
   border-radius: var(--sms-radius);
   background: #fff;
   border: 1px solid var(--sms-line);
