@@ -82,3 +82,12 @@
 .sms-step p {
   padding: 0 24px;
 }
+
+.sms-step {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sms-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 38px rgba(11, 59, 102, 0.14);
+}
