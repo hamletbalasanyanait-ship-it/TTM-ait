@@ -141,3 +141,13 @@
   transform: translateY(-5px);
   box-shadow: 0 30px 56px rgba(6, 48, 79, 0.4);
 }
+
+@media (max-width: 479px) {
+  .sms-plan__head,
+  .sms-plan__features,
+  .sms-plan__cta,
+  .sms-plan__note {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
