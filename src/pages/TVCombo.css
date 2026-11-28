@@ -1,144 +1,329 @@
 
 .tvc {
+  --navy: #003e59;
+  --red: #ed3548;
+  --cyan: #7fd0dc;
   width: 100%;
   background: #fff;
-  color: #555;
+  color: #4d5961;
   font-family: Arial, sans-serif;
   font-size: 15px;
+  overflow: hidden;
+}
+
+.tvc * {
+  box-sizing: border-box;
 }
 
 .tvc__hero {
-  width: 100%;
-  height: 360px;
-  background: url("https://www.telecomarmenia.am/img/menu_default.jpg") center/cover no-repeat;
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(0, 38, 58, .94), rgba(0, 62, 89, .55)),
+    url("https://www.telecomarmenia.am/img/menu_default.jpg") center/cover no-repeat;
+}
+
+.tvc__hero-content {
+  width: 1080px;
+  max-width: 100%;
+  padding: 55px 20px;
+  margin: 0 auto;
+  color: white;
+  animation: tvcAppear .7s ease both;
+}
+
+.tvc__hero-label,
+.tvc__eyebrow {
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.tvc__hero-content h1 {
+  margin: 15px 0;
+  font-size: clamp(45px, 7vw, 76px);
+  color: white;
+  letter-spacing: 2px;
+}
+
+.tvc__hero-content p {
+  max-width: 500px;
+  line-height: 1.8;
+  font-size: 17px;
+  color: #e1edf1;
+}
+
+.tvc__hero-btn {
+  display: inline-flex;
+  gap: 25px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px 24px;
+  border-radius: 30px;
+  background: var(--red);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: .25s;
+}
+
+.tvc__hero-btn:hover {
+  background: #d8243a;
+  transform: translateY(-3px);
 }
 
 .tvc__container {
   width: 100%;
   max-width: 1080px;
-  margin: 0 auto;
   padding: 0 16px;
-  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .tvc__cats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-top: -56px;
   position: relative;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 5px 20px rgba(0, 40, 70, 0.12);
+  margin-top: -35px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 40, 70, .12);
   overflow: hidden;
+  z-index: 2;
 }
 
 .tvc__cats a {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 85px;
+  min-height: 82px;
   padding: 15px 10px;
   text-align: center;
-  color: #003e59;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 700;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
   border-bottom: 4px solid transparent;
+  transition: .25s;
 }
 
 .tvc__cats a:hover,
 .tvc__cats a.active {
-  background: #f4f6f8;
-  border-bottom-color: #7fd0dc;
+  background: #f0f9fa;
+  border-bottom-color: var(--cyan);
+  color: var(--red);
 }
 
 .tvc__crumbs {
-  margin: 25px 0 30px;
-  color: #89939b;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 28px 0 35px;
   font-size: 12px;
+  color: #9aa4aa;
 }
 
 .tvc__crumbs a {
-  color: #003e59;
+  color: #71818a;
   text-decoration: none;
+  transition: .2s;
+}
+
+.tvc__crumbs a:hover {
+  color: var(--red);
+}
+
+.tvc__crumb-current {
+  color: var(--navy);
 }
 
 .tvc__layout {
   display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 40px;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 38px;
   align-items: start;
+  scroll-margin-top: 30px;
 }
 
 .tvc__side {
-  background: #f3f4f5;
-  border-radius: 5px;
+  position: sticky;
+  top: 20px;
+  background: #f5f7f8;
+  border: 1px solid #e9eef0;
+  border-radius: 12px;
   overflow: hidden;
 }
 
-.tvc__side h4 {
+.tvc__side h3 {
   margin: 0;
-  padding: 20px 16px;
-  color: #003e59;
-  font-size: 15px;
+  padding: 22px 18px;
+  color: var(--navy);
+  font-size: 17px;
 }
 
-.tvc__side button {
+.tvc__plan-group {
+  border-top: 1px solid #e3e9ec;
+}
+
+.tvc__plan-group > button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 17px 18px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.tvc__plan-group > button:hover,
+.tvc__plan-group > button.on {
+  background: #eaf5f7;
+}
+
+.tvc__plan-group > button b {
+  display: block;
+  color: var(--navy);
+  font-size: 14px;
+}
+
+.tvc__plan-group > button small {
+  display: block;
+  margin-top: 5px;
+  color: #89969d;
+  font-size: 11px;
+}
+
+.tvc__arrow {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: white;
+  color: var(--navy);
+  font-size: 20px;
+}
+
+.tvc__plan-options {
+  padding: 5px 12px 14px;
+  animation: tvcAppear .25s ease;
+}
+
+.tvc__plan-options button {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 15px 16px;
+  padding: 12px;
+  margin-top: 5px;
   border: 0;
-  border-top: 1px solid #e3e5e7;
+  border-radius: 6px;
   background: transparent;
-  color: #333;
+  color: #53636b;
   text-align: left;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 12px;
   cursor: pointer;
+  transition: .2s;
 }
 
-.tvc__side button:hover,
-.tvc__side button.on {
-  background: #e5e8eb;
+.tvc__plan-options button:hover,
+.tvc__plan-options button.selected {
+  background: var(--cyan);
+  color: var(--navy);
+  font-weight: 700;
 }
 
-.tvc__side a {
-  display: block;
-  padding: 13px 30px;
-  color: #003e59;
-  text-decoration: none;
-  font-size: 13px;
-}
-
-.tvc__side a:hover,
-.tvc__side a.sel {
-  background: #7fd0dc;
+.tvc__empty {
+  padding: 8px;
+  color: #849198;
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .tvc__main {
   min-width: 0;
+  animation: tvcAppear .5s ease;
 }
 
-.tvc__main h1 {
-  margin: 0 0 15px;
-  color: #003e59;
-  font-size: 36px;
-  font-weight: 600;
+.tvc__heading {
+  margin-bottom: 25px;
 }
 
-.tvc__main h2 {
-  margin: 40px 0 15px;
-  color: #003e59;
-  font-size: 24px;
-  font-weight: 600;
+.tvc__heading h2 {
+  margin: 10px 0 5px;
+  color: var(--navy);
+  font-size: clamp(28px, 4vw, 38px);
 }
 
-.tvc__note {
+.tvc__heading p {
   margin: 0;
-  color: #7b858d;
+  color: #87939a;
+  font-size: 14px;
+}
+
+.tvc__price-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  margin-bottom: 35px;
+  border: 1px solid #e5eff1;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #f1fafb, #fff);
+}
+
+.tvc__price-label {
+  color: #77868e;
   font-size: 13px;
-  line-height: 1.7;
+}
+
+.tvc__price {
+  margin-top: 8px;
+  color: var(--navy);
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.tvc__price small {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.tvc__discount {
+  display: inline-block;
+  margin-top: 8px;
+  color: #15916e;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.tvc__price-icon {
+  display: grid;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 18px;
+  background: var(--navy);
+  color: white;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.tvc__section {
+  margin-bottom: 30px;
+}
+
+.tvc__section h3,
+.tvc__tab-content h3 {
+  margin: 0 0 15px;
+  color: var(--navy);
+  font-size: 21px;
 }
 
 .tvc__row {
@@ -146,137 +331,345 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 17px 0;
-  border-bottom: 1px solid #e9ebed;
+  padding: 16px 0;
+  border-bottom: 1px solid #edf0f1;
+  line-height: 1.6;
+  transition: padding .2s;
 }
 
-.tvc__row b {
-  color: #003e59;
-  font-size: 25px;
+.tvc__row:hover {
+  padding-left: 8px;
+  padding-right: 8px;
+  background: #fbfdfd;
+}
+
+.tvc__row span {
+  font-size: 14px;
+}
+
+.tvc__row strong {
+  flex-shrink: 0;
+  color: var(--navy);
+  font-size: 20px;
   white-space: nowrap;
 }
 
 .tvc__row small {
-  font-size: 12px;
-}
-
-.tvc__main hr {
-  margin: 28px 0;
-  border: 0;
-  border-top: 1px solid #e5e5e5;
+  font-size: 11px;
+  font-weight: 500;
 }
 
 .tvc__btn {
-  margin: 25px 0 45px;
-  padding: 15px 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  padding: 17px 25px;
+  margin: 30px 0 45px;
   border: 0;
-  border-radius: 30px;
-  background: #ed3548;
+  border-radius: 35px;
+  background: var(--red);
   color: white;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 7px 18px rgba(237, 53, 72, .2);
+  transition: .25s;
 }
 
 .tvc__btn:hover {
-  background: #d92c3e;
+  background: #d8253c;
+  box-shadow: 0 10px 25px rgba(237, 53, 72, .3);
+  transform: translateY(-3px);
+}
+
+.tvc__btn span {
+  font-size: 20px;
+}
+
+.tvc__details {
+  border: 1px solid #e8edef;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .tvc__tabs {
   display: flex;
-  gap: 10px;
-  border-bottom: 1px solid #e5e5e5;
   overflow-x: auto;
+  background: #f6f8f9;
+  scrollbar-width: thin;
 }
 
 .tvc__tabs button {
-  padding: 13px 18px;
+  flex: 1;
+  min-width: max-content;
+  padding: 17px 14px;
   border: 0;
   border-bottom: 3px solid transparent;
   background: transparent;
-  color: #003e59;
-  font-weight: 600;
-  white-space: nowrap;
+  color: #687780;
+  font-size: 12px;
+  font-weight: 700;
   cursor: pointer;
+  transition: .2s;
+}
+
+.tvc__tabs button:hover {
+  color: var(--navy);
+  background: #edf5f6;
 }
 
 .tvc__tabs button.on {
-  border-bottom-color: #7fd0dc;
+  color: var(--navy);
+  background: white;
+  border-bottom-color: var(--cyan);
 }
 
-.tvc__included {
-  display: grid;
-  gap: 22px;
-  margin: 0;
+.tvc__tab-content {
+  min-height: 210px;
   padding: 25px;
-  list-style: none;
-  background: #f4f5f6;
+  animation: tvcAppear .3s ease;
 }
 
-.tvc__included li {
+.tvc__tab-content p {
+  color: #78858c;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.tvc__tab-content ul {
+  display: grid;
+  gap: 13px;
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+}
+
+.tvc__tab-content li {
   display: flex;
   align-items: center;
-  gap: 14px;
-  color: #555;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.tvc__tab-content li span {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #e4f7f1;
+  color: #15916e;
+  font-weight: 700;
 }
 
 .tvc__foot {
   margin: 35px 0 80px;
   padding-top: 20px;
-  border-top: 1px solid #eee;
-  color: #7b858d;
+  border-top: 1px solid #edf0f1;
+  color: #87939a;
   font-size: 13px;
 }
 
 .tvc__foot a {
-  color: #003e59;
-  font-weight: 600;
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: none;
 }
 
-@media (max-width: 800px) {
-  .tvc__hero {
-    height: 240px;
-  }
+.tvc__foot a:hover {
+  color: var(--red);
+}
 
+/* Modal */
+
+.tvc__modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0, 30, 45, .65);
+  backdrop-filter: blur(5px);
+  animation: tvcFade .2s ease;
+}
+
+.tvc__modal {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  padding: 40px 30px 30px;
+  border-radius: 16px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .2);
+  animation: tvcModal .3s ease;
+}
+
+.tvc__modal-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  border: 0;
+  border-radius: 50%;
+  background: #f1f4f5;
+  color: #52616a;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.tvc__modal-icon {
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #e4f7f1;
+  color: #15916e;
+  font-size: 27px;
+}
+
+.tvc__modal h3 {
+  color: var(--navy);
+  font-size: 21px;
+}
+
+.tvc__modal p {
+  color: #7b878e;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.tvc__modal-link {
+  display: block;
+  padding: 14px;
+  margin-top: 20px;
+  border-radius: 30px;
+  background: var(--red);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  transition: .2s;
+}
+
+.tvc__modal-link:hover {
+  background: #d8253c;
+}
+
+.tvc__modal-back {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: 0;
+  background: transparent;
+  color: #7b878e;
+  cursor: pointer;
+}
+
+@keyframes tvcAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tvcFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes tvcModal {
+  from {
+    opacity: 0;
+    transform: scale(.94) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 850px) {
   .tvc__layout {
     grid-template-columns: 1fr;
     gap: 25px;
+  }
+
+  .tvc__side {
+    position: static;
+  }
+
+  .tvc__hero {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tvc__hero {
+    min-height: 260px;
+  }
+
+  .tvc__hero-content {
+    padding: 40px 20px 55px;
+  }
+
+  .tvc__hero-content p {
+    font-size: 14px;
   }
 
   .tvc__cats {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .tvc__main h1 {
-    font-size: 28px;
-  }
-
-  .tvc__row b {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .tvc__hero {
-    height: 180px;
-  }
-
-  .tvc__cats {
-    margin-top: -30px;
-  }
-
   .tvc__cats a {
     min-height: 65px;
-    font-size: 12px;
+    font-size: 11px;
+  }
+
+  .tvc__crumbs {
+    margin: 22px 0;
+    gap: 6px;
+  }
+
+  .tvc__price-card {
+    padding: 20px;
+  }
+
+  .tvc__price {
+    font-size: 31px;
+  }
+
+  .tvc__price-icon {
+    width: 50px;
+    height: 50px;
   }
 
   .tvc__row {
     align-items: flex-start;
-    flex-direction: column;
-    gap: 8px;
+    gap: 12px;
   }
 
-  .tvc__btn {
-    width: 100%;
+  .tvc__row span {
+    font-size: 12px;
+  }
+
+  .tvc__row strong {
+    font-size: 16px;
+  }
+
+  .tvc__tabs button {
+    padding: 14px 12px;
+  }
+
+  .tvc__tab-content {
+    padding: 20px 15px;
   }
 }
