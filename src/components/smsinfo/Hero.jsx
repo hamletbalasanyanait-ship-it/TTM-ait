@@ -3,6 +3,12 @@ import "./Hero.css";
 export default function Hero() {
   return (
     <section className="sms-hero" id="top">
+      <div className="sms-hero__rings" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
+
       <div className="sms-wrap sms-hero__inner">
         <div className="sms-hero__text">
           <h1>SMS-ինֆո</h1>
