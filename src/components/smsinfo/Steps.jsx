@@ -14,8 +14,10 @@ export default function Steps() {
             <li key={step.id}>
               <Reveal delay={i * 110} from={i % 2 ? "right" : "left"} className="sms-steps__reveal">
                 <article className="sms-step">
-                  <div className="sms-step__media">{stepIcons[step.id]}</div>
-                  <span className="sms-step__num">{step.id}</span>
+                  <div className="sms-step__media">
+                    {stepIcons[step.id]}
+                    <span className="sms-step__num">{step.id}</span>
+                  </div>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
                 </article>
