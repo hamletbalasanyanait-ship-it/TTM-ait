@@ -61,6 +61,7 @@ export default function App() {
           <Route path="/5g" element={<Soon title="Team 5G" />} />
           <Route path="/mobile" element={<Mobile />} />
           <Route path="/offers/geforce" element={<GeForce />} />
+          <Route path="/sms-info" element={<SmsInfo />} />
 
           {/* Login */}
           <Route path="/account" element={<Login />} />
