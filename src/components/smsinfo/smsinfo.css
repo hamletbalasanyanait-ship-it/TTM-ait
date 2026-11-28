@@ -30,3 +30,26 @@
 .sms *::after {
   box-sizing: border-box;
 }
+
+.sms h1,
+.sms h2,
+.sms h3 {
+  margin: 0;
+  font-weight: 800;
+  color: inherit;
+}
+
+.sms p {
+  margin: 0;
+}
+
+.sms ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sms a {
+  color: inherit;
+  text-decoration: none;
+}
