@@ -142,3 +142,9 @@
   color: #fff;
   background: var(--sms-navy);
 }
+
+@media (min-width: 1024px) {
+  .sms-section {
+    padding: 72px 0;
+  }
+}
