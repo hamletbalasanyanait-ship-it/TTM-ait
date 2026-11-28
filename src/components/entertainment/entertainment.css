@@ -471,3 +471,75 @@
   font-size: 16px;
   color: var(--ent-navy);
 }
+
+/* ---------- action blocks: USSD / SMS / call ---------- */
+.ent-action {
+  display: grid;
+  gap: 10px;
+}
+
+.ent-action__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.ent-action__label {
+  font-weight: 700;
+  color: var(--ent-muted);
+}
+
+.ent-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  background: var(--ent-navy);
+  color: #fff !important;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ent-code:hover {
+  background: var(--ent-navy-dark);
+  transform: translateY(-1px);
+}
+
+.ent-code--sms {
+  background: var(--ent-red);
+  font-size: 17px;
+}
+
+.ent-code--sms:hover {
+  background: #d83a32;
+}
+
+.ent-code--call {
+  background: #12805c;
+}
+
+.ent-code--call:hover {
+  background: #0d664a;
+}
+
+.ent-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border: 1px solid var(--ent-line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ent-navy);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ent-copy:hover {
+  border-color: var(--ent-navy);
+}
