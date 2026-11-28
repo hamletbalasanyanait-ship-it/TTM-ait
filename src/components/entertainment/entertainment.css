@@ -745,3 +745,30 @@
     display: block;
   }
 }
+
+/* ---------- motion / print ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ent *,
+  .ent *::before,
+  .ent *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media print {
+  .ent-search,
+  .ent-select,
+  .ent-copy,
+  .ent-related,
+  .ent-tabs__list {
+    display: none !important;
+  }
+  .ent-tabs__panel[hidden] {
+    display: block !important;
+  }
+  .ent-tabs__panel {
+    border: 0;
+    padding: 0 0 12px;
+  }
+}
