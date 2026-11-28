@@ -105,3 +105,11 @@
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(240, 71, 62, 0.35);
 }
+
+/* ---------- keyboard focus ---------- */
+.sms a:focus-visible,
+.sms .sms-btn:focus-visible {
+  outline: 3px solid var(--sms-cyan);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
