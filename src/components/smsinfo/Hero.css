@@ -147,3 +147,7 @@
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
+
+.sms-hero__rings span:nth-child(1) { width: 320px; height: 320px; right: -80px; top: -110px; }
+.sms-hero__rings span:nth-child(2) { width: 520px; height: 520px; right: -180px; top: -210px; }
+.sms-hero__rings span:nth-child(3) { width: 220px; height: 220px; left: -70px; bottom: -90px; }
