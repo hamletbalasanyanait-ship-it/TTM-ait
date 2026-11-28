@@ -69,3 +69,10 @@
     gap: 24px;
   }
 }
+
+@media (min-width: 1024px) {
+  /* thin dividers between columns */
+  .sms-adv__grid > li + li {
+    border-left: 1px solid var(--sms-line);
+  }
+}
