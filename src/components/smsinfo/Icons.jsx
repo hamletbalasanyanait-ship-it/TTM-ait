@@ -38,3 +38,22 @@ export function IconSales() {
     </svg>
   );
 }
+
+export function IconTarget() {
+  return (
+    <svg {...base}>
+      <circle cx="24" cy="24" r="16" />
+      <circle cx="24" cy="24" r="9" />
+      <circle cx="24" cy="24" r="2.5" fill="currentColor" />
+      <path d="M24 4v6M24 38v6M4 24h6M38 24h6" />
+    </svg>
+  );
+}
+
+// advantage id -> icon component
+export const advantageIcons = {
+  ready: IconReady,
+  loyalty: IconLoyalty,
+  sales: IconSales,
+  target: IconTarget,
+};
