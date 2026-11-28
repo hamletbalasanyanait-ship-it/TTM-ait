@@ -69,3 +69,20 @@
     pointer-events: none;
   }
 }
+
+.sms-step__media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 150px;
+  margin-bottom: 22px;
+  color: rgba(255, 255, 255, 0.92);
+  background:
+    radial-gradient(60% 90% at 80% 10%, rgba(63, 208, 216, 0.45), transparent 70%),
+    linear-gradient(135deg, var(--sms-navy), var(--sms-card));
+}
+
+.sms-step__media svg {
+  width: 64px;
+  height: 64px;
+}
