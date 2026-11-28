@@ -20,9 +20,14 @@ export default function JoinCta() {
               կամ զանգահարեք <a href={contact.phoneHref}>{contact.phone}</a>{" "}
               հեռախոսահամարով։
             </p>
-            <a className="sms-btn" href={mailto}>
-              Միանալ
-            </a>
+            <div className="sms-join__actions">
+              <a className="sms-btn" href={mailto}>
+                Միանալ
+              </a>
+              <a className="sms-btn sms-btn--ghost" href={contact.phoneHref}>
+                {contact.phone}
+              </a>
+            </div>
           </div>
         </Reveal>
       </div>
