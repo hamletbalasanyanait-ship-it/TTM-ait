@@ -1,0 +1,4 @@
+.sms-terms__list {
+  display: grid;
+  gap: 16px;
+}
