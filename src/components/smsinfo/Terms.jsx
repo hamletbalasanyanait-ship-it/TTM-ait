@@ -15,6 +15,15 @@ export default function Terms() {
                 <li key={text.slice(0, 24)}>{text}</li>
               ))}
             </ul>
+            <ul className="sms-terms__ways">
+              {unsubscribe.map((w) => (
+                <li key={w.id}>
+                  {w.before}
+                  <a href={w.href}>{w.label}</a>
+                  {w.after}
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="sms-terms__item">
