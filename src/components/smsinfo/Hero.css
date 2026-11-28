@@ -151,3 +151,12 @@
 .sms-hero__rings span:nth-child(1) { width: 320px; height: 320px; right: -80px; top: -110px; }
 .sms-hero__rings span:nth-child(2) { width: 520px; height: 520px; right: -180px; top: -210px; }
 .sms-hero__rings span:nth-child(3) { width: 220px; height: 220px; left: -70px; bottom: -90px; }
+
+.sms-hero__rings span:nth-child(2) {
+  animation: sms-ring 7s ease-in-out infinite;
+}
+
+@keyframes sms-ring {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
