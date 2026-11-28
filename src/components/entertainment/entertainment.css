@@ -92,3 +92,31 @@
   margin-bottom: 24px;
   color: var(--ent-navy);
 }
+
+/* ---------- breadcrumbs ---------- */
+.ent-crumbs {
+  font-size: 14px;
+  color: var(--ent-muted);
+  margin-bottom: 18px;
+}
+
+.ent-crumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+}
+
+.ent-crumbs__item + .ent-crumbs__item::before {
+  content: "/";
+  margin: 0 10px;
+  color: var(--ent-line);
+}
+
+.ent-crumbs__item a:hover {
+  color: var(--ent-red);
+}
+
+.ent-crumbs__item--current {
+  color: var(--ent-text);
+  font-weight: 500;
+}
