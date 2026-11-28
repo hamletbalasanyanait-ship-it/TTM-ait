@@ -26,9 +26,9 @@
 .sms-adv__icon {
   display: inline-grid;
   place-items: center;
-  width: 76px;
-  height: 76px;
-  margin-bottom: 20px;
+  width: 92px;
+  height: 92px;
+  margin-bottom: 22px;
   border-radius: 50%;
   color: var(--sms-navy);
   background: radial-gradient(circle at 30% 25%, #e9fbfc, #cdeff2);
