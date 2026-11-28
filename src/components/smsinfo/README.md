@@ -24,6 +24,8 @@ the CSS of the other pages. Header and Footer are rendered globally in
 - `/sms-info`
 - `/business/sms-info`
 
+The page is also linked from the header: **Առաջարկներ → SMS-ինֆո**.
+
 Scroll-reveal animation is reused from `../business/Reveal`.
 
 ## Design notes
