@@ -148,3 +148,15 @@
     padding: 72px 0;
   }
 }
+
+@media print {
+  .sms-hero__art,
+  .sms-hero__rings,
+  .sms-join {
+    display: none;
+  }
+
+  .sms-section {
+    padding: 20px 0;
+  }
+}
