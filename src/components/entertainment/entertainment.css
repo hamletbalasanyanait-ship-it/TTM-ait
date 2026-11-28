@@ -298,3 +298,37 @@
 .ent-card__more svg {
   transition: transform 0.2s ease;
 }
+
+/* ---------- service page ---------- */
+.ent-detail {
+  display: grid;
+  gap: 28px;
+}
+
+.ent-detail__cover {
+  display: none;
+  width: 100%;
+  max-width: 320px;
+  border-radius: var(--ent-radius);
+}
+
+.ent-provider {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  font-size: 14px;
+  color: var(--ent-muted);
+}
+
+.ent-provider a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  color: var(--ent-navy);
+}
+
+.ent-provider a:hover {
+  color: var(--ent-red);
+}
