@@ -4,16 +4,28 @@ import { IconChevron } from "./Icons";
 import "./Terms.css";
 
 // One collapsible block of the «Պայմաններ» section.
-function Panel({ title, open, onToggle, children }) {
+function Panel({ id, title, open, onToggle, children }) {
   return (
     <div className={`sms-terms__item ${open ? "is-open" : ""}`}>
       <h3>
-        <button type="button" className="sms-terms__head" onClick={onToggle}>
+        <button
+          type="button"
+          className="sms-terms__head"
+          id={`sms-head-${id}`}
+          aria-expanded={open}
+          aria-controls={`sms-panel-${id}`}
+          onClick={onToggle}
+        >
           <span>{title}</span>
           <IconChevron />
         </button>
       </h3>
-      <div className="sms-terms__body">
+      <div
+        className="sms-terms__body"
+        id={`sms-panel-${id}`}
+        role="region"
+        aria-labelledby={`sms-head-${id}`}
+      >
         <div className="sms-terms__inner">{children}</div>
       </div>
     </div>
@@ -31,6 +43,7 @@ export default function Terms() {
 
         <div className="sms-terms__list">
           <Panel
+            id="limits"
             title="Ծառայության սահմանափակումներ"
             open={open.limits}
             onToggle={() => toggle("limits")}
@@ -52,6 +65,7 @@ export default function Terms() {
           </Panel>
 
           <Panel
+            id="general"
             title="Ընդհանուր պայմաններ"
             open={open.general}
             onToggle={() => toggle("general")}
