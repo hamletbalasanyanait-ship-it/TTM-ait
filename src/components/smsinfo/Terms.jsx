@@ -21,6 +21,9 @@ function Panel({ title, open, onToggle, children }) {
 }
 
 export default function Terms() {
+  const [open, setOpen] = useState({ limits: true, general: true });
+  const toggle = (id) => setOpen((o) => ({ ...o, [id]: !o[id] }));
+
   return (
     <section className="sms-section sms-section--soft sms-terms" id="terms">
       <div className="sms-wrap">
