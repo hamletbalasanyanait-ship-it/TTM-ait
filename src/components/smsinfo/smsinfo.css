@@ -124,3 +124,7 @@
     transition: none !important;
   }
 }
+
+.sms-section--soft {
+  background: var(--sms-soft);
+}
