@@ -40,3 +40,38 @@
   border-radius: 50%;
   background: var(--sms-red);
 }
+
+.sms-terms__ways {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 4px 22px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--sms-line);
+}
+
+.sms-terms__ways li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 15px;
+  color: var(--sms-text);
+}
+
+.sms-terms__ways li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--sms-navy);
+  font-weight: 800;
+}
+
+.sms-terms__ways a {
+  font-weight: 700;
+  color: var(--sms-navy);
+  border-bottom: 2px solid var(--sms-cyan);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.sms-terms__ways a:hover {
+  color: var(--sms-red);
+  border-color: var(--sms-red);
+}
