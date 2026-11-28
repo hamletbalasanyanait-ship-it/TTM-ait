@@ -37,9 +37,9 @@ export default function Terms() {
   const toggle = (id) => setOpen((o) => ({ ...o, [id]: !o[id] }));
 
   return (
-    <section className="sms-section sms-section--soft sms-terms" id="terms">
+    <section className="sms-section sms-section--soft sms-terms" id="terms" aria-labelledby="sms-terms-title">
       <div className="sms-wrap">
-        <h2 className="sms-title">Պայմաններ</h2>
+        <h2 className="sms-title" id="sms-terms-title">Պայմաններ</h2>
 
         <div className="sms-terms__list">
           <Panel
