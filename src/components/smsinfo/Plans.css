@@ -50,3 +50,36 @@
   font-weight: 800;
   color: #fff;
 }
+
+.sms-plan__features {
+  position: relative;
+  padding: 8px 28px;
+}
+
+.sms-plan__features li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sms-plan__features li:last-child {
+  border-bottom: 0;
+}
+
+.sms-plan__value {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sms-plan__value strong {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.sms-plan__label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
