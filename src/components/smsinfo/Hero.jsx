@@ -12,6 +12,17 @@ export default function Hero() {
             արագ և պարզ տեղադրման և օգտագործման հնարավորություններով։
           </p>
         </div>
+
+        <div className="sms-hero__art" aria-hidden="true">
+          <div className="sms-phone">
+            <span className="sms-phone__notch" />
+            <div className="sms-phone__screen">
+              <p className="sms-msg sms-msg--in">Team: Ձեր պատվերը պատրաստ է։</p>
+              <p className="sms-msg sms-msg--in">Team: -20% զեղչ մինչև ամսվա վերջ։</p>
+              <p className="sms-msg sms-msg--out">Շնորհակալություն</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
