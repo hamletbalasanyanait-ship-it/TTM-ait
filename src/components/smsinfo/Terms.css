@@ -75,3 +75,15 @@
   color: var(--sms-red);
   border-color: var(--sms-red);
 }
+
+@media (min-width: 900px) {
+  .sms-terms__list {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 24px;
+  }
+
+  .sms-terms__item {
+    padding: 32px 34px 28px;
+  }
+}
