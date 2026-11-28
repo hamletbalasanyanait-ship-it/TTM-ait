@@ -47,3 +47,13 @@
   justify-content: center;
   gap: 14px;
 }
+
+.sms-btn--ghost {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.65);
+}
+
+.sms-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 0 0 2px #fff;
+}
