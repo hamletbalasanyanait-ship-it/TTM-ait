@@ -92,3 +92,16 @@
   color: rgba(255, 255, 255, 0.7);
   background: rgba(0, 0, 0, 0.14);
 }
+
+@media (min-width: 640px) {
+  .sms-plan {
+    max-width: 420px;
+  }
+
+  .sms-plan__head,
+  .sms-plan__features,
+  .sms-plan__note {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+}
