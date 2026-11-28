@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import "./App.css";
@@ -21,9 +22,25 @@ import TeamTV from "./pages/TeamTV";
 const Soon = ({ title }) => (
   <h1 style={{ textAlign: "center" }}>{title}</h1>
 );
+=======
+import { Routes, Route, useLocation, Form } from "react-router-dom";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import Home from "./pages/Home";
+import Business from "./pages/Business";
+import Conect from "./pages/Conect";
+import EShop from "./pages/E-shop";
+import ForHome from "./pages/Forhome";
+import ForPhone from "./pages/Forphone";
+import Login from "./pages/Login";
+import "./App.css";
+import TVCosmo from "./pages/TVCosmo";
+import Roming from "./pages/Roming";
+>>>>>>> aa4189b (fix imports)
 
 export default function App() {
   const { pathname } = useLocation();
+  // the login page has its own logo + footer, so hide the global ones there
   const isLogin = pathname === "/account" || pathname === "/login";
 
   return (
@@ -33,6 +50,7 @@ export default function App() {
       <main className="app__main">
         <Routes>
           <Route path="/" element={<Home />} />
+<<<<<<< HEAD
           <Route path="/business" element={<Soon title="Business" />} />
           <Route path="/eshop" element={<Soon title="E-Shop" />} />
 
@@ -72,10 +90,21 @@ export default function App() {
           <Route path="/offers/geforce" element={<GeForce />} />
 
           {/* Login */}
+=======
+          <Route path="/business" element={<Business />} />
+          <Route path="/conect" element={<Conect />} />
+          <Route path="/eshop" element={<EShop />} />
+          <Route path="/for-home" element={<ForHome />} />
+          <Route path="/for-phone" element={<ForPhone />} />
+>>>>>>> aa4189b (fix imports)
           <Route path="/account" element={<Login />} />
           <Route path="/login" element={<Login />} />
-
+          <Route path="/tvcosmo" element={<TVCosmo />} />
+          <Route path="/roming" element={<Roming />} />
           <Route path="*" element={<Home />} />
+          
+
+<Route path="/internet/smartphone" element={<ForPhone />} />
         </Routes>
       </main>
 
