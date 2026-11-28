@@ -5,3 +5,23 @@
   color: #fff;
   background: linear-gradient(135deg, var(--sms-navy-dark), var(--sms-navy));
 }
+
+.sms-join__box h2 {
+  margin-bottom: 14px;
+  font-size: clamp(24px, 3.4vw, 36px);
+  line-height: 1.2;
+}
+
+.sms-join__box p {
+  max-width: 620px;
+  margin: 0 auto 28px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.sms-join__box p a {
+  font-weight: 700;
+  color: #fff;
+  border-bottom: 2px solid var(--sms-cyan);
+}
