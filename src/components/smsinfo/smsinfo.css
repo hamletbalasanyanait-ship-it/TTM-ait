@@ -64,6 +64,7 @@
 
 .sms-section {
   padding: 56px 0;
+  scroll-margin-top: 16px;
 }
 
 /* ---------- section heading ---------- */
