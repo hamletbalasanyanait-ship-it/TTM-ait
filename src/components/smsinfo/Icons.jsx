@@ -75,3 +75,12 @@ export function IconCheck() {
     </svg>
   );
 }
+
+export function IconMail() {
+  return (
+    <svg {...base}>
+      <rect x="6" y="11" width="36" height="26" rx="3" />
+      <path d="m7 14 17 13 17-13" />
+    </svg>
+  );
+}
