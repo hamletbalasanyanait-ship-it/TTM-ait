@@ -2,3 +2,13 @@
   color: #fff;
   background: var(--sms-navy);
 }
+
+.sms-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 32px;
+  min-height: 340px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
