@@ -45,3 +45,29 @@
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.86);
 }
+
+/* ---------- decorative phone ---------- */
+.sms-hero__art {
+  display: none;
+  justify-content: center;
+}
+
+.sms-phone {
+  position: relative;
+  width: 230px;
+  padding: 14px 12px 18px;
+  border-radius: 34px;
+  background: #0a1f33;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35), 0 0 0 8px rgba(255, 255, 255, 0.05);
+  transform: rotate(4deg);
+}
+
+.sms-phone__notch {
+  display: block;
+  width: 70px;
+  height: 6px;
+  margin: 0 auto 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.2);
+}
