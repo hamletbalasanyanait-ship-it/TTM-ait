@@ -5,9 +5,9 @@ import "./Steps.css";
 
 export default function Steps() {
   return (
-    <section className="sms-section sms-section--soft sms-steps" id="steps">
+    <section className="sms-section sms-section--soft sms-steps" id="steps" aria-labelledby="sms-steps-title">
       <div className="sms-wrap">
-        <h2 className="sms-title">Ակտիվացման քայլեր</h2>
+        <h2 className="sms-title" id="sms-steps-title">Ակտիվացման քայլեր</h2>
 
         <ol className="sms-steps__grid">
           {steps.map((step, i) => (
