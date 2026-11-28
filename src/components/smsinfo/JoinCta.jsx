@@ -9,11 +9,11 @@ const mailto =
 
 export default function JoinCta() {
   return (
-    <section className="sms-section sms-join" id="join">
+    <section className="sms-section sms-join" id="join" aria-labelledby="sms-join-title">
       <div className="sms-wrap">
         <Reveal>
           <div className="sms-join__box">
-            <h2>{contact.title}</h2>
+            <h2 id="sms-join-title">{contact.title}</h2>
             <p>
               Ուղարկե՛ք միացման հայտ{" "}
               <a href={`mailto:${contact.email}`}>{contact.email}</a> հասցեով,
