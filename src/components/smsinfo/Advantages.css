@@ -3,3 +3,18 @@
   grid-template-columns: 1fr;
   gap: 20px;
 }
+
+.sms-adv__reveal,
+.sms-adv__card {
+  height: 100%;
+}
+
+.sms-adv__card {
+  position: relative;
+  padding: 28px 24px 30px;
+  border-radius: var(--sms-radius);
+  background: #fff;
+  border: 1px solid var(--sms-line);
+  box-shadow: 0 8px 24px rgba(11, 59, 102, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
