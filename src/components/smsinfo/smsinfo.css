@@ -15,3 +15,18 @@
   --sms-radius: 18px;
   --sms-max: 1140px;
 }
+
+.sms {
+  font-family: "Noto Sans Armenian", "Sylfaen", system-ui, sans-serif;
+  background: var(--sms-bg);
+  color: var(--sms-text);
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.sms *,
+.sms *::before,
+.sms *::after {
+  box-sizing: border-box;
+}
