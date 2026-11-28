@@ -70,6 +70,7 @@ const navLinks = [
       { label: "MobiBattle", to: "/offers/mobibattle" },
       { label: "GeForce Games", to: "/offers/geforce" },
       { label: "Koreez", to: "/offers/koreez" },
+      { label: "SMS-ինֆո", to: "/sms-info" },
     ],
   },
   {
