@@ -58,8 +58,8 @@
 
 .sms-plan__features li {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  gap: 14px;
   padding: 16px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -104,4 +104,21 @@
     padding-left: 34px;
     padding-right: 34px;
   }
+}
+
+.sms-plan__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sms-plan__check {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--sms-navy-dark);
+  background: var(--sms-cyan);
 }
