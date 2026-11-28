@@ -15,6 +15,7 @@ import TVCombo from "./pages/TVCombo";
 import FixedPhone from "./pages/FixedPhone";
 import Login from "./pages/Login";
 import GeForce from "./pages/GeForce";
+import SmsInfo from "./pages/SmsInfo";
 
 import "./App.css";
 
