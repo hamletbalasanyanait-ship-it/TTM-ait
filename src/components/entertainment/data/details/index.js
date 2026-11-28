@@ -1,14 +1,14 @@
-import smsPremium from "./sms-premium";
-import koreez from "./koreez";
-import geforceGames from "./geforce-games";
-import mobiBattle from "./mobi-battle";
-import melomaniaQuiz from "./melomania-quiz";
-import bookPortal from "./book-portal";
-import datingPortal from "./dating-portal";
-import kidsPortal from "./kids-portal";
-import humorClub from "./humor-club";
-import funbox from "./funbox";
-import laughcall from "./laughcall";
+import smsPremium from "./sms-premium.js";
+import koreez from "./koreez.js";
+import geforceGames from "./geforce-games.js";
+import mobiBattle from "./mobi-battle.js";
+import melomaniaQuiz from "./melomania-quiz.js";
+import bookPortal from "./book-portal.js";
+import datingPortal from "./dating-portal.js";
+import kidsPortal from "./kids-portal.js";
+import humorClub from "./humor-club.js";
+import funbox from "./funbox.js";
+import laughcall from "./laughcall.js";
 
 export const details = [
   smsPremium,

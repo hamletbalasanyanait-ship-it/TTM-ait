@@ -1,9 +1,9 @@
 // A small normalised "database" built from the raw data files.
 // Collections: services, tabs, blocks, shortCodes, providers, ussd, prices.
 // Everything is derived, so the data files stay the single source of truth.
-import { services, ORIGIN } from "./services";
-import { details } from "./details";
-import { shortCodes } from "./shortcodes";
+import { services, ORIGIN } from "./services.js";
+import { details } from "./details/index.js";
+import { shortCodes } from "./shortcodes.js";
 
 const byId = (list) => Object.fromEntries(list.map((x) => [x.id, x]));
 
