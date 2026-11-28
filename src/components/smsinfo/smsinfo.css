@@ -136,3 +136,8 @@
     --sms-max: 1240px;
   }
 }
+
+.sms ::selection {
+  color: #fff;
+  background: var(--sms-navy);
+}
