@@ -143,3 +143,9 @@
 .sms-terms__item.is-open {
   box-shadow: 0 14px 32px rgba(11, 59, 102, 0.1);
 }
+
+@media (max-width: 479px) {
+  .sms-terms__item {
+    padding: 20px 18px 18px;
+  }
+}
