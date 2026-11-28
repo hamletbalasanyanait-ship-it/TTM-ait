@@ -28,3 +28,13 @@ export function IconLoyalty() {
     </svg>
   );
 }
+
+export function IconSales() {
+  return (
+    <svg {...base}>
+      <path d="M6 40h36" />
+      <path d="M10 32l10-10 7 7 13-15" />
+      <path d="M31 14h9v9" />
+    </svg>
+  );
+}
