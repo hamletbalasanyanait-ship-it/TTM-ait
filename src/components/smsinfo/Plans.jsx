@@ -3,6 +3,14 @@ import { plan } from "./data/plan";
 import { IconCheck } from "./Icons";
 import "./Plans.css";
 
+// smooth scroll to the join block instead of an instant jump
+function goToJoin(e) {
+  const el = document.getElementById("join");
+  if (!el) return;
+  e.preventDefault();
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 export default function Plans() {
   return (
     <section className="sms-section sms-plans" id="packages">
