@@ -1,0 +1,4 @@
+.sms-plans__wrap {
+  display: flex;
+  justify-content: flex-start;
+}
