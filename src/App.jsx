@@ -1,12 +1,10 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import "./App.css";
 
 // Components
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 // Pages
 import Home from "./pages/Home";
@@ -19,29 +17,11 @@ import ForHome from "./pages/Forhome";
 import TVCombo from "./pages/TVCombo";
 import TVCosmo from "./pages/TVCosmo";
 import TeamTV from "./pages/TeamTV";
+import Bonus from "./pages/bonus";
 
 const Soon = ({ title }) => (
   <h1 style={{ textAlign: "center" }}>{title}</h1>
 );
-=======
-import { Routes, Route, useLocation, Form } from "react-router-dom";
-=======
-import { Routes, Route } from "react-router-dom";
-import Bonus from "./pages/bonus";
->>>>>>> 095ec43 (Add /bonus route)
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
-import Home from "./pages/Home";
-import Business from "./pages/Business";
-import Conect from "./pages/Conect";
-import EShop from "./pages/E-shop";
-import ForHome from "./pages/Forhome";
-import ForPhone from "./pages/Forphone";
-import Login from "./pages/Login";
-import "./App.css";
-import TVCosmo from "./pages/TVCosmo";
-import Roming from "./pages/Roming";
->>>>>>> aa4189b (fix imports)
 
 export default function App() {
   const { pathname } = useLocation();
@@ -55,7 +35,6 @@ export default function App() {
       <main className="app__main">
         <Routes>
           <Route path="/" element={<Home />} />
-<<<<<<< HEAD
           <Route path="/business" element={<Soon title="Business" />} />
           <Route path="/eshop" element={<Soon title="E-Shop" />} />
 
@@ -94,26 +73,15 @@ export default function App() {
           <Route path="/mobile" element={<Mobile />} />
           <Route path="/offers/geforce" element={<GeForce />} />
 
+          {/* Bonus */}
+          <Route path="/offers/bonus" element={<Bonus />} />
+          <Route path="/bonus" element={<Bonus />} />
+
           {/* Login */}
-=======
-          <Route path="/business" element={<Business />} />
-          <Route path="/conect" element={<Conect />} />
-          <Route path="/eshop" element={<EShop />} />
-          <Route path="/for-home" element={<ForHome />} />
-          <Route path="/for-phone" element={<ForPhone />} />
->>>>>>> aa4189b (fix imports)
           <Route path="/account" element={<Login />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/tvcosmo" element={<TVCosmo />} />
-          <Route path="/roming" element={<Roming />} />
-          <Route path="*" element={<Home />} />
-<<<<<<< HEAD
-          
 
-<Route path="/internet/smartphone" element={<ForPhone />} />
-=======
-          <Route path="/offers/bonus" element={<Bonus />} />
->>>>>>> 095ec43 (Add /bonus route)
+          <Route path="*" element={<Home />} />
         </Routes>
       </main>
 
