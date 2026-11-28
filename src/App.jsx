@@ -1,5 +1,5 @@
 
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
@@ -16,6 +16,8 @@ import FixedPhone from "./pages/FixedPhone";
 import Login from "./pages/Login";
 import GeForce from "./pages/GeForce";
 import SmsInfo from "./pages/SmsInfo";
+import Entertainment from "./pages/Entertainment";
+import EntertainmentService from "./pages/EntertainmentService";
 
 import "./App.css";
 
@@ -63,6 +65,14 @@ export default function App() {
           <Route path="/mobile" element={<Mobile />} />
           <Route path="/offers/geforce" element={<GeForce />} />
           <Route path="/sms-info" element={<SmsInfo />} />
+
+          {/* Entertainment */}
+          <Route path="/entertainment" element={<Entertainment />} />
+          <Route path="/services/entertainment" element={<Entertainment />} />
+          <Route path="/entertainment/:slug" element={<EntertainmentService />} />
+          <Route path="/entertainment/:slug/:id" element={<EntertainmentService />} />
+          <Route path="/offers/mobibattle" element={<Navigate to="/entertainment/mobi-battle" replace />} />
+          <Route path="/offers/koreez" element={<Navigate to="/entertainment/koreez" replace />} />
 
           {/* Login */}
           <Route path="/account" element={<Login />} />
