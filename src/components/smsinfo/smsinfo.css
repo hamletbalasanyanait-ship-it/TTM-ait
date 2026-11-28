@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;500;700;800&display=swap");
+
+/* Every SMS-info style is scoped under .sms / .sms-* so it never
+   collides with the other pages' CSS. */
+.sms {
+  --sms-navy: #0b3b66;
+  --sms-navy-dark: #06304f;
+  --sms-card: #064a73;
+  --sms-red: #f0473e;
+  --sms-bg: #f3f5f7;
+  --sms-text: #0b2a45;
+  --sms-muted: #6a7f92;
+  --sms-cyan: #3fd0d8;
+  --sms-line: #dbe3ea;
+  --sms-radius: 18px;
+  --sms-max: 1140px;
+}
