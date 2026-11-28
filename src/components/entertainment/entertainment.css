@@ -332,3 +332,50 @@
 .ent-provider a:hover {
   color: var(--ent-red);
 }
+
+/* ---------- tabs ---------- */
+.ent-tabs__list {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+}
+
+.ent-tabs__tab {
+  flex: none;
+  padding: 11px 20px;
+  border: 1px solid var(--ent-line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ent-navy);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.ent-tabs__tab:hover {
+  border-color: var(--ent-navy);
+}
+
+.ent-tabs__tab.is-active {
+  background: var(--ent-navy);
+  border-color: var(--ent-navy);
+  color: #fff;
+}
+
+.ent-tabs__tab:focus-visible,
+.ent-tabs__panel:focus-visible {
+  outline: 2px solid var(--ent-cyan);
+  outline-offset: 2px;
+}
+
+.ent-tabs__panel {
+  margin-top: 18px;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--ent-line);
+  border-radius: var(--ent-radius);
+}
