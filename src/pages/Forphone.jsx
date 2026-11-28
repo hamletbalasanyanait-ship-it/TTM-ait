@@ -1,4 +1,5 @@
-import { useState } from 'react'
+
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import heroImg from './heroImage.js'
 import './Forphone.css'
@@ -21,47 +22,88 @@ const CRUMBS = [
 const SUBTABS = ['Կանխավճարային', 'Հետվճարային']
 
 const GIGA_DESC = 'Գերարագ ինտերնետ փաթեթ սմարթֆոնի համար'
-const MEGA_DESC = 'Օրական Ինտերնետ սմարթֆոնի համար․ մնացորդն այլևս չի զրոյանում'
+const MEGA_DESC =
+  'Օրական Ինտերնետ սմարթֆոնի համար․ մնացորդն այլևս չի զրոյանում'
 
 const SECTIONS = [
   {
     id: 'unlimit',
     title: 'Անսահմանափակ հավելվածներ',
+    subtitle: 'Քո սիրելի հավելվածներն առանց սահմանափակման',
+    icon: '✦',
     cards: [
-      { title: 'Video Unlimit', text: 'Միացրու և վայելիր անսահմանափակ տեսանյութերը' },
-      { title: 'Music Unlimit', text: 'Միացրու և վայելիր անսահմանափակ երաժշտությունը' },
-      { title: 'Social Unlimit', text: 'Միացրու և վայելիր անսահմանափակ սոցիալական ցանցերը' },
-      { title: 'Messenger Unlimit', text: 'Միացրու և վայելիր անսահմանափակ մեսենջերներ' },
+      {
+        title: 'Video Unlimit',
+        text: 'Միացրու և վայելիր անսահմանափակ տեսանյութերը',
+        tag: 'VIDEO',
+        symbol: '▶',
+      },
+      {
+        title: 'Music Unlimit',
+        text: 'Միացրու և վայելիր անսահմանափակ երաժշտությունը',
+        tag: 'MUSIC',
+        symbol: '♫',
+      },
+      {
+        title: 'Social Unlimit',
+        text: 'Միացրու և վայելիր անսահմանափակ սոցիալական ցանցերը',
+        tag: 'SOCIAL',
+        symbol: '◎',
+      },
+      {
+        title: 'Messenger Unlimit',
+        text: 'Միացրու և վայելիր անսահմանափակ մեսենջերներ',
+        tag: 'CHAT',
+        symbol: '⌁',
+      },
     ],
   },
   {
     id: 'giga',
     title: 'Giga',
+    subtitle: 'Գերարագ ինտերնետ՝ ամեն օրվա համար',
+    icon: '◈',
     cards: [
-      { title: 'Giga 1+1ԳԲ', text: GIGA_DESC },
-      { title: 'Giga 2+1ԳԲ', text: GIGA_DESC },
-      { title: 'Giga 5+1ԳԲ', text: GIGA_DESC },
-      { title: 'Giga 10 ԳԲ', text: GIGA_DESC },
-      { title: 'Giga 15 ԳԲ', text: GIGA_DESC },
+      { title: 'Giga 1+1ԳԲ', text: GIGA_DESC, tag: 'GIGA', symbol: '01' },
+      { title: 'Giga 2+1ԳԲ', text: GIGA_DESC, tag: 'GIGA', symbol: '02' },
+      { title: 'Giga 5+1ԳԲ', text: GIGA_DESC, tag: 'GIGA', symbol: '05' },
+      { title: 'Giga 10 ԳԲ', text: GIGA_DESC, tag: 'GIGA', symbol: '10' },
+      { title: 'Giga 15 ԳԲ', text: GIGA_DESC, tag: 'GIGA', symbol: '15' },
     ],
   },
   {
     id: 'mega',
     title: 'Mega',
+    subtitle: 'Ինտերնետ, որը միշտ քեզ հետ է',
+    icon: '⚡',
     cards: [
-      { title: 'Mega 300+', text: MEGA_DESC },
-      { title: 'Mega 500+', text: MEGA_DESC },
-      { title: 'Mega 300', text: 'Օրական Ինտերնետ սմարթֆոնի համար։' },
-      { title: 'Mega 500', text: 'Օրական Ինտերնետ սմարթֆոնի համար' },
+      { title: 'Mega 300+', text: MEGA_DESC, tag: 'MEGA', symbol: '300' },
+      { title: 'Mega 500+', text: MEGA_DESC, tag: 'MEGA', symbol: '500' },
+      {
+        title: 'Mega 300',
+        text: 'Օրական Ինտերնետ սմարթֆոնի համար։',
+        tag: 'MEGA',
+        symbol: '300',
+      },
+      {
+        title: 'Mega 500',
+        text: 'Օրական Ինտերնետ սմարթֆոնի համար',
+        tag: 'MEGA',
+        symbol: '500',
+      },
     ],
   },
   {
     id: '3gb',
     title: 'Փաթեթ «3ԳԲ» = 500֏',
+    subtitle: 'Ավելի շատ հնարավորություններ՝ մեկ փաթեթում',
+    icon: '✧',
     cards: [
       {
         title: '«3ԳԲ»',
         text: 'Ինտերնետ փաթեթ «ՍՄԱՐԹ» և «Be Free» կանխավճարային սակագնային փաթեթների…',
+        tag: 'SPECIAL',
+        symbol: '3GB',
       },
     ],
   },
@@ -83,114 +125,324 @@ function TabIcon({ name }) {
       return (
         <svg {...S}>
           <rect x="14" y="3" width="20" height="42" rx="4" />
+          <path d="M20 8h8" />
           <circle cx="24" cy="38" r="1.3" fill="currentColor" />
         </svg>
       )
+
     case 'tv':
       return (
         <svg {...S}>
-          <rect x="4" y="14" width="30" height="22" rx="3" />
-          <path d="m13 14-5-8M22 14l5-8" />
-          <rect x="26" y="26" width="18" height="13" rx="2" fill="#fff" />
+          <rect x="4" y="12" width="40" height="27" rx="4" />
+          <path d="m15 12-6-7M33 12l6-7M18 44h12M24 39v5" />
         </svg>
       )
+
     case 'pc':
       return (
         <svg {...S}>
-          <rect x="4" y="5" width="30" height="24" rx="3" />
-          <path d="M19 29v8M12 38h14" />
-          <rect x="30" y="16" width="13" height="24" rx="3" fill="#fff" />
+          <rect x="4" y="5" width="40" height="28" rx="3" />
+          <path d="M19 33v7M29 33v7M13 41h22" />
         </svg>
       )
+
     default:
       return (
         <svg {...S}>
-          <rect x="12" y="3" width="24" height="42" rx="4" />
-          <text x="24" y="31" textAnchor="middle" fontSize="15" fontWeight="700" fill="currentColor" stroke="none">5G</text>
+          <rect x="8" y="5" width="32" height="38" rx="6" />
+          <text
+            x="24"
+            y="28"
+            textAnchor="middle"
+            fontSize="13"
+            fontWeight="800"
+            fill="currentColor"
+            stroke="none"
+          >
+            5G
+          </text>
         </svg>
       )
   }
 }
 
-export default function ForPhone() {
-  const [closed, setClosed] = useState({})
-  const toggle = (id) => setClosed((c) => ({ ...c, [id]: !c[id] }))
+function Reveal({ children, className = '', delay = 0 }) {
+  const elementRef = useRef(null)
+
+  useEffect(() => {
+    const element = elementRef.current
+    if (!element) return
+
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      element.classList.add('is-visible')
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          element.classList.add('is-visible')
+          observer.unobserve(element)
+        }
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -35px 0px' }
+    )
+
+    observer.observe(element)
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <div className="fp">
+    <div
+      ref={elementRef}
+      className={`fp-reveal ${className}`}
+      style={{ '--reveal-delay': `${delay}ms` }}
+    >
+      {children}
+    </div>
+  )
+}
+
+export default function ForPhone() {
+  const [closed, setClosed] = useState({})
+  const [activeSubtab, setActiveSubtab] = useState(SUBTABS[0])
+
+  const toggle = (id) => {
+    setClosed((current) => ({
+      ...current,
+      [id]: !current[id],
+    }))
+  }
+
+  return (
+    <main className="fp">
       {/* HERO */}
       <section className="fp-hero">
-        <img className="fp-hero__img" src={heroImg} alt="Social, Video, Messenger, Music Unlimit" />
+        <div className="fp-hero__glow fp-hero__glow--one" />
+        <div className="fp-hero__glow fp-hero__glow--two" />
+        <div className="fp-hero__ring fp-hero__ring--one" />
+        <div className="fp-hero__ring fp-hero__ring--two" />
+
+        <div className="fp-hero__content">
+          <div className="fp-hero__eyebrow">
+            <span className="fp-live-dot" />
+            TEAM TELECOM ARMENIA
+          </div>
+
+          <img
+            className="fp-hero__img"
+            src={heroImg}
+            alt="Social, Video, Messenger, Music Unlimit"
+          />
+        </div>
+
+        <div className="fp-hero__bottom-line" />
       </section>
 
       <div className="fp-container">
         {/* TABS */}
-        <nav className="fp-tabs" aria-label="Ինտերնետ">
-          {TABS.map((t, i) => (
-            <Link key={t.label} to={t.to} className={`fp-tabs__item ${i === 0 ? 'is-active' : ''}`}>
-              <TabIcon name={t.icon} />
-              <span>{t.label}</span>
-            </Link>
-          ))}
-        </nav>
+        <Reveal className="fp-tabs-reveal">
+          <nav className="fp-tabs" aria-label="Ինտերնետ">
+            {TABS.map((tab, index) => (
+              <Link
+                key={tab.label}
+                to={tab.to}
+                className={`fp-tabs__item ${
+                  index === 0 ? 'is-active' : ''
+                }`}
+              >
+                <span className="fp-tabs__icon">
+                  <TabIcon name={tab.icon} />
+                </span>
+                <span>{tab.label}</span>
+                {index === 0 && (
+                  <span className="fp-tabs__active-dot" />
+                )}
+              </Link>
+            ))}
+          </nav>
+        </Reveal>
 
-        {/* CRUMBS */}
-        <ul className="fp-crumbs">
-          {CRUMBS.map((c, i) => (
-            <li key={c.label}>
-              {c.to ? <Link to={c.to}>{c.label}</Link> : <span>{c.label}</span>}
-              {i < CRUMBS.length - 1 && <i aria-hidden="true">›</i>}
-            </li>
-          ))}
-        </ul>
+        {/* BREADCRUMBS */}
+        <Reveal delay={100}>
+          <ul className="fp-crumbs">
+            {CRUMBS.map((crumb, index) => (
+              <li key={crumb.label}>
+                {crumb.to ? (
+                  <Link to={crumb.to}>{crumb.label}</Link>
+                ) : (
+                  <span className="fp-crumbs__current">
+                    {crumb.label}
+                  </span>
+                )}
+                {index < CRUMBS.length - 1 && (
+                  <i aria-hidden="true">›</i>
+                )}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
 
         {/* SUBTABS */}
-        <div className="fp-subtabs">
-          {SUBTABS.map((s, i) => (
-            <button key={s} type="button" className={i === 0 ? 'is-active' : ''}>
-              {s}
-            </button>
-          ))}
-        </div>
+        <Reveal delay={150}>
+          <div className="fp-subtabs">
+            {SUBTABS.map((tab) => (
+              <button
+                key={tab}
+                type="button"
+                className={
+                  activeSubtab === tab ? 'is-active' : ''
+                }
+                onClick={() => setActiveSubtab(tab)}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+        </Reveal>
 
-        {/* HEAD */}
-        <h1 className="fp-title">Սմարթֆոնի համար</h1>
+        {/* PAGE TITLE */}
+        <Reveal delay={200}>
+          <div className="fp-heading">
+            <div className="fp-heading__small">
+              <span /> ԻՆՏԵՐՆԵՏ ՔՈ ՍՄԱՐԹՖՈՆԻ ՀԱՄԱՐ
+            </div>
+            <h1 className="fp-title">Սմարթֆոնի համար</h1>
+            <p className="fp-heading__description">
+              Ընտրիր քեզ հարմար ինտերնետ փաթեթը և մնա կապի մեջ
+              ցանկացած պահի։
+            </p>
+          </div>
+        </Reveal>
 
         {/* SECTIONS */}
-        {SECTIONS.map((sec) => {
-          const isClosed = !!closed[sec.id]
-          return (
-            <section key={sec.id} className="fp-section">
-              <button
-                type="button"
-                className="fp-section__head"
-                aria-expanded={!isClosed}
-                onClick={() => toggle(sec.id)}
-              >
-                <h2>{sec.title}</h2>
-                <span className={`fp-section__arrow ${isClosed ? 'is-closed' : ''}`} />
-              </button>
+        <div className="fp-sections">
+          {SECTIONS.map((section, sectionIndex) => {
+            const isClosed = !!closed[section.id]
 
-              {!isClosed && (
-                <div className="fp-grid">
-                  {sec.cards.map((card) => (
-                    <article key={card.title} className="fp-card">
-                      <h3>{card.title}</h3>
-                      <p>{card.text}</p>
-                      <a href="#" className="fp-card__btn">Մանրամասն</a>
-                    </article>
-                  ))}
-                </div>
-              )}
-            </section>
-          )
-        })}
+            return (
+              <Reveal
+                key={section.id}
+                className="fp-section-reveal"
+                delay={sectionIndex * 70}
+              >
+                <section
+                  className={`fp-section ${
+                    isClosed ? 'is-collapsed' : ''
+                  }`}
+                >
+                  <button
+                    type="button"
+                    className="fp-section__head"
+                    aria-expanded={!isClosed}
+                    onClick={() => toggle(section.id)}
+                  >
+                    <span className="fp-section__left">
+                      <span className="fp-section__icon">
+                        {section.icon}
+                      </span>
+
+                      <span className="fp-section__titles">
+                        <span className="fp-section__title">
+                          {section.title}
+                        </span>
+                        <span className="fp-section__subtitle">
+                          {section.subtitle}
+                        </span>
+                      </span>
+                    </span>
+
+                    <span className="fp-section__right">
+                      <span className="fp-section__count">
+                        {section.cards.length} ՓԱԹԵԹ
+                      </span>
+                      <span className="fp-section__arrow">
+                        <span />
+                      </span>
+                    </span>
+                  </button>
+
+                  <div
+                    className="fp-section__content"
+                    aria-hidden={isClosed}
+                  >
+                    {!isClosed && (
+                      <div className="fp-grid">
+                        {section.cards.map((card, cardIndex) => (
+                          <article
+                            key={card.title}
+                            className="fp-card"
+                            style={{
+                              '--card-index': cardIndex,
+                              '--card-total': section.cards.length,
+                            }}
+                          >
+                            <div className="fp-card__top">
+                              <span className="fp-card__tag">
+                                {card.tag}
+                              </span>
+                              <span className="fp-card__number">
+                                {String(cardIndex + 1).padStart(2, '0')}
+                              </span>
+                            </div>
+
+                            <div className="fp-card__symbol">
+                              {card.symbol}
+                            </div>
+
+                            <h3>{card.title}</h3>
+                            <p>{card.text}</p>
+
+                            <a
+                              href="#"
+                              className="fp-card__btn"
+                              onClick={(event) => event.preventDefault()}
+                            >
+                              <span>Մանրամասն</span>
+                              <span className="fp-card__btn-arrow">
+                                →
+                              </span>
+                            </a>
+
+                            <span className="fp-card__shine" />
+                          </article>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </section>
+              </Reveal>
+            )
+          })}
+        </div>
 
         {/* NOTE */}
-        <p className="fp-note">
-          Արխիվային սակագնային և ինտերնետ <a href="#">փաթեթներ</a>
-        </p>
+        <Reveal>
+          <div className="fp-note">
+            <span className="fp-note__icon">ⓘ</span>
+            <p>
+              Արխիվային սակագնային և ինտերնետ{' '}
+              <a
+                href="#"
+                onClick={(event) => event.preventDefault()}
+              >
+                փաթեթներ
+              </a>
+            </p>
+            <span className="fp-note__decoration">TEAM</span>
+          </div>
+        </Reveal>
+
+        {/* FOOTER DECORATION */}
+        <div className="fp-footer-decoration">
+          <span />
+          <span />
+          <span />
+        </div>
       </div>
-    </div>
+    </main>
   )
 }

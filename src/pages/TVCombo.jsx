@@ -25,15 +25,27 @@ const plans = [
     name: "ԿՈՄԲՈ 4",
     description: "Չորսը մեկում փաթեթ",
     options: [
-      { name: "ԿՈՄԲՈ 4 9900", price: "9900", discount: "7425" },
-      { name: "ԿՈՄԲՈ 4 Մարզային", price: "7990", discount: null },
+      {
+        name: "ԿՈՄԲՈ 4 9900",
+        price: "9900",
+        discount: "7425",
+      },
+      {
+        name: "ԿՈՄԲՈ 4 Մարզային",
+        price: "7990",
+        discount: null,
+      },
     ],
   },
 ];
 
 const mobile = [
   ["Be Free 5000", "5,000", ""],
-  ["Րոպեներ դեպի ՀՀ բոլոր ցանցեր, ԱՄՆ, Կանադա, ՌԴ Beeline և t2*", "3,000", "րոպե"],
+  [
+    "Րոպեներ դեպի ՀՀ բոլոր ցանցեր, ԱՄՆ, Կանադա, ՌԴ Beeline և t2*",
+    "3,000",
+    "րոպե",
+  ],
   ["SMS դեպի ՀՀ բոլոր ցանցեր", "500", "SMS"],
   ["Բջջային ինտերնետ", "Անսահմ.", ""],
   ["Ինտերնետ ռոումինգում", "200", "ՄԲ"],
@@ -58,27 +70,42 @@ const tabContent = [
   {
     title: "Փաթեթում ներառված է",
     text: "Փաթեթը ներառում է Wi-Fi սարք, TV Box և 3 Be Free հատուկ պայմաններով։",
-    items: ["Wi-Fi սարք", "TV Box", "3 Be Free հատուկ պայմաններով"],
+    items: [
+      "Wi-Fi սարք",
+      "TV Box",
+      "3 Be Free հատուկ պայմաններով",
+    ],
   },
   {
     title: "TeamTV",
     text: "Փաթեթում ներառված է TeamTV ծառայությունը՝ մինչև 150 ալիքով։",
-    items: ["150 հեռուստաալիք", "TeamTV ծառայություն"],
+    items: [
+      "150 հեռուստաալիք",
+      "TeamTV ծառայություն",
+    ],
   },
   {
     title: "Սակագներ",
     text: "Ընտրված փաթեթի ամսական արժեքը ցուցադրվում է վերևում։",
-    items: ["ԿՈՄԲՈ 4 9900 — 9900 դրամ", "ԿՈՄԲՈ 4 Մարզային — 7990 դրամ"],
+    items: [
+      "ԿՈՄԲՈ 4 9900 — 9900 դրամ",
+      "ԿՈՄԲՈ 4 Մարզային — 7990 դրամ",
+    ],
   },
   {
     title: "Պայմաններ",
     text: "ԿՈՄԲՈ 4 9900 փաթեթի համար նշված է զեղչված արժեք՝ 7425 դրամ։ Զեղչի ժամկետը՝ 17.11.2026–17.02.2027։",
-    items: ["Ամսական վճար", "Զեղչի պայմանները կարող են կիրառվել փաթեթին միանալու դեպքում"],
+    items: [
+      "Ամսական վճար",
+      "Զեղչի պայմանները կարող են կիրառվել փաթեթին միանալու դեպքում",
+    ],
   },
   {
     title: "Team Բոնուս",
     text: "Team Բոնուսի մանրամասների համար ծանոթացիր Team Telecom Armenia-ի պաշտոնական առաջարկներին։",
-    items: ["Լրացուցիչ տեղեկություններ՝ պաշտոնական կայքում"],
+    items: [
+      "Լրացուցիչ տեղեկություններ՝ պաշտոնական կայքում",
+    ],
   },
 ];
 
@@ -115,9 +142,16 @@ export default function TVCombo() {
     <div className="tvc">
       <div className="tvc__hero">
         <div className="tvc__hero-content">
-          <span className="tvc__hero-label">TEAM TELECOM ARMENIA</span>
+          <span className="tvc__hero-label">
+            TEAM TELECOM ARMENIA
+          </span>
+
           <h1>ԿՈՄԲՈ</h1>
-          <p>Ինտերնետ, հեռուստատեսություն և բջջային կապ՝ մեկ փաթեթում</p>
+
+          <p>
+            Ինտերնետ, հեռուստատեսություն և բջջային կապ՝ մեկ փաթեթում
+          </p>
+
           <a href="#tvc-packages" className="tvc__hero-btn">
             Տեսնել փաթեթը <span>→</span>
           </a>
@@ -144,7 +178,9 @@ export default function TVCombo() {
           <span>›</span>
           <Link to="/tariffs">Սակագներ</Link>
           <span>›</span>
-          <span className="tvc__crumb-current">Ինտերնետ և TV - ԿՈՄԲՈ</span>
+          <span className="tvc__crumb-current">
+            Ինտերնետ և TV - ԿՈՄԲՈ
+          </span>
         </nav>
 
         <div className="tvc__layout" id="tvc-packages">
@@ -155,12 +191,15 @@ export default function TVCombo() {
               <div className="tvc__plan-group" key={plan.name}>
                 <button
                   className={open === index ? "on" : ""}
-                  onClick={() => setOpen(open === index ? -1 : index)}
+                  onClick={() =>
+                    setOpen(open === index ? -1 : index)
+                  }
                 >
                   <span>
                     <b>{plan.name}</b>
                     <small>{plan.description}</small>
                   </span>
+
                   <span className="tvc__arrow">
                     {open === index ? "−" : "+"}
                   </span>
@@ -173,12 +212,17 @@ export default function TVCombo() {
                         <button
                           key={option.name}
                           className={
-                            selectedPlan === optionIndex ? "selected" : ""
+                            selectedPlan === optionIndex
+                              ? "selected"
+                              : ""
                           }
                           onClick={() => choosePlan(optionIndex)}
                         >
                           {option.name}
-                          {selectedPlan === optionIndex && <span>✓</span>}
+
+                          {selectedPlan === optionIndex && (
+                            <span>✓</span>
+                          )}
                         </button>
                       ))
                     ) : (
@@ -194,28 +238,37 @@ export default function TVCombo() {
 
           <main className="tvc__main">
             <div className="tvc__heading">
-              <span className="tvc__eyebrow">ԻՆՏԵՐՆԵՏ ԵՎ TV</span>
+              <span className="tvc__eyebrow">
+                ԻՆՏԵՐՆԵՏ ԵՎ TV
+              </span>
+
               <h2>{currentPlan.name}</h2>
               <p>Չորսը մեկում փաթեթ</p>
             </div>
 
             <div className="tvc__price-card">
               <div>
-                <span className="tvc__price-label">Ամսական վճար</span>
+                <span className="tvc__price-label">
+                  Ամսական վճար
+                </span>
+
                 <div className="tvc__price">
                   {currentPlan.price} <small>դրամ</small>
                 </div>
+
                 {currentPlan.discount && (
                   <span className="tvc__discount">
                     Զեղչված արժեք՝ {currentPlan.discount} դրամ
                   </span>
                 )}
               </div>
+
               <div className="tvc__price-icon">₽</div>
             </div>
 
             <section className="tvc__section">
               <h3>Բջջային ներառումներ</h3>
+
               {mobile.map((item) => (
                 <Row key={item[0]} item={item} />
               ))}
@@ -223,6 +276,7 @@ export default function TVCombo() {
 
             <section className="tvc__section">
               <h3>Ֆիքսված ներառումներ</h3>
+
               {fixed.map((item) => (
                 <Row key={item[0]} item={item} />
               ))}
@@ -251,6 +305,7 @@ export default function TVCombo() {
               <div className="tvc__tab-content">
                 <h3>{currentTab.title}</h3>
                 <p>{currentTab.text}</p>
+
                 <ul>
                   {currentTab.items.map((item) => (
                     <li key={item}>
@@ -264,7 +319,11 @@ export default function TVCombo() {
 
             <p className="tvc__foot">
               Արխիվային սակագնային և ինտերնետ{" "}
-              <a href="https://www.telecomarmenia.am/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.telecomarmenia.am/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 փաթեթներ
               </a>
             </p>
@@ -288,12 +347,18 @@ export default function TVCombo() {
             >
               ×
             </button>
+
             <div className="tvc__modal-icon">✓</div>
-            <h3>Դու ընտրել ես {currentPlan.name} փաթեթը</h3>
+
+            <h3>
+              Դու ընտրել ես {currentPlan.name} փաթեթը
+            </h3>
+
             <p>
-              Միանալու պայմանների և հասանելիության մասին տեղեկանալու համար
-              այցելիր Team Telecom Armenia-ի պաշտոնական կայք։
+              Միանալու պայմանների և հասանելիության մասին տեղեկանալու
+              համար այցելիր Team Telecom Armenia-ի պաշտոնական կայք։
             </p>
+
             <a
               href="https://www.telecomarmenia.am/"
               target="_blank"
@@ -302,6 +367,7 @@ export default function TVCombo() {
             >
               Պաշտոնական կայք →
             </a>
+
             <button
               className="tvc__modal-back"
               onClick={() => setShowModal(false)}
