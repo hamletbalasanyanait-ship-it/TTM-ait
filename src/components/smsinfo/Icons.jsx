@@ -20,3 +20,11 @@ export function IconReady() {
     </svg>
   );
 }
+
+export function IconLoyalty() {
+  return (
+    <svg {...base}>
+      <path d="M24 40S7 30 7 18.5A9.5 9.5 0 0 1 24 13a9.5 9.5 0 0 1 17 5.5C41 30 24 40 24 40Z" />
+    </svg>
+  );
+}
