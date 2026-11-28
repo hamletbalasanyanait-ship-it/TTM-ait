@@ -32,7 +32,7 @@
   border-radius: 50%;
   color: var(--sms-navy);
   background: radial-gradient(circle at 30% 25%, #e9fbfc, #cdeff2);
-  box-shadow: inset 0 0 0 1px rgba(63, 208, 216, 0.55);
+  box-shadow: inset 0 0 0 1px rgba(63, 208, 216, 0.55), 0 0 0 9px rgba(63, 208, 216, 0.12);
   transition: transform 0.35s ease, color 0.25s ease, background 0.25s ease;
 }
 
