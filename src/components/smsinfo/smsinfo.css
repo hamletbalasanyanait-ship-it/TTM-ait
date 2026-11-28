@@ -129,3 +129,10 @@
 .sms-section--soft {
   background: var(--sms-soft);
 }
+
+/* wide screens */
+@media (min-width: 1400px) {
+  .sms {
+    --sms-max: 1240px;
+  }
+}
