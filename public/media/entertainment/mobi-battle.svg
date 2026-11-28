@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="mobi-battle">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a1c71"/>
+      <stop offset="1" stop-color="#d76d77"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="200" fill="url(#g)"/>
+  <circle cx="276" cy="28" r="70" fill="#fff" opacity=".07"/>
+  <circle cx="30" cy="190" r="60" fill="#fff" opacity=".06"/>
+  <g transform="translate(100 40)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="32" y="4" width="56" height="104" rx="10" fill-opacity=".93" stroke="none"/>
+    <rect x="38" y="16" width="44" height="76" rx="3" fill="#3a1c71" stroke="none"/>
+    <path d="M52 40l22 14-22 14z" stroke="none"/>
+    <path d="M96 24l14-10M96 36l20-4" fill="none" stroke-width="5"/>
+  </g>
+</svg>
