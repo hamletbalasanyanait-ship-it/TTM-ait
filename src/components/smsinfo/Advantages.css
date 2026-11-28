@@ -50,6 +50,8 @@
 }
 
 .sms-adv__card p {
+  max-width: 260px;
+  margin: 0 auto;
   font-size: 15px;
   line-height: 1.6;
   color: var(--sms-muted);
