@@ -76,3 +76,19 @@
   white-space: nowrap;
   border: 0;
 }
+
+/* ---------- sections ---------- */
+.ent-section {
+  padding: 48px 0;
+}
+
+.ent-section--soft {
+  background: var(--ent-bg);
+}
+
+.ent-section__title {
+  font-size: 30px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: var(--ent-navy);
+}
