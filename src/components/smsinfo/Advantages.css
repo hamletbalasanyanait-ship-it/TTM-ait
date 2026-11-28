@@ -56,3 +56,16 @@
   line-height: 1.6;
   color: var(--sms-muted);
 }
+
+@media (min-width: 640px) {
+  .sms-adv__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sms-adv__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
