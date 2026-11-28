@@ -43,6 +43,12 @@ export default function Plans() {
                 ))}
               </ul>
 
+              <div className="sms-plan__cta">
+                <a className="sms-btn" href="#join" onClick={goToJoin}>
+                  Միանալ
+                </a>
+              </div>
+
               <p className="sms-plan__note">{plan.note}</p>
             </article>
           </Reveal>
