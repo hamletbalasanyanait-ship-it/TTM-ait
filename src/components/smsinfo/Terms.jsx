@@ -3,7 +3,7 @@ import "./Terms.css";
 
 export default function Terms() {
   return (
-    <section className="sms-section sms-terms" id="terms">
+    <section className="sms-section sms-section--soft sms-terms" id="terms">
       <div className="sms-wrap">
         <h2 className="sms-title">Պայմաններ</h2>
 
