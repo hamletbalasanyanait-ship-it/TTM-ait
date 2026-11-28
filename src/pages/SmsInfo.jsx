@@ -6,6 +6,7 @@ import "../components/smsinfo/smsinfo.css";
 export default function SmsInfo() {
   // same tab title as the original page
   useEffect(() => {
+    window.scrollTo(0, 0);
     const previous = document.title;
     document.title = "SMS-ինֆո | Team";
     return () => {
