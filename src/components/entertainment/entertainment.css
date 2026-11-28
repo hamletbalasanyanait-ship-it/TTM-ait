@@ -682,3 +682,22 @@
   font-size: 13px;
   color: var(--ent-muted);
 }
+
+/* ---------- related services ---------- */
+.ent-related__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 24px;
+}
+
+.ent-related__list a {
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--ent-line);
+  color: var(--ent-navy);
+  font-weight: 500;
+}
+
+.ent-related__list a:hover {
+  color: var(--ent-red);
+}
