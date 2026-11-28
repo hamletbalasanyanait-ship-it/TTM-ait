@@ -379,3 +379,95 @@
   border: 1px solid var(--ent-line);
   border-radius: var(--ent-radius);
 }
+
+/* ---------- text blocks ---------- */
+.ent-blocks {
+  display: grid;
+  gap: 16px;
+}
+
+.ent-p--strong {
+  font-weight: 700;
+}
+
+.ent-p a,
+.ent-list a,
+.ent-note a {
+  color: var(--ent-navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-word;
+}
+
+.ent-list {
+  display: grid;
+  gap: 10px;
+}
+
+.ent-list li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.ent-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ent-red);
+}
+
+.ent-list--num {
+  counter-reset: ent-step;
+}
+
+.ent-list--num li {
+  counter-increment: ent-step;
+  padding-left: 40px;
+}
+
+.ent-list--num li::before {
+  content: counter(ent-step);
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  background: var(--ent-navy);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ent-note {
+  font-size: 13.5px;
+  color: var(--ent-muted);
+}
+
+.ent-extlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: var(--ent-navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ent-spec {
+  padding: 14px 18px;
+  border-left: 4px solid var(--ent-cyan);
+  background: var(--ent-bg);
+  border-radius: 0 12px 12px 0;
+  display: grid;
+  gap: 6px;
+}
+
+.ent-spec__label {
+  font-size: 16px;
+  color: var(--ent-navy);
+}
