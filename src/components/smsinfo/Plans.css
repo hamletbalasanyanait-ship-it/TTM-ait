@@ -122,3 +122,13 @@
   color: var(--sms-navy-dark);
   background: var(--sms-cyan);
 }
+
+.sms-plan__cta {
+  position: relative;
+  padding: 10px 28px 22px;
+}
+
+.sms-plan__cta .sms-btn {
+  display: block;
+  text-align: center;
+}
