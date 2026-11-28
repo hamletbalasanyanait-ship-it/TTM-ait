@@ -37,7 +37,7 @@ const navLinks = [
     children: [
       { label: "TeamTV", to: "/services/teamtv" },
       { label: "Վճարում և համալրում", to: "/services/payment" },
-      { label: "Զվարճանք", to: "/services/entertainment" },
+      { label: "Զվարճանք", to: "/entertainment" },
       { label: "Զանգեր և անվտանգություն", to: "/services/calls-security" },
       { label: "Ֆիքսված հեռախոսակապ", to: "/services/fixed" },
     ],
