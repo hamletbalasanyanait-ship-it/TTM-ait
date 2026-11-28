@@ -51,8 +51,11 @@ export default function Terms() {
             </ul>
           </Panel>
 
-          <div className="sms-terms__item">
-            <h3>Ընդհանուր պայմաններ</h3>
+          <Panel
+            title="Ընդհանուր պայմաններ"
+            open={open.general}
+            onToggle={() => toggle("general")}
+          >
             <ul className="sms-terms__bullets">
               {generalTerms.map((t) => (
                 <li key={t.text.slice(0, 24)}>
@@ -60,7 +63,7 @@ export default function Terms() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Panel>
         </div>
       </div>
     </section>
